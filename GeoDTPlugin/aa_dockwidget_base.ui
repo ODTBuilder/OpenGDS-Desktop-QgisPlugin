@@ -1,0 +1,631 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>aDockWidgetBase</class>
+ <widget class="QDockWidget" name="aDockWidgetBase">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>352</width>
+    <height>504</height>
+   </rect>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">
+
+
+
+QWidget
+{  
+color: #323232;
+    background-color: #ffffff;
+}
+QTreeView {
+
+     background-color: #ffffff;
+}
+
+
+QToolButton{
+margin: 5px 0;
+border-right:1px solid #0e237a;
+}
+
+
+QToolButton:hover {
+    color: #fff;
+    background-color: #314dc0;
+	border-top:1px solid #2e49b7;
+	border-left:1px solid #2e49b7;
+	border-bottom:1px solid #1a3194;
+	border-right:1px solid #1a3194;
+}
+
+
+QToolButton:pressed {
+    background-color: #152c8a;
+}    
+
+
+
+QToolButton:checked {
+    color: #fff;
+    background-color: #152c8a;
+		border-radius: 0;
+	
+	border-top:1px solid #0e2171;
+	border-left:1px solid #0e2171;
+	border-bottom:1px solid #2e49b7;
+	border-right:1px solid #2e49b7;
+}    
+
+QToolBar{
+ background-color: #213ba7; 
+ border-bottom: 1px solid #132a89;
+} 
+
+QToolBar QToolButton {
+ margin-top:3px;
+ padding:3px 3px;
+  background: transparent;  
+  color: white; 
+  }
+   
+  
+  
+  
+QToolBar QToolButton:pressed {
+    border: 1px solid #0e2171;
+    border-radius: 0;
+    background-color:#152c8a
+}
+    
+  
+QToolBar::handle{ 
+    background-color:#0e237a;
+    border: 1px solid #0e237a; 
+} 
+
+
+
+
+
+
+
+QTabBar::tab {
+    background-color:#e7eaf4;
+    border:1px solid #b0bedd;
+    border-top-left-radius:0;
+    border-top-right-radius:0;
+    padding:4px 10px;
+	color:#555;
+	margin-bottom:1px;
+
+}
+
+QTabBar::tab:selected {
+    border-bottom:none;
+	border:1px solid #4c73d5;
+    background-color: #4c73d5;
+	color:#fff;
+}
+
+
+
+
+
+
+
+
+
+
+
+/** group boxes */
+
+
+
+QGroupBox {
+    background-color: #ffffff;
+    border: 1px solid #d8d8d8;
+    border-top-style: solid;
+    border-right-style: solid;
+    border-bottom-style: solid;
+    border-left-style: solid;
+    border-radius: 0;
+    margin-top: 3ex;  
+}
+
+QGroupBox::title {
+     subcontrol-origin: margin;
+    subcontrol-position: top left;  
+    padding: 0 6px;
+	color: #335095;
+    background-color:#ffffff;
+}
+
+
+
+
+
+/** PushButtons **/
+
+QPushButton {
+    background-color: ;
+	border:1px solid #999;
+    border-width: 1px;
+    border-radius: 2px;
+       min-width: 2em;
+    padding: 6px;
+}
+
+QPushButton::hover {
+    background-color:#dde3f4;
+    border-color: #91aee0;
+}
+
+QPushButton::disabled {
+    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,stop: 0 #ffffff22, stop: 1.0 #9b9bff22);
+    border-style: dotted;
+    border-width: 1px;
+    border-radius: 5px;
+    border-color: #99999933;
+    min-width: 2em;
+    padding: 6px;
+    color:#33333;
+}
+
+
+
+
+QLineEdit {
+    color: #333;
+	padding:2px 5px;
+    background-color: #fff;
+    selection-color: #335095;
+	selection-border: 1px solid #90a5dc;
+    selection-background-color: #e9eefb;
+    border: 1px solid #c5c5c5; /* border top color defined after QAbstractSpinBox, QLineEdit and QComboBox */
+    border-radius: 2px;
+}
+ 
+QLineEdit:read-only {
+       background-color: #ccc;
+}
+
+QTextEdit, QListView {
+    background-color: white;
+    border: 1px solid gray;
+    background-attachment: scroll;
+}
+
+
+
+
+
+
+
+/* ==================================================================================== */
+/* SCROLL BAR                                                                           */
+/* ==================================================================================== */
+
+QScrollBar:horizontal {
+    background-color: #333;
+    height: 8px;
+    margin: 0px;
+    padding: 0px;
+}
+
+QScrollBar::handle:horizontal {
+    border: 1px solid #111;
+    background: #535353;
+}
+
+QScrollBar::add-line:horizontal, QScrollBar::sub-line:horizontal,
+QScrollBar::add-page:horizontal, QScrollBar::sub-page:horizontal {
+    width: 0px;
+    background: transparent;
+}
+
+QScrollBar:vertical {
+    background-color: #c5c5c5;
+    width: 8px;
+    margin: 0;
+}
+
+QScrollBar::handle:vertical {
+    border: 1px solid #adadad;
+    background: #adadad;
+}
+
+QScrollBar::add-line:vertical, QScrollBar::sub-line:vertical,
+QScrollBar::add-page:vertical, QScrollBar::sub-page:vertical {
+    height: 0px;
+    background: transparent;
+}
+
+
+
+
+
+
+
+
+/** Dock Widgets e.g. Time Manager */
+
+QDockWidget
+{	padding:10px 0 0 0;
+  	color: #000;
+  
+}
+
+
+
+QDockWidget::title {
+    text-align: center;
+    padding: 4px;
+	border-bottom:1px solid #c5c5c5;
+	border-right:1px solid #c5c5c5;
+
+}
+
+QDockWidget::close-button,
+QDockWidget::float-button {
+    border: 1px transparent #e6e6e6;
+    border-radius: 2px;
+    background: transparent;
+    subcontrol-origin: padding;
+    subcontrol-position: right center;
+}
+
+QDockWidget::close-button {
+    right: 4px;
+}
+    
+QDockWidget::float-button {
+    right: 22px;
+}
+
+QDockWidget::close-button:hover,
+QDockWidget::float-button:hover {
+    background: #f5f5f5;
+}
+
+QDockWidget::close-button:pressed,
+QDockWidget::float-button:pressed {
+    /*padding: 1px -1px -1px 1px;*/
+    background-color: #e0e0e0;
+}
+
+
+
+
+
+
+
+
+
+
+
+/** handle */
+
+/* Similar to the splitter is the following window separator: */
+
+QMainWindow::separator
+{    background-position: center center;
+    background-repeat: none;
+    background-color: #d8def1;
+    color: white;
+	border-left:1px solid #c6cde3;
+    padding-left: 4px;   
+    spacing: 3px; /* spacing between items in the tool bar */
+}
+
+QMainWindow::separator:hover
+{
+
+    background-color: #d8def1;
+    color: white;
+    padding-left: 4px;
+
+    border-right: 1px solid #284898;
+    spacing: 3px; /* spacing between items in the tool bar */
+}
+
+</string>
+  </property>
+  <property name="windowTitle">
+   <string>GeoDT</string>
+  </property>
+  <widget class="QWidget" name="dockWidgetContents">
+   <layout class="QGridLayout" name="gridLayout">
+    <item row="3" column="0">
+     <spacer name="verticalSpacer">
+      <property name="orientation">
+       <enum>Qt::Vertical</enum>
+      </property>
+      <property name="sizeHint" stdset="0">
+       <size>
+        <width>20</width>
+        <height>40</height>
+       </size>
+      </property>
+     </spacer>
+    </item>
+    <item row="0" column="0">
+     <widget class="QTabWidget" name="tabWidget">
+      <property name="styleSheet">
+       <string notr="true">QGroupBox {
+    background-color: #ffffff;
+    border: 1px solid #d8d8d8;
+    border-top-style: solid;
+    border-right-style: solid;
+    border-bottom-style: solid;
+    border-left-style: solid;
+    border-radius: 0;
+    margin-top: 3ex;  
+}
+
+QGroupBox::title {
+     subcontrol-origin: margin;
+    subcontrol-position: top left;  
+    padding: 0 6px;
+	color: #335095;
+    background-color:#ffffff;
+}
+
+QPushButton {
+    background-color: ;
+	border:1px solid #999;
+    border-width: 1px;
+    border-radius: 2px;
+       min-width: 2em;
+    padding: 6px;
+}
+
+QPushButton::hover {
+    background-color:#dde3f4;
+    border-color: #91aee0;
+}
+
+QPushButton::disabled {
+    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,stop: 0 #ffffff22, stop: 1.0 #9b9bff22);
+    border-style: dotted;
+    border-width: 1px;
+    border-radius: 5px;
+    border-color: #99999933;
+    min-width: 2em;
+    padding: 6px;
+    color:#33333;
+}
+
+
+
+
+QLineEdit {
+    color: #333;
+	padding:2px 5px;
+    background-color: #fff;
+    selection-color: #335095;
+	selection-border: 1px solid #90a5dc;
+    selection-background-color: #e9eefb;
+    border: 1px solid #c5c5c5; /* border top color defined after QAbstractSpinBox, QLineEdit and QComboBox */
+    border-radius: 2px;
+}
+ 
+QLineEdit:read-only {
+       background-color: #ccc;
+}
+
+QTextEdit, QListView {
+    background-color: white;
+    border: 1px solid gray;
+    background-attachment: scroll;
+}
+
+
+</string>
+      </property>
+      <property name="currentIndex">
+       <number>1</number>
+      </property>
+      <widget class="QWidget" name="tab">
+       <attribute name="title">
+        <string>환경 설정</string>
+       </attribute>
+       <layout class="QGridLayout" name="gridLayout_4">
+        <item row="0" column="0">
+         <widget class="QGroupBox" name="groupBox">
+          <property name="styleSheet">
+           <string notr="true">background-color: rgb(255, 255, 255);</string>
+          </property>
+          <property name="title">
+           <string>옵션 설정</string>
+          </property>
+          <layout class="QGridLayout" name="gridLayout_2">
+           <item row="6" column="0">
+            <spacer name="horizontalSpacer">
+             <property name="orientation">
+              <enum>Qt::Horizontal</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>40</width>
+               <height>20</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+           <item row="0" column="0" colspan="3">
+            <widget class="QGroupBox" name="groupBox_2">
+             <property name="title">
+              <string>검수 종류</string>
+             </property>
+             <layout class="QGridLayout" name="gridLayout_3">
+              <item row="0" column="1">
+               <widget class="QComboBox" name="cidx"/>
+              </item>
+             </layout>
+            </widget>
+           </item>
+           <item row="6" column="2">
+            <widget class="QPushButton" name="close_btn">
+             <property name="text">
+              <string>닫기</string>
+             </property>
+            </widget>
+           </item>
+           <item row="6" column="1">
+            <widget class="QPushButton" name="go_btn">
+             <property name="text">
+              <string>실행</string>
+             </property>
+            </widget>
+           </item>
+           <item row="3" column="0" colspan="3">
+            <widget class="QGroupBox" name="groupBox_5">
+             <property name="title">
+              <string>검수 대상 파일 경로</string>
+             </property>
+             <layout class="QGridLayout" name="gridLayout_8">
+              <item row="0" column="0">
+               <widget class="QLineEdit" name="path3"/>
+              </item>
+              <item row="0" column="1">
+               <widget class="QPushButton" name="load3">
+                <property name="text">
+                 <string>불러오기</string>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </widget>
+           </item>
+           <item row="2" column="0" colspan="3">
+            <widget class="QGroupBox" name="groupBox_6">
+             <property name="title">
+              <string>검수 옵션 경로</string>
+             </property>
+             <layout class="QGridLayout" name="gridLayout_7">
+              <item row="0" column="0">
+               <widget class="QLineEdit" name="path2"/>
+              </item>
+              <item row="0" column="1">
+               <widget class="QPushButton" name="load2">
+                <property name="text">
+                 <string>불러오기</string>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </widget>
+           </item>
+           <item row="4" column="0" colspan="3">
+            <widget class="QGroupBox" name="groupBox_3">
+             <property name="title">
+              <string>좌표계</string>
+             </property>
+             <layout class="QGridLayout" name="gridLayout_9">
+              <item row="0" column="0">
+               <widget class="QComboBox" name="crs"/>
+              </item>
+             </layout>
+            </widget>
+           </item>
+           <item row="1" column="0" colspan="3">
+            <widget class="QGroupBox" name="groupBox_7">
+             <property name="title">
+              <string>레이어 정의 옵션 경로</string>
+             </property>
+             <layout class="QGridLayout" name="gridLayout_6">
+              <item row="0" column="0">
+               <widget class="QLineEdit" name="path1"/>
+              </item>
+              <item row="0" column="1">
+               <widget class="QPushButton" name="load1">
+                <property name="text">
+                 <string>불러오기</string>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="tab_2">
+       <attribute name="title">
+        <string>네비게이터</string>
+       </attribute>
+       <layout class="QGridLayout" name="gridLayout_5">
+        <item row="1" column="1">
+         <widget class="QPushButton" name="close_btn_2">
+          <property name="text">
+           <string>닫기</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="0">
+         <spacer name="horizontalSpacer_2">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>40</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item row="0" column="0" colspan="2">
+         <widget class="QGroupBox" name="groupBox_4">
+          <property name="styleSheet">
+           <string notr="true">background-color: rgb(255, 255, 255);</string>
+          </property>
+          <property name="title">
+           <string>검수 결과</string>
+          </property>
+          <layout class="QGridLayout" name="gridLayout_10">
+           <item row="0" column="1">
+            <widget class="QComboBox" name="filelist1"/>
+           </item>
+           <item row="1" column="0">
+            <widget class="QLabel" name="label_2">
+             <property name="text">
+              <string>SHP 파일</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="1">
+            <widget class="QComboBox" name="filelist2"/>
+           </item>
+           <item row="0" column="0">
+            <widget class="QLabel" name="label">
+             <property name="text">
+              <string>상위폴더</string>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="0" colspan="2">
+            <widget class="QTableWidget" name="tableWidget">
+             <attribute name="horizontalHeaderStretchLastSection">
+              <bool>true</bool>
+             </attribute>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
