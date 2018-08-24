@@ -39,7 +39,7 @@ OpenGeoDT 팀
    
     <img width="875" alt="2018-08-24 9 21 49" src="https://user-images.githubusercontent.com/13480171/44558462-3f54b000-a77f-11e8-91e1-d86d694faa6f.png">
 
-  - 자세한 검수 옵션설정은 GeoDT Online 웹 매뉴얼 을 참조하십시오.
+  - 자세한 검수 옵션설정은 [GeoDT Online 웹 매뉴얼](https://github.com/ODTBuilder/OpenGDS-Desktop-QgisPlugin/blob/master/GeoDT%20Online%20매뉴얼.hwp)을 참조하십시오.
   
   - QGIS Parameter 연동
   ![image](https://user-images.githubusercontent.com/13480171/44511808-a036a680-a6f3-11e8-84b6-f7b09dbcc79b.png) 
