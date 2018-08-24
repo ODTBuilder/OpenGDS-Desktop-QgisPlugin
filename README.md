@@ -20,8 +20,36 @@ OpenGeoDT 팀
 =====
 - 공간자료 검증도구 v1.0은 자사 GIS 통합 솔루션인 GeoDT 2.2 기반의 데스크톱 기반 공간데이터 편집/검수 솔루션임.
 - 데스크톱상에서 공간정보의 기하학적/논리적 구조와 속성값에 대한 검수편집 기능을 제공함.
+- Batch file 과 연동하여 검수를 진행함.
 
 
+기능
+=====
+- Option 설정
+  - GeoDT Online 에서 검수옵션 설정을 기반으로 QGIS 검수 옵션값을 설정함
+    - 설정 예시 1)
+    
+    <img width="911" alt="2018-08-24 9 15 34" src="https://user-images.githubusercontent.com/13480171/44558307-66f74880-a77e-11e8-9add-74537c569ce7.png">
+    
+    - 설정 예시 2)
+    
+    <img width="875" alt="2018-08-24 9 21 38" src="https://user-images.githubusercontent.com/13480171/44558463-3fed4680-a77f-11e8-8e86-f5bf1d327509.png">
+    
+    - 설정 예시 3)
+   
+    <img width="875" alt="2018-08-24 9 21 49" src="https://user-images.githubusercontent.com/13480171/44558462-3f54b000-a77f-11e8-91e1-d86d694faa6f.png">
+
+  - 자세한 검수 옵션설정은 GeoDT Online 웹 매뉴얼 을 참조하십시오.
+  
+  - QGIS Parameter 연동
+  ![image](https://user-images.githubusercontent.com/13480171/44511808-a036a680-a6f3-11e8-84b6-f7b09dbcc79b.png) 
+  </br>환경설정창 확대</br>
+  ![image](https://user-images.githubusercontent.com/13480171/44558624-30bac880-a780-11e8-94b7-54fd1885773f.png)
+
+  - QGIS 에러 네비게이터
+  ![image](https://user-images.githubusercontent.com/13480171/44512279-f48e5600-a6f4-11e8-9259-f77d5547ac86.png)
+  </br>에러 네비게이터창 확대</br>
+  ![image](https://user-images.githubusercontent.com/13480171/44558666-6fe91980-a780-11e8-9083-038d188fbd29.png)
 
 연구기관
 =====
