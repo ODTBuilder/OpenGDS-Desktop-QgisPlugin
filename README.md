@@ -43,12 +43,12 @@ OpenGeoDT 팀
   
   - QGIS Parameter 연동
   ![image](https://user-images.githubusercontent.com/13480171/46720101-83a5fc00-ccaa-11e8-894c-6fb0b044ac20.JPG) 
-  </br>환경설정창 확대</br>
+    - 환경설정창 확대</br>
   ![image](https://user-images.githubusercontent.com/13480171/46720104-86a0ec80-ccaa-11e8-896b-a4926267ffc2.JPG)
 
   - QGIS 에러 네비게이터
   ![image](https://user-images.githubusercontent.com/13480171/46720108-87d21980-ccaa-11e8-805d-374ebb668161.JPG)
-  </br>에러 네비게이터창 확대</br>
+    - 에러 네비게이터창 확대</br>
   ![image](https://user-images.githubusercontent.com/13480171/46720113-899bdd00-ccaa-11e8-951b-5a987bf9a8c8.JPG)
 
 연구기관
