@@ -30,8 +30,6 @@ from qgis.utils import QGis
 from qgis.core import *
 from qgis.gui import *
 import os.path
-import collections
-import subprocess
 import sys
 reload(sys)
 sys.setdefaultencoding('utf-8')
@@ -39,16 +37,16 @@ from PyQt4 import QtGui, uic
 from PyQt4.QtCore import pyqtSignal
 
 FORM_CLASS, _ = uic.loadUiType(os.path.join(
-    os.path.dirname(__file__), 'aa_dockwidget_base.ui'))
+    os.path.dirname(__file__), 'val_dockwidget_base.ui'))
 
 
-class aDockWidget(QtGui.QDockWidget, FORM_CLASS):
+class ValDockWidget(QtGui.QDockWidget, FORM_CLASS):
 
     closingPlugin = pyqtSignal()
 
     def __init__(self, iface, parent=None):
         """Constructor."""
-        super(aDockWidget, self).__init__(parent)
+        super(ValDockWidget, self).__init__(parent)
         # Set up the user interface from Designer.
         # After setupUI you can access any designer object by doing
         # self.<objectname>, and you can use autoconnect slots - see

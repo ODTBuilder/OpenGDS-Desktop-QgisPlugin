@@ -1,0 +1,2270 @@
+[
+  {
+    "name": "도로경계",
+    "layers": [
+      {
+        "fix": null,
+        "code": "A0010000",
+        "geometry": "multipolygon"
+      }
+    ]
+  },
+  {
+    "name": "도로중심선",
+    "layers": [
+      {
+        "fix": [
+          {
+            "name": "도로구분",
+            "type": null,
+            "isnull": false,
+            "length": null,
+            "values": [
+              "고속국도",
+              "일반국도",
+              "지방도",
+              "면리간도로",
+              "소로",
+              "미분류"
+            ]
+          },
+          {
+            "name": "포장재질",
+            "type": null,
+            "isnull": false,
+            "length": null,
+            "values": [
+              "포장",
+              "비포장",
+              "기타"
+            ]
+          },
+          {
+            "name": "분리대유무",
+            "type": null,
+            "isnull": false,
+            "length": null,
+            "values": [
+              "유",
+              "무"
+            ]
+          },
+          {
+            "name": "일방통행",
+            "type": null,
+            "isnull": false,
+            "length": null,
+            "values": [
+              "양방통행",
+              "일방통행"
+            ]
+          }
+        ],
+        "code": "A0020000",
+        "geometry": "multilinestring"
+      }
+    ]
+  },
+  {
+    "name": "인도",
+    "layers": [
+      {
+        "fix": [
+          {
+            "name": "재질",
+            "type": null,
+            "isnull": false,
+            "length": null,
+            "values": [
+              "아스콘",
+              "콘크리트",
+              "블록",
+              "비포장",
+              "아스콘/블록",
+              "기타"
+            ]
+          },
+          {
+            "name": "자전거도로유무",
+            "type": null,
+            "isnull": false,
+            "length": null,
+            "values": [
+              "유",
+              "무"
+            ]
+          },
+          {
+            "name": "종류",
+            "type": null,
+            "isnull": false,
+            "length": null,
+            "values": [
+              "인도",
+              "자전거도로"
+            ]
+          }
+        ],
+        "code": "A0033320",
+        "geometry": "multilinestring"
+      }
+    ]
+  },
+  {
+    "name": "횡단보도",
+    "layers": [
+      {
+        "fix": null,
+        "code": "A0043325",
+        "geometry": "multipolygon"
+      }
+    ]
+  },
+  {
+    "name": "안전지대",
+    "layers": [
+      {
+        "fix": [
+          {
+            "name": "구조",
+            "type": null,
+            "isnull": false,
+            "length": null,
+            "values": [
+              "교통섬",
+              "평면(도색)",
+              "어린이보호구역"
+            ]
+          }
+        ],
+        "code": "A0053326",
+        "geometry": "multipolygon"
+      }
+    ]
+  },
+  {
+    "name": "육교",
+    "layers": [
+      {
+        "fix": [
+          {
+            "name": "형태",
+            "type": null,
+            "isnull": false,
+            "length": null,
+            "values": [
+              "장애인이용여부(가능)",
+              "장애인이용여부(불가)"
+            ]
+          }
+        ],
+        "code": "A0063321",
+        "geometry": "multipolygon"
+      }
+    ]
+  },
+  {
+    "name": "교량",
+    "layers": [
+      {
+        "fix": [
+          {
+            "name": "종류",
+            "type": null,
+            "isnull": false,
+            "length": null,
+            "values": [
+              "철교",
+              "도로교",
+              "보도교"
+            ]
+          },
+          {
+            "name": "재질",
+            "type": null,
+            "isnull": false,
+            "length": null,
+            "values": [
+              "콘크리트",
+              "강재",
+              "목재",
+              "석재",
+              "기타"
+            ]
+          }
+        ],
+        "code": "A0070000",
+        "geometry": "multipolygon"
+      }
+    ]
+  },
+  {
+    "name": "교차로",
+    "layers": [
+      {
+        "fix": [
+          {
+            "name": "종류",
+            "type": null,
+            "isnull": false,
+            "length": null,
+            "values": [
+              "평면교차점",
+              "면교차점",
+              "입체교차점",
+              "기타"
+            ]
+          }
+        ],
+        "code": "A0080000",
+        "geometry": "multipolygon"
+      }
+    ]
+  },
+  {
+    "name": "입체교차부",
+    "layers": [
+      {
+        "fix": [
+          {
+            "name": "구분",
+            "type": null,
+            "isnull": false,
+            "length": null,
+            "values": [
+              "고가차도",
+              "지하차도"
+            ]
+          },
+          {
+            "name": "재질",
+            "type": null,
+            "isnull": false,
+            "length": null,
+            "values": [
+              "콘크리트",
+              "강재",
+              "목재",
+              "석재",
+              "기타"
+            ]
+          },
+          {
+            "name": "보도",
+            "type": null,
+            "isnull": false,
+            "length": null,
+            "values": [
+              "유",
+              "무"
+            ]
+          }
+        ],
+        "code": "A0090000",
+        "geometry": "multipolygon"
+      }
+    ]
+  },
+  {
+    "name": "인터체인지",
+    "layers": [
+      {
+        "fix": [
+          {
+            "name": "보도",
+            "type": null,
+            "isnull": false,
+            "length": null,
+            "values": [
+              "고속국도",
+              "일반국도",
+              "지방도",
+              "일반도로"
+            ]
+          }
+        ],
+        "code": "A0100000",
+        "geometry": "multipolygon"
+      }
+    ]
+  },
+  {
+    "name": "터널",
+    "layers": [
+      {
+        "fix": null,
+        "code": "A0110020",
+        "geometry": "multipolygon"
+      }
+    ]
+  },
+  {
+    "name": "터널입구",
+    "layers": [
+      {
+        "fix": null,
+        "code": "A0123373",
+        "geometry": "multipolygon"
+      }
+    ]
+  },
+  {
+    "name": "정거장",
+    "layers": [
+      {
+        "fix": null,
+        "code": "A0131122",
+        "geometry": "point"
+      }
+    ]
+  },
+  {
+    "name": "정류장",
+    "layers": [
+      {
+        "fix": [
+          {
+            "name": "용도",
+            "type": null,
+            "isnull": false,
+            "length": null,
+            "values": [
+              "버스(고속)",
+              "버스(시외)",
+              "버스(좌석)",
+              "버스(일반)",
+              "버스(마을)",
+              "택시",
+              "공용"
+            ]
+          }
+        ],
+        "code": "A0140000",
+        "geometry": "point"
+      }
+    ]
+  },
+  {
+    "name": "철도",
+    "layers": [
+      {
+        "fix": [
+          {
+            "name": "구분",
+            "type": null,
+            "isnull": false,
+            "length": null,
+            "values": [
+              "고속철도",
+              "보통철도",
+              "특수철도",
+              "지하철(지상)",
+              "삭도(케이블카)",
+              "모노레일",
+              "기타"
+            ]
+          },
+          {
+            "name": "관리기관",
+            "type": null,
+            "isnull": false,
+            "length": null,
+            "values": [
+              "국가",
+              "지자체",
+              "공공기관",
+              "개인",
+              "기타"
+            ]
+          }
+        ],
+        "code": "A0150000",
+        "geometry": "multilinestring"
+      }
+    ]
+  },
+  {
+    "name": "철도경계",
+    "layers": [
+      {
+        "fix": null,
+        "code": "A0160024",
+        "geometry": "multipolygon"
+      }
+    ]
+  },
+  {
+    "name": "철도중심선",
+    "layers": [
+      {
+        "fix": [
+          {
+            "name": "구분",
+            "type": null,
+            "isnull": false,
+            "length": null,
+            "values": [
+              "고속철도",
+              "보통철도",
+              "특수철도",
+              "지하철(지상)",
+              "삭도(케이블카)",
+              "모노레일",
+              "기타"
+            ]
+          },
+          {
+            "name": "구조",
+            "type": null,
+            "isnull": false,
+            "length": null,
+            "values": [
+              "단선",
+              "복선",
+              "복복선",
+              "3복선",
+              "기타"
+            ]
+          },
+          {
+            "name": "관리기관",
+            "type": null,
+            "isnull": false,
+            "length": null,
+            "values": [
+              "국가",
+              "지자체",
+              "공공기관",
+              "개인",
+              "기타"
+            ]
+          }
+        ],
+        "code": "A0171119",
+        "geometry": "multilinestring"
+      }
+    ]
+  },
+  {
+    "name": "철도전차대",
+    "layers": [
+      {
+        "fix": [
+          {
+            "name": "구분",
+            "type": null,
+            "isnull": false,
+            "length": null,
+            "values": [
+              "고속철도",
+              "보통철도",
+              "특수철도",
+              "지하철(지상)",
+              "삭도(케이블카)",
+              "모노레일",
+              "기타"
+            ]
+          },
+          {
+            "name": "관리기관",
+            "type": null,
+            "isnull": false,
+            "length": null,
+            "values": [
+              "국가",
+              "지자체",
+              "공공기관",
+              "개인",
+              "기타"
+            ]
+          }
+        ],
+        "code": "A0180000",
+        "geometry": "point"
+      }
+    ]
+  },
+  {
+    "name": "플랫폼",
+    "layers": [
+      {
+        "fix": [
+          {
+            "name": "명칭",
+            "isnull": false
+          }
+        ],
+        "code": "A0191221",
+        "geometry": "multipolygon"
+      }
+    ]
+  },
+  {
+    "name": "플랫폼의지붕",
+    "layers": [
+      {
+        "fix": null,
+        "code": "A0201222",
+        "geometry": "multipolygon"
+      }
+    ]
+  },
+  {
+    "name": "나루",
+    "layers": [
+      {
+        "fix": [
+          {
+            "name": "용도",
+            "type": null,
+            "isnull": false,
+            "length": null,
+            "values": [
+              "차량",
+              "사람"
+            ]
+          }
+        ],
+        "code": "A0210000",
+        "geometry": "point"
+      }
+    ]
+  },
+  {
+    "name": "나루노선",
+    "layers": [
+      {
+        "fix": null,
+        "code": "A0222257",
+        "geometry": "multilinestring"
+      }
+    ]
+  },
+  {
+    "name": "건물경계",
+    "layers": [
+      {
+        "fix": [
+          {
+            "name": "종류",
+            "type": null,
+            "isnull": false,
+            "length": null,
+            "values": [
+              "일반주택",
+              "연립주택",
+              "아파트",
+              "주택외건물",
+              "무벽건물",
+              "온실",
+              "공사중건물",
+              "가건물",
+              "미분류"
+            ]
+          },
+          {
+            "name": "용도",
+            "type": null,
+            "isnull": false,
+            "length": null,
+            "values": [
+              "주택",
+              "근린생활시설",
+              "문화및집회시설",
+              "종교시설",
+              "판매시설",
+              "운수시설",
+              "의료시설",
+              "교육연구시설",
+              "노유자(노인및어린이)시설",
+              "수련시설",
+              "운동시설",
+              "업무시설",
+              "숙박시설",
+              "위락시설",
+              "공장",
+              "창고시설",
+              "위험물저장및처리시설",
+              "자동차관련시설",
+              "동물및식물관련시설",
+              "분뇨및쓰레기처리시설",
+              "교정및군사시설",
+              "방송통신시설",
+              "발전시설",
+              "묘지관련시설",
+              "관광휴게시설",
+              "장례시설",
+              "기타시설"
+            ]
+          }
+        ],
+        "code": "B0010000",
+        "geometry": "multipolygon"
+      }
+    ]
+  },
+  {
+    "name": "담장",
+    "layers": [
+      {
+        "fix": [
+          {
+            "name": "구분",
+            "type": null,
+            "isnull": false,
+            "length": null,
+            "values": [
+              "담",
+              "문주"
+            ]
+          }
+        ],
+        "code": "B0020000",
+        "geometry": "multilinestring"
+      }
+    ]
+  },
+  {
+    "name": "댐",
+    "layers": [
+      {
+        "fix": [
+          {
+            "name": "용도",
+            "type": null,
+            "isnull": false,
+            "length": null,
+            "values": [
+              "다목적용",
+              "발전용",
+              "담수용",
+              "기타"
+            ]
+          }
+        ],
+        "code": "C0010000",
+        "geometry": "multipolygon"
+      }
+    ]
+  },
+  {
+    "name": "부두",
+    "layers": [
+      {
+        "fix": [
+          {
+            "name": "용도",
+            "type": null,
+            "isnull": false,
+            "length": null,
+            "values": [
+              "여객용",
+              "화물용"
+            ]
+          },
+          {
+            "name": "재질",
+            "type": null,
+            "isnull": false,
+            "length": null,
+            "values": [
+              "콘크리트",
+              "석축(돌)",
+              "목재",
+              "기타"
+            ]
+          }
+        ],
+        "code": "C0025336",
+        "geometry": "multipolygon"
+      }
+    ]
+  },
+  {
+    "name": "선착장",
+    "layers": [
+      {
+        "fix": null,
+        "code": "C0032254",
+        "geometry": "multipolygon"
+      }
+    ]
+  },
+  {
+    "name": "선거",
+    "layers": [
+      {
+        "fix": [
+          {
+            "name": "재질",
+            "type": null,
+            "isnull": false,
+            "length": null,
+            "values": [
+              "FIX",
+              "콘크리트",
+              "석축(돌)",
+              "기타"
+            ]
+          }
+        ],
+        "code": "C0040000",
+        "geometry": "multipolygon"
+      }
+    ]
+  },
+  {
+    "name": "제방",
+    "layers": [
+      {
+        "fix": [
+          {
+            "name": "구분",
+            "type": null,
+            "isnull": false,
+            "length": null,
+            "values": [
+              "제방",
+              "방파제",
+              "방조제",
+              "소파블럭"
+            ]
+          },
+          {
+            "name": "재질",
+            "type": null,
+            "isnull": false,
+            "length": null,
+            "values": [
+              "콘크리트",
+              "흙",
+              "돌망태",
+              "석축",
+              "블록",
+              "기타"
+            ]
+          },
+          {
+            "name": "상하구분",
+            "type": null,
+            "isnull": false,
+            "length": null,
+            "values": [
+              "상단",
+              "하단"
+            ]
+          }
+        ],
+        "code": "C0050000",
+        "geometry": "multilinestring"
+      }
+    ]
+  },
+  {
+    "name": "수문",
+    "layers": [
+      {
+        "fix": [
+          {
+            "name": "구분",
+            "type": null,
+            "isnull": false,
+            "length": null,
+            "values": [
+              "수문",
+              "배수갑문",
+              "보",
+              "여수로"
+            ]
+          },
+          {
+            "name": "재질",
+            "type": null,
+            "isnull": false,
+            "length": null,
+            "values": [
+              "콘크리트",
+              "철",
+              "나무",
+              "기타"
+            ]
+          }
+        ],
+        "code": "C0060000",
+        "geometry": "multilinestring"
+      }
+    ]
+  },
+  {
+    "name": "암거",
+    "layers": [
+      {
+        "fix": null,
+        "code": "C0070000",
+        "geometry": "multilinestring"
+      }
+    ]
+  },
+  {
+    "name": "잔교",
+    "layers": [
+      {
+        "fix": [
+          {
+            "name": "재질",
+            "type": null,
+            "isnull": false,
+            "length": null,
+            "values": [
+              "목재",
+              "콘크리트",
+              "철재",
+              "기타"
+            ]
+          }
+        ],
+        "code": "C0080000",
+        "geometry": "multilinestring"
+      }
+    ]
+  },
+  {
+    "name": "우물/약수터",
+    "layers": [
+      {
+        "fix": null,
+        "code": "C0090000",
+        "geometry": "point"
+      }
+    ]
+  },
+  {
+    "name": "관정",
+    "layers": [
+      {
+        "fix": null,
+        "code": "C0106312",
+        "geometry": "point"
+      }
+    ]
+  },
+  {
+    "name": "분수",
+    "layers": [
+      {
+        "fix": null,
+        "code": "C0116313",
+        "geometry": "point"
+      }
+    ]
+  },
+  {
+    "name": "온천",
+    "layers": [
+      {
+        "fix": null,
+        "code": "C0125335",
+        "geometry": "point"
+      }
+    ]
+  },
+  {
+    "name": "양식장",
+    "layers": [
+      {
+        "fix": null,
+        "code": "C0130000",
+        "geometry": "point"
+      }
+    ]
+  },
+  {
+    "name": "낚시터",
+    "layers": [
+      {
+        "fix": null,
+        "code": "C0142263",
+        "geometry": "point"
+      }
+    ]
+  },
+  {
+    "name": "해수욕장",
+    "layers": [
+      {
+        "fix": null,
+        "code": "C0152261",
+        "geometry": "point"
+      }
+    ]
+  },
+  {
+    "name": "등대",
+    "layers": [
+      {
+        "fix": [
+          {
+            "name": "용도",
+            "type": null,
+            "isnull": true,
+            "length": null,
+            "values": [
+              "항해",
+              "항공",
+              "기타"
+            ]
+          },
+          {
+            "name": "형태",
+            "type": null,
+            "isnull": true,
+            "length": null,
+            "values": [
+              "유인",
+              "무인"
+            ]
+          }
+        ],
+        "code": "C0160000",
+        "geometry": "point"
+      }
+    ]
+  },
+  {
+    "name": "저장조",
+    "layers": [
+      {
+        "fix": [
+          {
+            "name": "구분",
+            "type": null,
+            "isnull": true,
+            "length": null,
+            "values": [
+              "저수조",
+              "저유조",
+              "기타저장소"
+            ]
+          }
+        ],
+        "code": "C0170000",
+        "geometry": "multipolygon"
+      }
+    ]
+  },
+  {
+    "name": "탱크",
+    "layers": [
+      {
+        "fix": null,
+        "code": "C0186115",
+        "geometry": "point"
+      }
+    ]
+  },
+  {
+    "name": "광산",
+    "layers": [
+      {
+        "fix": [
+          {
+            "name": "상태",
+            "type": null,
+            "isnull": false,
+            "length": null,
+            "values": [
+              "운영중",
+              "폐쇄"
+            ]
+          }
+        ],
+        "code": "C0190000",
+        "geometry": "point"
+      }
+    ]
+  },
+  {
+    "name": "적치장",
+    "layers": [
+      {
+        "fix": null,
+        "code": "C0200000",
+        "geometry": "point"
+      }
+    ]
+  },
+  {
+    "name": "채취장",
+    "layers": [
+      {
+        "fix": [
+          {
+            "name": "구분",
+            "type": null,
+            "isnull": false,
+            "length": null,
+            "values": [
+              "채석장",
+              "토취장",
+              "골재채취장"
+            ]
+          }
+        ],
+        "code": "C0210000",
+        "geometry": "point"
+      }
+    ]
+  },
+  {
+    "name": "조명",
+    "layers": [
+      {
+        "fix": [
+          {
+            "name": "구분",
+            "type": null,
+            "isnull": false,
+            "length": null,
+            "values": [
+              "보안(방범)등",
+              "가로등",
+              "조명등",
+              "유도등"
+            ]
+          }
+        ],
+        "code": "C0220000",
+        "geometry": "point"
+      }
+    ]
+  },
+  {
+    "name": "전력주/통신주",
+    "layers": [
+      {
+        "fix": [
+          {
+            "name": "구분",
+            "type": null,
+            "isnull": false,
+            "length": null,
+            "values": [
+              "통신(전화)주",
+              "전력주",
+              "유선주",
+              "공동주",
+              "기타"
+            ]
+          },
+          {
+            "type": null,
+            "isnull": false,
+            "length": null,
+            "재질": [
+              "콘크리트",
+              "나무",
+              "철",
+              "기타"
+            ]
+          }
+        ],
+        "code": "C0230000",
+        "geometry": "point"
+      }
+    ]
+  },
+  {
+    "name": "맨홀",
+    "layers": [
+      {
+        "fix": [
+          {
+            "type": null,
+            "isnull": false,
+            "length": null,
+            "구분": [
+              "공동구",
+              "가스",
+              "전화",
+              "전기",
+              "하수",
+              "상수",
+              "통신",
+              "지역난방",
+              "송유",
+              "광역상수도"
+            ]
+          }
+        ],
+        "code": "C0240000",
+        "geometry": "point"
+      }
+    ]
+  },
+  {
+    "name": "소화전",
+    "layers": [
+      {
+        "fix": [
+          {
+            "name": "형태",
+            "type": null,
+            "isnull": false,
+            "length": null,
+            "values": [
+              "지상",
+              "지하"
+            ]
+          }
+        ],
+        "code": "C0250000",
+        "geometry": "point"
+      }
+    ]
+  },
+  {
+    "name": "관측소",
+    "layers": [
+      {
+        "fix": [
+          {
+            "name": "용도",
+            "type": null,
+            "isnull": false,
+            "length": null,
+            "values": [
+              "수위",
+              "우량",
+              "수질",
+              "풍향/풍속",
+              "대기오염",
+              "파랑",
+              "지질",
+              "지진",
+              "기타"
+            ]
+          }
+        ],
+        "code": "C0260000",
+        "geometry": "point"
+      }
+    ]
+  },
+  {
+    "name": "야영지",
+    "layers": [
+      {
+        "fix": null,
+        "code": "C0270000",
+        "geometry": "multipolygon"
+      }
+    ]
+  },
+  {
+    "name": "묘지",
+    "layers": [
+      {
+        "fix": null,
+        "code": "C0285311",
+        "geometry": "point"
+      }
+    ]
+  },
+  {
+    "name": "묘지계",
+    "layers": [
+      {
+        "fix": null,
+        "code": "C0290000",
+        "geometry": "multipolygon"
+      }
+    ]
+  },
+  {
+    "name": "유적지",
+    "layers": [
+      {
+        "fix": null,
+        "code": "C0305316",
+        "geometry": "point"
+      }
+    ]
+  },
+  {
+    "name": "문화재",
+    "layers": [
+      {
+        "fix": [
+          {
+            "name": "형태",
+            "type": null,
+            "isnull": false,
+            "length": null,
+            "values": [
+              "탑",
+              "누각",
+              "정자",
+              "암자",
+              "절",
+              "절터",
+              "능",
+              "봉화대",
+              "기타"
+            ]
+          }
+        ],
+        "code": "C0310000",
+        "geometry": "point"
+      }
+    ]
+  },
+  {
+    "name": "성",
+    "layers": [
+      {
+        "fix": [
+          {
+            "name": "재질",
+            "type": null,
+            "isnull": false,
+            "length": null,
+            "values": [
+              "흙",
+              "돌",
+              "기타"
+            ]
+          }
+        ],
+        "code": "C0325315",
+        "geometry": "multilinestring"
+      }
+    ]
+  },
+  {
+    "name": "비석/기념비",
+    "layers": [
+      {
+        "fix": [
+          {
+            "name": "구분",
+            "type": null,
+            "isnull": false,
+            "length": null,
+            "values": [
+              "기념비",
+              "묘비"
+            ]
+          }
+        ],
+        "code": "C0330000",
+        "geometry": "point"
+      }
+    ]
+  },
+  {
+    "name": "탑",
+    "layers": [
+      {
+        "fix": [
+          {
+            "name": "구분",
+            "type": null,
+            "isnull": false,
+            "length": null,
+            "values": [
+              "소방탑",
+              "저수탑",
+              "취수탑",
+              "전파탑",
+              "송전탑",
+              "시계탑",
+              "송수신탑",
+              "전망대",
+              "감시탑"
+            ]
+          },
+          {
+            "name": "재질",
+            "type": null,
+            "isnull": false,
+            "length": null,
+            "values": [
+              "콘크리트",
+              "대리석",
+              "철골",
+              "기타"
+            ]
+          }
+        ],
+        "code": "C0340000",
+        "geometry": "point"
+      }
+    ]
+  },
+  {
+    "name": "동상",
+    "layers": [
+      {
+        "fix": null,
+        "code": "C0350000",
+        "geometry": "point"
+      }
+    ]
+  },
+  {
+    "name": "공중전화",
+    "layers": [
+      {
+        "fix": null,
+        "code": "C0363361",
+        "geometry": "point"
+      }
+    ]
+  },
+  {
+    "name": "우체통",
+    "layers": [
+      {
+        "fix": null,
+        "code": "C0373362",
+        "geometry": "point"
+      }
+    ]
+  },
+  {
+    "name": "놀이시설",
+    "layers": [
+      {
+        "fix": [
+          {
+            "name": "구분",
+            "type": null,
+            "isnull": false,
+            "length": null,
+            "values": [
+              "유원지",
+              "동물원",
+              "식물원",
+              "옥외수영장",
+              "골프장/골프연습장",
+              "스키장",
+              "테니스장",
+              "어린이놀이터",
+              "운동장",
+              "번지점프장",
+              "경륜장",
+              "수련원",
+              "기타놀이시설"
+            ]
+          }
+        ],
+        "code": "C0380000",
+        "geometry": "point"
+      }
+    ]
+  },
+  {
+    "name": "계단",
+    "layers": [
+      {
+        "fix": [
+          {
+            "name": "구조",
+            "type": null,
+            "isnull": false,
+            "length": null,
+            "values": [
+              "계단",
+              "스탠드"
+            ]
+          }
+        ],
+        "code": "C0390000",
+        "geometry": "multipolygon"
+      }
+    ]
+  },
+  {
+    "name": "게시판",
+    "layers": [
+      {
+        "fix": [
+          {
+            "name": "구분",
+            "type": null,
+            "isnull": false,
+            "length": null,
+            "values": [
+              "게시판",
+              "광고판"
+            ]
+          }
+        ],
+        "code": "C0403360",
+        "geometry": "point"
+      }
+    ]
+  },
+  {
+    "name": "표지",
+    "layers": [
+      {
+        "fix": [
+          {
+            "name": "용도",
+            "type": null,
+            "isnull": false,
+            "length": null,
+            "values": [
+              "도로정보판",
+              "안내판",
+              "지시판",
+              "규제판",
+              "주의",
+              "이정표"
+            ]
+          }
+        ],
+        "code": "C0410000",
+        "geometry": "point"
+      }
+    ]
+  },
+  {
+    "name": "주유소",
+    "layers": [
+      {
+        "fix": [
+          {
+            "name": "종류",
+            "type": null,
+            "isnull": false,
+            "length": null,
+            "values": [
+              "유류",
+              "가스",
+              "전기"
+            ]
+          }
+        ],
+        "code": "C0423365",
+        "geometry": "multipolygon"
+      }
+    ]
+  },
+  {
+    "name": "주차장",
+    "layers": [
+      {
+        "fix": [
+          {
+            "name": "구분",
+            "type": null,
+            "isnull": false,
+            "length": null,
+            "values": [
+              "유료",
+              "무료"
+            ]
+          }
+        ],
+        "code": "C0430000",
+        "geometry": "multipolygon"
+      }
+    ]
+  },
+  {
+    "name": "휴게소",
+    "layers": [
+      {
+        "fix": [
+          {
+            "name": "용도",
+            "type": null,
+            "isnull": false,
+            "length": null,
+            "values": [
+              "고속도로",
+              "일반국도",
+              "기타"
+            ]
+          }
+        ],
+        "code": "C0443363",
+        "geometry": "multipolygon"
+      }
+    ]
+  },
+  {
+    "name": "지하도",
+    "layers": [
+      {
+        "fix": null,
+        "code": "C0453322",
+        "geometry": "multipolygon"
+      }
+    ]
+  },
+  {
+    "name": "지하도입구",
+    "layers": [
+      {
+        "fix": [
+          {
+            "name": "용도",
+            "type": null,
+            "isnull": false,
+            "length": null,
+            "values": [
+              "사람출입",
+              "차량출입",
+              "기타"
+            ]
+          }
+        ],
+        "code": "C0463374",
+        "geometry": "multilinestring"
+      }
+    ]
+  },
+  {
+    "name": "지하환기구",
+    "layers": [
+      {
+        "fix": null,
+        "code": "C0471220",
+        "geometry": "multipolygon"
+      }
+    ]
+  },
+  {
+    "name": "굴뚝",
+    "layers": [
+      {
+        "fix": null,
+        "code": "C0486353",
+        "geometry": "point"
+      }
+    ]
+  },
+  {
+    "name": "신호등",
+    "layers": [
+      {
+        "fix": [
+          {
+            "name": "용도",
+            "type": null,
+            "isnull": false,
+            "length": null,
+            "values": [
+              "보행용",
+              "차량용",
+              "보행용/차량용"
+            ]
+          }
+        ],
+        "code": "C0493376",
+        "geometry": "point"
+      }
+    ]
+  },
+  {
+    "name": "차단기",
+    "layers": [
+      {
+        "fix": [
+          {
+            "name": "구분",
+            "type": null,
+            "isnull": false,
+            "length": null,
+            "values": [
+              "가로등제어기(점멸기)",
+              "신호등제어기",
+              "전기제어기",
+              "건널목차단기"
+            ]
+          }
+        ],
+        "code": "C0503375",
+        "geometry": "point"
+      }
+    ]
+  },
+  {
+    "name": "도로반사경",
+    "layers": [
+      {
+        "fix": null,
+        "code": "C0513369",
+        "geometry": "point"
+      }
+    ]
+  },
+  {
+    "name": "도로분리대",
+    "layers": [
+      {
+        "fix": [
+          {
+            "name": "구조",
+            "type": null,
+            "isnull": false,
+            "length": null,
+            "values": [
+              "화단",
+              "콘크리트",
+              "철재",
+              "플라스틱",
+              "기타"
+            ]
+          }
+        ],
+        "code": "C0520000",
+        "geometry": "multipolygon"
+      }
+    ]
+  },
+  {
+    "name": "방지책",
+    "layers": [
+      {
+        "fix": [
+          {
+            "name": "명칭",
+            "type": null,
+            "isnull": false,
+            "length": null,
+            "values": [
+              "낙석방지책",
+              "소음방지책",
+              "방호벽",
+              "차광책",
+              "가드레일",
+              "가드펜스"
+            ]
+          },
+          {
+            "name": "재질",
+            "type": null,
+            "isnull": false,
+            "length": null,
+            "values": [
+              "콘크리트",
+              "철",
+              "나무",
+              "플라스틱",
+              "복합",
+              "기타"
+            ]
+          }
+        ],
+        "code": "C0530000",
+        "geometry": "multilinestring"
+      }
+    ]
+  },
+  {
+    "name": "요금징수소",
+    "layers": [
+      {
+        "fix": [
+          {
+            "name": "명칭",
+            "type": null,
+            "isnull": false,
+            "length": null,
+            "values": null
+          }
+        ],
+        "code": "C0540000",
+        "geometry": "point"
+      }
+    ]
+  },
+  {
+    "name": "헬기장",
+    "layers": [
+      {
+        "fix": null,
+        "code": "C0556354",
+        "geometry": "point"
+      }
+    ]
+  },
+  {
+    "name": "경지계",
+    "layers": [
+      {
+        "fix": [
+          {
+            "name": "구분",
+            "type": null,
+            "isnull": false,
+            "length": null,
+            "values": [
+              "논",
+              "밭",
+              "과수원",
+              "목초지",
+              "조림지"
+            ]
+          }
+        ],
+        "code": "D0010000",
+        "geometry": "multipolygon"
+      }
+    ]
+  },
+  {
+    "name": "지류계",
+    "layers": [
+      {
+        "fix": [
+          {
+            "name": "구분",
+            "type": null,
+            "isnull": false,
+            "length": null,
+            "values": [
+              "논",
+              "밭",
+              "과수원",
+              "목초지",
+              "조림지"
+            ]
+          }
+        ],
+        "code": "D0020000",
+        "geometry": "multipolygon"
+      }
+    ]
+  },
+  {
+    "name": "독립수",
+    "layers": [
+      {
+        "fix": [
+          {
+            "name": "구분",
+            "type": null,
+            "isnull": false,
+            "length": null,
+            "values": [
+              "보호수",
+              "기념수"
+            ]
+          }
+        ],
+        "code": "D0030000",
+        "geometry": "point"
+      }
+    ]
+  },
+  {
+    "name": "목장",
+    "layers": [
+      {
+        "fix": [
+          {
+            "name": "용도",
+            "type": null,
+            "isnull": false,
+            "length": null,
+            "values": [
+              "소",
+              "말",
+              "돼지",
+              "염소",
+              "기타"
+            ]
+          }
+        ],
+        "code": "D0040000",
+        "geometry": "multipolygon"
+      }
+    ]
+  },
+  {
+    "name": "하천경계",
+    "layers": [
+      {
+        "fix": null,
+        "code": "E0010001",
+        "geometry": "multipolygon"
+      }
+    ]
+  },
+  {
+    "name": "하천중심선",
+    "layers": [
+      {
+        "fix": [
+          {
+            "name": "형태",
+            "type": null,
+            "isnull": false,
+            "length": null,
+            "values": [
+              "실폭",
+              "세류"
+            ]
+          },
+          {
+            "name": "상태",
+            "type": null,
+            "isnull": false,
+            "length": null,
+            "values": [
+              "건천",
+              "유천"
+            ]
+          }
+        ],
+        "code": "E0020000",
+        "geometry": "multilinestring"
+      }
+    ]
+  },
+  {
+    "name": "실폭하천",
+    "layers": [
+      {
+        "fix": null,
+        "code": "E0032111",
+        "geometry": "multipolygon"
+      }
+    ]
+  },
+  {
+    "name": "유수방향",
+    "layers": [
+      {
+        "fix": null,
+        "code": "E0042326",
+        "geometry": "point"
+      }
+    ]
+  },
+  {
+    "name": "호수/저수지",
+    "layers": [
+      {
+        "fix": null,
+        "code": "E0052114",
+        "geometry": "multipolygon"
+      }
+    ]
+  },
+  {
+    "name": "용수로",
+    "layers": [
+      {
+        "fix": [
+          {
+            "name": "형태",
+            "type": null,
+            "isnull": false,
+            "length": null,
+            "values": [
+              "수로",
+              "고가수로"
+            ]
+          },
+          {
+            "name": "용도",
+            "type": null,
+            "isnull": false,
+            "length": null,
+            "values": [
+              "공업용수로",
+              "농업용수로",
+              "기타"
+            ]
+          }
+        ],
+        "code": "E0060000",
+        "geometry": "multilinestring"
+      }
+    ]
+  },
+  {
+    "name": "폭포",
+    "layers": [
+      {
+        "fix": null,
+        "code": "E0072325",
+        "geometry": "point"
+      }
+    ]
+  },
+  {
+    "name": "해안선",
+    "layers": [
+      {
+        "fix": [
+          {
+            "name": "구분",
+            "type": null,
+            "isnull": false,
+            "length": null,
+            "values": [
+              "육지",
+              "섬"
+            ]
+          }
+        ],
+        "code": "E0080000",
+        "geometry": "multilinestring"
+      }
+    ]
+  },
+  {
+    "name": "등고선",
+    "layers": [
+      {
+        "fix": [
+          {
+            "name": "구분",
+            "type": null,
+            "isnull": false,
+            "length": null,
+            "values": [
+              "주곡선",
+              "계곡선",
+              "간곡선",
+              "조곡선"
+            ]
+          }
+        ],
+        "code": "F0010000",
+        "geometry": "multilinestring"
+      }
+    ]
+  },
+  {
+    "name": "표고점",
+    "layers": [
+      {
+        "fix": null,
+        "code": "F0020000",
+        "geometry": "point"
+      }
+    ]
+  },
+  {
+    "name": "성/절토",
+    "layers": [
+      {
+        "fix": [
+          {
+            "name": "구분",
+            "type": null,
+            "isnull": false,
+            "length": null,
+            "values": [
+              "성토",
+              "절토"
+            ]
+          },
+          {
+            "name": "상하구분",
+            "type": null,
+            "isnull": false,
+            "length": null,
+            "values": [
+              "상단",
+              "하단"
+            ]
+          }
+        ],
+        "code": "F0030000",
+        "geometry": "multilinestring"
+      }
+    ]
+  },
+  {
+    "name": "옹벽",
+    "layers": [
+      {
+        "fix": [
+          {
+            "name": "종류",
+            "type": null,
+            "isnull": false,
+            "length": null,
+            "values": [
+              "옹벽",
+              "석축"
+            ]
+          },
+          {
+            "name": "상하구분",
+            "type": null,
+            "isnull": false,
+            "length": null,
+            "values": [
+              "상단",
+              "하단"
+            ]
+          },
+          {
+            "name": "재질",
+            "type": null,
+            "isnull": false,
+            "length": null,
+            "values": [
+              "콘크리트",
+              "돌",
+              "돌망태",
+              "석축",
+              "기타"
+            ]
+          }
+        ],
+        "code": "F0040000",
+        "geometry": "multilinestring"
+      }
+    ]
+  },
+  {
+    "name": "동굴입구",
+    "layers": [
+      {
+        "fix": [
+          {
+            "name": "형태",
+            "type": null,
+            "isnull": false,
+            "length": null,
+            "values": [
+              "인공",
+              "자연"
+            ]
+          }
+        ],
+        "code": "F0057215",
+        "geometry": "multilinestring"
+      }
+    ]
+  },
+  {
+    "name": "행정경계",
+    "layers": [
+      {
+        "fix": [
+          {
+            "name": "구분",
+            "type": null,
+            "isnull": false,
+            "length": null,
+            "values": [
+              "국경",
+              "특별시",
+              "광역시",
+              "도",
+              "시",
+              "군",
+              "구",
+              "법정동",
+              "행정동",
+              "읍",
+              "면",
+              "리"
+            ]
+          }
+        ],
+        "code": "G0010000",
+        "geometry": "multipolygon"
+      }
+    ]
+  },
+  {
+    "name": "수부지형경계",
+    "layers": [
+      {
+        "fix": [
+          {
+            "name": "형태",
+            "type": null,
+            "isnull": false,
+            "length": null,
+            "values": [
+              "모래",
+              "습지",
+              "염전",
+              "갯벌",
+              "자갈"
+            ]
+          }
+        ],
+        "code": "G0020000",
+        "geometry": "multipolygon"
+      }
+    ]
+  },
+  {
+    "name": "기타경계",
+    "layers": [
+      {
+        "fix": null,
+        "code": "G0030000",
+        "geometry": "multilinestring"
+      }
+    ]
+  },
+  {
+    "name": "도곽",
+    "layers": [
+      {
+        "fix": [
+          {
+            "name": "도엽명",
+            "isnull": false
+          },
+          {
+            "name": "도엽코드",
+            "isnull": false
+          }
+        ],
+        "code": "H0010000",
+        "geometry": "multilinestring"
+      }
+    ]
+  },
+  {
+    "name": "기준점",
+    "layers": [
+      {
+        "fix": [
+          {
+            "name": "구분",
+            "type": null,
+            "isnull": false,
+            "length": null,
+            "values": [
+              "삼각점",
+              "수준점",
+              "중력점",
+              "지자지점",
+              "GPS",
+              "지적기준점",
+              "통합기준점"
+            ]
+          },
+          {
+            "name": "등급",
+            "type": null,
+            "isnull": false,
+            "length": null,
+            "values": [
+              "삼각점(1등)",
+              "삼각점(2등)",
+              "삼각점(3등)",
+              "삼각점(4등)",
+              "수준점(1등)",
+              "수준점(2등)"
+            ]
+          },
+          {
+            "name": "좌표",
+            "type": null,
+            "isnull": false,
+            "length": null,
+            "values": null
+          },
+          {
+            "name": "표고",
+            "type": null,
+            "isnull": false,
+            "length": null,
+            "values": null
+          }
+        ],
+        "code": "H0020000",
+        "geometry": "multilinestring"
+      }
+    ]
+  },
+  {
+    "name": "격자",
+    "layers": [
+      {
+        "fix": null,
+        "code": "H0037335",
+        "geometry": "multilinestring"
+      }
+    ]
+  },
+  {
+    "name": "지명",
+    "layers": [
+      {
+        "fix": [
+          {
+            "name": "구분",
+            "type": null,
+            "isnull": false,
+            "length": null,
+            "values": [
+              "자연지명",
+              "행정지명",
+              "산업지명",
+              "환경지명",
+              "관광/문화지명"
+            ]
+          },
+          {
+            "name": "형태",
+            "type": null,
+            "isnull": false,
+            "length": null,
+            "values": [
+              "만",
+              "반도",
+              "평야",
+              "들",
+              "계곡",
+              "령",
+              "부락",
+              "행정명",
+              "법정명",
+              "단지",
+              "산업지명(단지)",
+              "환경지명(단지)",
+              "관광/문화지명(단지)"
+            ]
+          }
+        ],
+        "code": "H0040000",
+        "geometry": "point"
+      }
+    ]
+  },
+  {
+    "name": "산/산맥",
+    "layers": [
+      {
+        "fix": [
+          {
+            "name": "산명",
+            "type": null,
+            "isnull": false,
+            "length": null,
+            "values": null
+          },
+          {
+            "name": "높이",
+            "type": null,
+            "isnull": false,
+            "length": null,
+            "values": null
+          }
+        ],
+        "code": "H0059153",
+        "geometry": "point"
+      }
+    ]
+  }
+]

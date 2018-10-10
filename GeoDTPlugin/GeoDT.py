@@ -21,28 +21,23 @@
  ***************************************************************************/
 """
 
-
 from qgis.core import *
-from PyQt4.QtCore import *
 from PyQt4.QtGui import *
-from PyQt4.QtSql import *
 from PyQt4.QtCore import *
 import os.path
 import os
-import collections
-import subprocess
+import re
 import sys
+import subprocess
 reload(sys)
 sys.setdefaultencoding('utf-8')
 # Initialize Qt resources from file resources.py
 import resources
-
 # Import the code for the DockWidget
-from aa_dockwidget import aDockWidget
+from val_dockwidget import ValDockWidget
 import os.path
 
-
-class a:
+class GeoDT:
     """QGIS Plugin Implementation."""
 
     def __init__(self, iface):
@@ -80,12 +75,16 @@ class a:
         self.toolbar = self.iface.addToolBar(u'GeoDT')
         self.toolbar.setObjectName(u'GeoDT')
 
-        #print "** INITIALIZING a"
+        # print "** INITIALIZING a"
 
         self.pluginIsActive = False
-        self.dockwidget = None
-
-
+        # 수정 : 윤현구
+        # self.dockwidget = None
+        self.dockwidget = ValDockWidget(self.iface)
+        self.process = QProcess(self.iface)
+        self.check_java_proc = QProcess(self.iface)
+        self.baseDir = "C:\\val"
+        self.errorDirPath = self.baseDir + '\\error\\'
 
     # noinspection PyMethodMayBeStatic
     def tr(self, message):
@@ -101,7 +100,6 @@ class a:
         """
         # noinspection PyTypeChecker,PyArgumentList,PyCallByClass
         return QCoreApplication.translate('a', message)
-
 
     def add_action(
         self,
@@ -176,7 +174,6 @@ class a:
 
         return action
 
-
     def initGui(self):
         """Create the menu entries and toolbar icons inside the QGIS GUI."""
 
@@ -187,12 +184,12 @@ class a:
             callback=self.run,
             parent=self.iface.mainWindow())
 
-    #--------------------------------------------------------------------------
+    # --------------------------------------------------------------------------
 
     def onClosePlugin(self):
         """Cleanup necessary items here when plugin dockwidget is closed"""
 
-        #print "** CLOSING a"
+        # print "** CLOSING a"
 
         # disconnects
         self.dockwidget.closingPlugin.disconnect(self.onClosePlugin)
@@ -205,11 +202,10 @@ class a:
 
         self.pluginIsActive = False
 
-
     def unload(self):
         """Removes the plugin menu item and icon from QGIS GUI."""
 
-        #print "** UNLOAD a"
+        # print "** UNLOAD a"
 
         for action in self.actions:
             self.iface.removePluginMenu(
@@ -219,7 +215,7 @@ class a:
         # remove the toolbar
         del self.toolbar
 
-    #--------------------------------------------------------------------------
+    # --------------------------------------------------------------------------
 
     def run(self):
         """Run method that loads and starts the plugin"""
@@ -227,88 +223,86 @@ class a:
 
         if not self.pluginIsActive:
             self.pluginIsActive = True
-
-
-            if self.dockwidget == None:
-
-                self.dockwidget = aDockWidget(self.iface)
-                layers = self.iface.legendInterface().layers()
-                self.dockwidget.go_btn.clicked.connect(self.do_join)
-                self.dockwidget.close_btn.clicked.connect(self.do_close)
-                self.dockwidget.close_btn_2.clicked.connect(self.do_close)
-                self.dockwidget.load1.clicked.connect(self.do_load1)
-                self.dockwidget.load2.clicked.connect(self.do_load2)
-                self.dockwidget.load3.clicked.connect(self.do_load3)
-                # my_dict = {u'수치지도 1.0': 1,
-                #            u'수치지도 2.0': 2,
-                #            u'지하시설물 1.0': 3,
-                #            u'지하시설물 2.0': 4,
-                #            u'임상도': 5
-                #            }
-                listCidx = [ u'수치지도 1.0', u'수치지도 2.0', u'지하시설물 1.0', u'지하시설물 2.0', u'임상도']
-                self.dockwidget.cidx.addItems(listCidx)
-                listCrs=[u'EPSG:5186',u'EPSG:5187']
-                self.dockwidget.crs.addItems(listCrs)
-                self.dockwidget.path1.setText(u'C:/val/임상도layer.json')
-                self.dockwidget.path2.setText(u'C:/val/임상도option.json')
-                self.dockwidget.path3.setText(u'C:/val/50000.zip')
-
-                self.BasePath = 'C:/val/error/'
-                self.listLayer = []  ## 추가된 레이어 리스트 목록 저장
-                self.ini_setting()
-                self.ini_event()
-                self.ini_flag=False
-
-
-
+            self.dockwidget.go_btn.clicked.connect(self.execute_val)
+            self.dockwidget.close_btn.clicked.connect(self.close_button_event)
+            self.dockwidget.close_btn_2.clicked.connect(self.close_button_event)
+            self.dockwidget.load1.clicked.connect(self.load_layer_def_event)
+            self.dockwidget.load2.clicked.connect(self.load_val_opt_event)
+            self.dockwidget.load3.clicked.connect(self.load_val_target_event)
+            self.dockwidget.cidx.currentIndexChanged.connect(self.change_filetype)
+            self.dockwidget.log_detail_btn.clicked.connect(self.log_detail_btn_event)
+            self.process.readyRead.connect(self.print_log_event)
+            self.check_java_proc.readyRead.connect(self.check_java)
+            self.dockwidget.cidx.addItems([ u'수치지도 1.0', u'수치지도 2.0', u'지하시설물 1.0', u'지하시설물 2.0', u'임상도'])
+            self.dockwidget.cidx.setCurrentIndex(1) # 수치지도 2.0 기본
+            self.dockwidget.crs.addItems([u'EPSG:5186',u'EPSG:5187'])
+            '''
+            self.dockwidget.path1.setText(u'C:/val/수치지도20layer.json')
+            self.dockwidget.path2.setText(u'C:/val/수치지도20option.json')
+            self.dockwidget.path3.setText(u'C:/val/수치지도20Sample_ngi.zip')
+            '''
+            self.dockwidget.log_detail.setVisible(False)
+            self.check_java_proc.start(self.baseDir + "\\check_java.bat")
+            self.listLayer = []  # # 추가된 레이어 리스트 목록 저장
+            self.ini_setting()
+            self.ini_event()
 
             # connect to provide cleanup on closing of dockwidget
             self.dockwidget.closingPlugin.connect(self.onClosePlugin)
+            self.ini_flag=False
 
             # show the dockwidget
             # TODO: fix to allow choice of dock location
+
             self.iface.addDockWidget(Qt.RightDockWidgetArea, self.dockwidget)
             self.dockwidget.show()
 
-#+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+# ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
     def ini_event(self):
-        self.dockwidget.filelist1.currentIndexChanged.connect(self.changeCombobox1)
-        self.dockwidget.filelist2.activated.connect(self.changeCombobox2)
+        self.dockwidget.filelist1.currentIndexChanged.connect(self.navi_change_directory_event)
+        self.dockwidget.filelist2.activated.connect(self.navi_change_shpfile_event)
         self.dockwidget.tableWidget.clicked.connect(self.viewClicked)
 
     def ini_setting(self):
         self.dockwidget.filelist1.clear()
         self.dockwidget.filelist2.clear()
         self.dockwidget.tableWidget.clear()
-        fileList1 = os.listdir(self.BasePath)
+        fileList1 = []
+        try:
+            fileList1 = os.listdir(u'%s'%self.errorDirPath)
+        except:
+            pass
         fileList1.reverse()
         self.dockwidget.filelist1.addItems(fileList1)
-        self.changeCombobox1()
-        self.changeCombobox2()
+        self.navi_change_directory_event()
+        self.navi_change_shpfile_event()
 
-    def changeCombobox1(self):
+    def navi_change_directory_event(self):
         self.dockwidget.filelist2.clear()
-        fileList2 = os.listdir(self.BasePath + self.dockwidget.filelist1.currentText())
+        fileList2 = []
+        try:
+            fileList2 = os.listdir(u'%s'%self.errorDirPath + self.dockwidget.filelist1.currentText())
+        except:
+            pass
         shplist=[]
         for file in fileList2:
             if file.endswith('.shp'):
-                shplist.append(str(file).replace(".shp", ""))
+                shplist.append(str(file).decode("utf-8").replace(".shp", ""))
         self.dockwidget.filelist2.addItems(shplist)
 
-    def changeCombobox2(self):
-        # if not self.filelist2.currentText():
-        #     return
+    def navi_change_shpfile_event(self):
         for lyr in self.listLayer:
             try:
                 vl = self.iface.legendInterface().layers()[self.findlayer(lyr.name())]
                 QgsMapLayerRegistry.instance().removeMapLayer(vl.id())
             except:
                 pass
+        # 위젯에 값 설정이 안되있으면 종료
         if self.ini_flag:
             return
 
-        filePath = self.BasePath + self.dockwidget.filelist1.currentText()+'/'+ self.dockwidget.filelist2.currentText()+'.shp'
+        filePath = self.errorDirPath + self.dockwidget.filelist1.currentText()+'/'+ self.dockwidget.filelist2.currentText()+'.shp'
         layer = QgsVectorLayer(filePath, self.dockwidget.filelist2.currentText(), 'ogr')
         self.listLayer.append(layer)
         QgsMapLayerRegistry.instance().addMapLayer(layer, True)
@@ -327,9 +321,9 @@ class a:
         self.hideFiled = len(tableFiled)-1
 
         # QMessageBox.warning(self.iface.mainWindow(), "File Make ", str(layer.featureCount()))
-        i=0
-        for feat in feats :
-            j=0
+        i = 0
+        for feat in feats:
+            j = 0
             for filed in layer.fields():
                 try:
                     m = QTableWidgetItem(feat.attribute(filed.name()))
@@ -341,7 +335,6 @@ class a:
             self.dockwidget.tableWidget.setItem(i, j,m)
             i = i + 1
             # QMessageBox.warning(self.iface.mainWindow(), "File Make ", str(feat.id()))
-
 
     def viewClicked(self):
         if not self.activeLayer:
@@ -356,68 +349,73 @@ class a:
         # canvas.zoomOut()
         self.iface.mapCanvas().refresh()
 
-
-
-
     # +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-    def select_output_file(self):
-        filename = QFileDialog.getOpenFileName(self.dockwidget, "Select output file ", "", '*.*')
-        self.dlg.lineEdit.setText(filename)
-
-    def do_load1(self):
-        filename = QFileDialog.getOpenFileName(self.dockwidget, u"레이어 정의 옵션 경로", "", '*.*')
+    def load_layer_def_event(self):
+        filename = QFileDialog.getOpenFileName(self.dockwidget, u"레이어 정의 옵션 경로", self.baseDir, '*.*')
         self.dockwidget.path1.setText(filename)
 
-
-    def do_load2(self):
-        filename = QFileDialog.getOpenFileName(self.dockwidget, u"검수 옵션 경로", "", '*.*')
+    def load_val_opt_event(self):
+        filename = QFileDialog.getOpenFileName(self.dockwidget, u"검수 옵션 경로", self.baseDir, '*.*')
         self.dockwidget.path2.setText(filename)
 
-
-    def do_load3(self):
-        filename = QFileDialog.getOpenFileName(self.dockwidget, u"검수 대상 파일 경로", "", '*.*')
+    def load_val_target_event(self):
+        filename = QFileDialog.getOpenFileName(self.dockwidget, u"검수 대상 파일 경로", self.baseDir, '*.*')
         self.dockwidget.path3.setText(filename)
 
+    def change_filetype(self):
+        filetypelist = [[u'dxf'] ,[u'shp', u'ngi'], [u'dxf'], [u'shp'], [u'shp']]
+        self.dockwidget.filetype.clear()
+        self.dockwidget.filetype.addItems(filetypelist[int(self.dockwidget.cidx.currentIndex())])
 
-    def do_join(self):
+    def execute_val(self):
+
         if self.dockwidget.path1.text() =='' or self.dockwidget.path2.text()=='' or self.dockwidget.path3.text() =='':
             if self.dockwidget.path1.text() =='':
                 QMessageBox.warning(self.iface.mainWindow(), u'알림', u'레이어 정의 옵션 경로를 입력해주세요')
-                return 
+                return
             if self.dockwidget.path2.text() =='':
                 QMessageBox.warning(self.iface.mainWindow(), u'알림', u'검수 옵션 경로를 입력해주세요')
                 return
             if self.dockwidget.path3.text() =='':
                 QMessageBox.warning(self.iface.mainWindow(), u'알림', u'검수 대장 파일 경로를 입력해주세요')
                 return
-                
+
         else:
-            cidx= str(self.dockwidget.cidx.currentIndex() + 1)
-            String = 'java -Dfile.encoding=utf-8 -Djava.file.encoding=UTF-8 -jar -Xms1024m -Xmx1024m C:/val/val.jar --basedir C:/val --filetype shp --cidx %s --layerdefpath %s --valoptpath %s --objfilepath %s --crs EPSG:5186' % (cidx, self.dockwidget.path1.text(),self.dockwidget.path2.text(),self.dockwidget.path3.text())
+            cidx = str(self.dockwidget.cidx.currentIndex() + 1)
+            try:
 
-            # String = 'C:/val/val.jar  --basedir C:/val --filetype shp --cidx %s --layerdefpath %s --valoptpath %s --objfilepath %s --crs EPSG:5186' % (cidx, self.dockwidget.path1.text(),self.dockwidget.path2.text(),self.dockwidget.path3.text())
-            QgsMessageLog.logMessage(u"qString --> %s" % String)
+                self.dockwidget.logLabel.setText("검수 작업을 진행합니다.".decode("utf-8"))
+                query = self.baseDir + "\\start.bat"
+                # 파일 내용 삭제
+                open(query, 'w').close()
+                # 파일 내용 삽입
+                f = open(query, 'w')
+                f.write("@echo off\n" +
+                        '"%JAVA_HOME%\\bin\\java" ' +
+                        "-Dfile.encoding=utf-8 -Djava.file.encoding=UTF-8 -jar -Xms1024m -Xmx1024m " +
+                        self.baseDir + "\\val.jar "
+                        # args
+                        "--basedir " + self.baseDir + " " +
+                        "--filetype " + self.dockwidget.filetype.currentText().encode('euc-kr') + " "+
+                        "--cidx " + cidx + " " +
+                        "--layerdefpath " + self.dockwidget.path1.text().encode('euc-kr').replace("/", "\\", 2) + " "
+                        "--valoptpath " + self.dockwidget.path2.text().encode('euc-kr').replace("/", "\\", 2) + " "
+                        "--objfilepath " + self.dockwidget.path3.text().encode('euc-kr').replace("/", "\\", 2) + " "
+                        "--crs " + self.dockwidget.crs.currentText().encode('euc-kr') +
+                        "\n\n" +
+                        "pause>nul")
+                f.close()
+                self.dockwidget.log_detail.setPlainText("")
+                self.dockwidget.progressBar.setValue(0)
+                self.process.start(query)
+                self.dockwidget.go_btn.setEnabled(False)
 
-            # subprocess.call(['java', '-jar','C:/val/val.jar' ,'c:\\textMining.txt'])
-            os.system('cmd.exe')
-            os.system(String)
-            # subprocess.Popen(String, shell=True)
-            QMessageBox.warning(self.iface.mainWindow(), u'알림', String)
-            # os.system(String)
-
-        self.dockwidget.tabWidget.setCurrentIndex(1)
-        self.ini_setting()
-
-
-
-
-
-
-
-
+            except Exception as e:
+                QgsMessageLog.logMessage("Error : " + str(e), tag="Validating", level=QgsMessageLog.INFO)
+                self.dockwidget.logLabel.setText("검수 작업이 실패하였습니다.".decode("utf-8"))
+                return
     def findlayer(self, s):
-        # QMessageBox.warning(self.iface.mainWindow(), "File Make ", 'find')
         layers = self.iface.legendInterface().layers()
         i = -1
         for layer in layers:
@@ -426,8 +424,47 @@ class a:
             if u == s:
                 return i
 
-
-
-    def do_close(self):
+    def close_button_event(self):
         self.dockwidget.close()
 
+    def print_log_event(self):
+        output = str(self.process.readAllStandardOutput()).decode("utf-8").replace("<br>", "\n")
+        self.dockwidget.log_detail.appendPlainText(output)
+
+        if u"실패" in output:
+            self.process.kill()
+            self.dockwidget.logLabel.setText(u"검수를 실패했습니다.")
+            self.dockwidget.go_btn.setEnabled(True)
+
+        intValue = re.findall("\d+", output)
+        percent = intValue[0]
+        startTime = intValue[3] + ":" + intValue[4] + ":" + intValue[5]
+        finishTime = intValue[6] + ":" + intValue[7] + ":" + intValue[8]
+        self.dockwidget.logLabel.setText("진행중".decode("utf-8") + " ( " + startTime + " / " + finishTime + " )")
+        self.dockwidget.progressBar.setValue(int(percent))
+
+        if u"성공" in output:
+            self.process.kill()
+            self.ini_setting()
+            self.dockwidget.logLabel.setText(u"검수가 완료 되었습니다.")
+            self.dockwidget.tabWidget.setCurrentIndex(1)
+            self.dockwidget.go_btn.setEnabled(True)
+
+    def log_detail_btn_event(self):
+        if self.dockwidget.log_detail_btn.isChecked():
+            self.dockwidget.log_detail.setVisible(True)
+        else:
+            self.dockwidget.log_detail.setVisible(False)
+
+    # check_java_proc
+    def check_java(self):
+        output = str(self.check_java_proc.readAllStandardOutput()).decode("utf-8")
+        if "not found." in output:
+            QMessageBox.warning(self.iface.mainWindow(), u'알림', u'자바가 설치되어있지 않습니다.')
+            return
+        if "Java runtime is" in output:
+            version = re.findall("\d+", output)[1]
+            if int(version) < 8:
+                QMessageBox.warning(self.iface.mainWindow(), u'알림', u'자바 ' + version + '버전에 호환되지 않습니다.')
+                return
+            pass

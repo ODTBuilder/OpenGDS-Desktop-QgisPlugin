@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>352</width>
-    <height>504</height>
+    <width>532</width>
+    <height>901</height>
    </rect>
   </property>
   <property name="styleSheet">
@@ -338,19 +338,6 @@ QMainWindow::separator:hover
   </property>
   <widget class="QWidget" name="dockWidgetContents">
    <layout class="QGridLayout" name="gridLayout">
-    <item row="3" column="0">
-     <spacer name="verticalSpacer">
-      <property name="orientation">
-       <enum>Qt::Vertical</enum>
-      </property>
-      <property name="sizeHint" stdset="0">
-       <size>
-        <width>20</width>
-        <height>40</height>
-       </size>
-      </property>
-     </spacer>
-    </item>
     <item row="0" column="0">
      <widget class="QTabWidget" name="tabWidget">
       <property name="styleSheet">
@@ -426,7 +413,7 @@ QTextEdit, QListView {
 </string>
       </property>
       <property name="currentIndex">
-       <number>1</number>
+       <number>0</number>
       </property>
       <widget class="QWidget" name="tab">
        <attribute name="title">
@@ -442,46 +429,7 @@ QTextEdit, QListView {
            <string>옵션 설정</string>
           </property>
           <layout class="QGridLayout" name="gridLayout_2">
-           <item row="6" column="0">
-            <spacer name="horizontalSpacer">
-             <property name="orientation">
-              <enum>Qt::Horizontal</enum>
-             </property>
-             <property name="sizeHint" stdset="0">
-              <size>
-               <width>40</width>
-               <height>20</height>
-              </size>
-             </property>
-            </spacer>
-           </item>
-           <item row="0" column="0" colspan="3">
-            <widget class="QGroupBox" name="groupBox_2">
-             <property name="title">
-              <string>검수 종류</string>
-             </property>
-             <layout class="QGridLayout" name="gridLayout_3">
-              <item row="0" column="1">
-               <widget class="QComboBox" name="cidx"/>
-              </item>
-             </layout>
-            </widget>
-           </item>
-           <item row="6" column="2">
-            <widget class="QPushButton" name="close_btn">
-             <property name="text">
-              <string>닫기</string>
-             </property>
-            </widget>
-           </item>
-           <item row="6" column="1">
-            <widget class="QPushButton" name="go_btn">
-             <property name="text">
-              <string>실행</string>
-             </property>
-            </widget>
-           </item>
-           <item row="3" column="0" colspan="3">
+           <item row="4" column="0" colspan="3">
             <widget class="QGroupBox" name="groupBox_5">
              <property name="title">
               <string>검수 대상 파일 경로</string>
@@ -500,7 +448,46 @@ QTextEdit, QListView {
              </layout>
             </widget>
            </item>
-           <item row="2" column="0" colspan="3">
+           <item row="1" column="0" colspan="3">
+            <widget class="QGroupBox" name="groupBox_9">
+             <property name="title">
+              <string>파일 형식</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+             </property>
+             <layout class="QHBoxLayout" name="horizontalLayout">
+              <item>
+               <widget class="QComboBox" name="filetype"/>
+              </item>
+             </layout>
+            </widget>
+           </item>
+           <item row="0" column="0" colspan="3">
+            <widget class="QGroupBox" name="groupBox_2">
+             <property name="title">
+              <string>검수 종류</string>
+             </property>
+             <layout class="QGridLayout" name="gridLayout_3">
+              <item row="0" column="1">
+               <widget class="QComboBox" name="cidx"/>
+              </item>
+             </layout>
+            </widget>
+           </item>
+           <item row="5" column="0" colspan="3">
+            <widget class="QGroupBox" name="groupBox_3">
+             <property name="title">
+              <string>좌표계</string>
+             </property>
+             <layout class="QGridLayout" name="gridLayout_9">
+              <item row="0" column="0">
+               <widget class="QComboBox" name="crs"/>
+              </item>
+             </layout>
+            </widget>
+           </item>
+           <item row="3" column="0" colspan="3">
             <widget class="QGroupBox" name="groupBox_6">
              <property name="title">
               <string>검수 옵션 경로</string>
@@ -519,19 +506,7 @@ QTextEdit, QListView {
              </layout>
             </widget>
            </item>
-           <item row="4" column="0" colspan="3">
-            <widget class="QGroupBox" name="groupBox_3">
-             <property name="title">
-              <string>좌표계</string>
-             </property>
-             <layout class="QGridLayout" name="gridLayout_9">
-              <item row="0" column="0">
-               <widget class="QComboBox" name="crs"/>
-              </item>
-             </layout>
-            </widget>
-           </item>
-           <item row="1" column="0" colspan="3">
+           <item row="2" column="0" colspan="3">
             <widget class="QGroupBox" name="groupBox_7">
              <property name="title">
               <string>레이어 정의 옵션 경로</string>
@@ -550,6 +525,33 @@ QTextEdit, QListView {
              </layout>
             </widget>
            </item>
+           <item row="7" column="0">
+            <spacer name="horizontalSpacer">
+             <property name="orientation">
+              <enum>Qt::Horizontal</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>40</width>
+               <height>20</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+           <item row="7" column="2">
+            <widget class="QPushButton" name="close_btn">
+             <property name="text">
+              <string>닫기</string>
+             </property>
+            </widget>
+           </item>
+           <item row="7" column="1">
+            <widget class="QPushButton" name="go_btn">
+             <property name="text">
+              <string>실행</string>
+             </property>
+            </widget>
+           </item>
           </layout>
          </widget>
         </item>
@@ -560,26 +562,6 @@ QTextEdit, QListView {
         <string>네비게이터</string>
        </attribute>
        <layout class="QGridLayout" name="gridLayout_5">
-        <item row="1" column="1">
-         <widget class="QPushButton" name="close_btn_2">
-          <property name="text">
-           <string>닫기</string>
-          </property>
-         </widget>
-        </item>
-        <item row="1" column="0">
-         <spacer name="horizontalSpacer_2">
-          <property name="orientation">
-           <enum>Qt::Horizontal</enum>
-          </property>
-          <property name="sizeHint" stdset="0">
-           <size>
-            <width>40</width>
-            <height>20</height>
-           </size>
-          </property>
-         </spacer>
-        </item>
         <item row="0" column="0" colspan="2">
          <widget class="QGroupBox" name="groupBox_4">
           <property name="styleSheet">
@@ -619,8 +601,131 @@ QTextEdit, QListView {
           </layout>
          </widget>
         </item>
+        <item row="1" column="0">
+         <spacer name="horizontalSpacer_2">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>40</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item row="1" column="1">
+         <widget class="QPushButton" name="close_btn_2">
+          <property name="text">
+           <string>닫기</string>
+          </property>
+         </widget>
+        </item>
        </layout>
       </widget>
+     </widget>
+    </item>
+    <item row="6" column="0">
+     <spacer name="verticalSpacer">
+      <property name="orientation">
+       <enum>Qt::Vertical</enum>
+      </property>
+      <property name="sizeHint" stdset="0">
+       <size>
+        <width>100</width>
+        <height>500</height>
+       </size>
+      </property>
+     </spacer>
+    </item>
+    <item row="5" column="0">
+     <widget class="QGroupBox" name="groupBox_8">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>0</width>
+        <height>0</height>
+       </size>
+      </property>
+      <property name="title">
+       <string>검수 작업</string>
+      </property>
+      <layout class="QVBoxLayout" name="verticalLayout">
+       <item>
+        <widget class="QGroupBox" name="groupBox_10">
+         <property name="title">
+          <string>로그</string>
+         </property>
+         <layout class="QVBoxLayout" name="verticalLayout_2">
+          <item>
+           <widget class="QLabel" name="logLabel">
+            <property name="text">
+             <string>상태 : 대기 중</string>
+            </property>
+            <property name="margin">
+             <number>10</number>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <layout class="QHBoxLayout" name="horizontalLayout_2">
+            <item>
+             <spacer name="horizontalSpacer_3">
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>40</width>
+                <height>20</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+            <item>
+             <widget class="QPushButton" name="log_detail_btn">
+              <property name="text">
+               <string>자세히</string>
+              </property>
+              <property name="checkable">
+               <bool>true</bool>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <widget class="QPlainTextEdit" name="log_detail">
+            <property name="minimumSize">
+             <size>
+              <width>0</width>
+              <height>200</height>
+             </size>
+            </property>
+            <property name="readOnly">
+             <bool>true</bool>
+            </property>
+            <property name="backgroundVisible">
+             <bool>false</bool>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item>
+        <widget class="QProgressBar" name="progressBar">
+         <property name="value">
+          <number>0</number>
+         </property>
+        </widget>
+       </item>
+      </layout>
      </widget>
     </item>
    </layout>
