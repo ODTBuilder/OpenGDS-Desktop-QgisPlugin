@@ -1,0 +1,1275 @@
+{
+  "border": {
+    "code": "H0010000",
+    "geometry": "multilinestring"
+  },
+  "definition": [
+  {
+    "name": "road boundaries",
+      "options": {
+        "adjacent": {
+          "DRefEntityNone": {
+            "figure": null,
+            "filter": null,
+            "relation": null,
+            "tolerance": [
+              {
+                "code": null,
+                "value": 0.1,
+                "interval": null,
+                "condition": "under"
+              }
+            ]
+          }
+        },
+        "graphic": {
+          "MultiPart": {
+            "filter": null,
+            "relation": null,
+            "tolerance": null
+          },
+          "OverShoot": {
+            "filter": null,
+            "relation": null,
+            "tolerance": [
+              {
+                "code": null,
+                "value": 0.1,
+                "interval": null,
+                "condition": "under"
+              }
+            ]
+          },
+          "SmallArea": {
+            "filter": null,
+            "relation": null,
+            "tolerance": [
+              {
+                "code": null,
+                "value": 0.1,
+                "interval": null,
+                "condition": "over"
+              }
+            ]
+          },
+          "CenterLineMiss": {
+            "filter": null,
+            "relation": [
+              {
+                "name": "road center line",
+                "filter": null,
+                "tolerance": null
+              }
+            ],
+            "tolerance": null
+          },
+          "TwistedPolygon": {
+            "filter": null,
+            "relation": null,
+            "tolerance": null
+          },
+          "PointDuplicated": {
+            "filter": null,
+            "relation": null,
+            "tolerance": null
+          },
+          "EntityDuplicated": {
+            "filter": null,
+            "relation": null,
+            "tolerance": null
+          }
+        },
+        "attribute": {
+          "UFIDMiss": {
+            "figure": [
+              {
+                "code": null,
+                "attribute": [
+                  {
+                    "key": "UFID",
+                    "number": null,
+                    "values": null,
+                    "interval": null,
+                    "condition": null
+                  }
+                ]
+              }
+            ],
+            "filter": null,
+            "relation": null
+          }
+        }
+      }
+  },
+  {
+    "name": "road center line",
+    "options": {
+        "adjacent": {
+          "DRefEntityNone": {
+            "figure": null,
+            "filter": null,
+            "relation": null,
+            "tolerance": [
+              {
+                "code": null,
+                "value": 0.1,
+                "interval": null,
+                "condition": "under"
+              }
+            ]
+          },
+          "RefAttributeMiss": {
+            "figure": [
+              {
+                "code": "A0020000",
+                "attribute": [
+                  {
+                    "key": "type",
+                    "number": null,
+                    "values": null,
+                    "interval": null,
+                    "condition": null
+                  }
+                ]
+              }
+            ],
+            "filter": null,
+            "relation": null,
+            "tolerance": [
+              {
+                "code": null,
+                "value": 0.2,
+                "interval": null,
+                "condition": "under"
+              }
+            ]
+          }
+        },
+        "graphic": {
+          "NodeMiss": {
+            "filter": null,
+            "relation": [
+              {
+                "name": "road boundaries",
+                "filter": null,
+                "tolerance": null
+              },
+              {
+                "name": "intersection",
+                "filter": null,
+                "tolerance": null
+              }
+            ],
+            "tolerance": [
+              {
+                "code": null,
+                "value": 0.1,
+                "interval": null,
+                "condition": "under"
+              }
+            ]
+          },
+          "MultiPart": {
+            "filter": null,
+            "relation": null,
+            "tolerance": null
+          },
+          "OverShoot": {
+            "filter": null,
+            "relation": null,
+            "tolerance": [
+              {
+                "code": null,
+                "value": 0.1,
+                "interval": null,
+                "condition": "under"
+              }
+            ]
+          },
+          "SmallLength": {
+            "filter": null,
+            "relation": null,
+            "tolerance": [
+              {
+                "code": null,
+                "value": 0.1,
+                "interval": null,
+                "condition": "over"
+              }
+            ]
+          },
+          "BoundaryMiss": {
+            "filter": [
+              {
+                "code": "A0020000",
+                "attribute": [
+                  {
+                    "key": "type",
+                    "values": [
+                      "express way",
+                      "national highway",
+                      "provincial road",
+                      "unclassified"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "relation": [
+              {
+                "name": "road boundaries",
+                "filter": null,
+                "tolerance": null
+              }
+            ],
+            "tolerance": null
+          },
+          "PointDuplicated": {
+            "filter": null,
+            "relation": null,
+            "tolerance": null
+          },
+          "EntityDuplicated": {
+            "filter": null,
+            "relation": null,
+            "tolerance": null
+          },
+          "LinearDisconnection": {
+            "filter": null,
+            "relation": [
+              {
+                "name": "road boundaries",
+                "filter": null,
+                "tolerance": null
+              },
+              {
+                "name": "intersection",
+                "filter": null,
+                "tolerance": null
+              }
+            ],
+            "tolerance": [
+              {
+                "code": null,
+                "value": 0.1,
+                "interval": null,
+                "condition": "under"
+              }
+            ]
+          }
+        },
+        "attribute": {
+          "UFIDMiss": {
+            "figure": [
+              {
+                "code": null,
+                "attribute": [
+                  {
+                    "key": "UFID",
+                    "number": null,
+                    "values": null,
+                    "interval": null,
+                    "condition": null
+                  }
+                ]
+              }
+            ],
+            "filter": null,
+            "relation": null
+          }
+        }
+      }
+  },
+  {
+      "name": "bridge",
+      "options": {
+        "adjacent": {
+          "DRefEntityNone": {
+            "figure": null,
+            "filter": null,
+            "relation": null,
+            "tolerance": [
+              {
+                "code": null,
+                "value": 0.1,
+                "interval": null,
+                "condition": "under"
+              }
+            ]
+          },
+          "RefAttributeMiss": {
+            "figure": [
+              {
+                "code": "A0070000",
+                "attribute": [
+                  {
+                    "key": "종류",
+                    "number": null,
+                    "values": null,
+                    "interval": null,
+                    "condition": null
+                  },
+                  {
+                    "key": "재질",
+                    "number": null,
+                    "values": null,
+                    "interval": null,
+                    "condition": null
+                  }
+                ]
+              }
+            ],
+            "filter": null,
+            "relation": null,
+            "tolerance": [
+              {
+                "code": null,
+                "value": 0.2,
+                "interval": null,
+                "condition": "under"
+              }
+            ]
+          }
+        },
+        "graphic": {
+          "MultiPart": {
+            "filter": null,
+            "relation": null,
+            "tolerance": null
+          },
+          "OverShoot": {
+            "filter": null,
+            "relation": null,
+            "tolerance": [
+              {
+                "code": null,
+                "value": 0.1,
+                "interval": null,
+                "condition": "under"
+              }
+            ]
+          },
+          "SmallArea": {
+            "filter": null,
+            "relation": null,
+            "tolerance": [
+              {
+                "code": null,
+                "value": 0.1,
+                "interval": null,
+                "condition": "over"
+              }
+            ]
+          },
+          "OutBoundary": {
+            "filter": null,
+            "relation": [
+              {
+                "name": "road boundaries",
+                "filter": null,
+                "tolerance": null
+              }
+            ],
+            "tolerance": [
+              {
+                "code": null,
+                "value": 0.1,
+                "interval": null,
+                "condition": "under"
+              }
+            ]
+          },
+          "TwistedPolygon": {
+            "filter": null,
+            "relation": null,
+            "tolerance": null
+          },
+          "PointDuplicated": {
+            "filter": null,
+            "relation": null,
+            "tolerance": null
+          },
+          "EntityDuplicated": {
+            "filter": null,
+            "relation": null,
+            "tolerance": null
+          }
+        },
+        "attribute": {
+          "UFIDMiss": {
+            "figure": [
+              {
+                "code": null,
+                "attribute": [
+                  {
+                    "key": "UFID",
+                    "number": null,
+                    "values": null,
+                    "interval": null,
+                    "condition": null
+                  }
+                ]
+              }
+            ],
+            "filter": null,
+            "relation": null
+          }
+        }
+      }
+    },
+  {
+      "name": "intersection",
+      "options": {
+        "adjacent": {
+          "DRefEntityNone": {
+            "figure": null,
+            "filter": null,
+            "relation": null,
+            "tolerance": [
+              {
+                "code": null,
+                "value": 0.1,
+                "interval": null,
+                "condition": "under"
+              }
+            ]
+          },
+          "RefAttributeMiss": {
+            "figure": [
+              {
+                "code": "A0080000",
+                "attribute": [
+                  {
+                    "key": "종류",
+                    "number": null,
+                    "values": null,
+                    "interval": null,
+                    "condition": null
+                  }
+                ]
+              }
+            ],
+            "filter": null,
+            "relation": null,
+            "tolerance": [
+              {
+                "code": null,
+                "value": 0.1,
+                "interval": null,
+                "condition": "under"
+              }
+            ]
+          }
+        },
+        "graphic": {
+          "MultiPart": {
+            "filter": null,
+            "relation": null,
+            "tolerance": null
+          },
+          "OverShoot": {
+            "filter": null,
+            "relation": null,
+            "tolerance": [
+              {
+                "code": null,
+                "value": 0.1,
+                "interval": null,
+                "condition": "under"
+              }
+            ]
+          },
+          "SmallArea": {
+            "filter": null,
+            "relation": null,
+            "tolerance": [
+              {
+                "code": null,
+                "value": 0.1,
+                "interval": null,
+                "condition": "over"
+              }
+            ]
+          },
+          "TwistedPolygon": {
+            "filter": null,
+            "relation": null,
+            "tolerance": null
+          },
+          "PointDuplicated": {
+            "filter": null,
+            "relation": null,
+            "tolerance": null
+          },
+          "EntityDuplicated": {
+            "filter": null,
+            "relation": null,
+            "tolerance": null
+          },
+          "HoleMisplacement": {
+            "filter": null,
+            "relation": null,
+            "tolerance": null
+          }
+        },
+        "attribute": {
+          "UFIDMiss": {
+            "figure": [
+              {
+                "code": null,
+                "attribute": [
+                  {
+                    "key": "UFID",
+                    "number": null,
+                    "values": null,
+                    "interval": null,
+                    "condition": null
+                  }
+                ]
+              }
+            ],
+            "filter": null,
+            "relation": null
+          }
+        }
+      }
+    },
+  {
+      "name": "building boundaries",
+      "options": {
+        "adjacent": {
+          "DRefEntityNone": {
+            "figure": null,
+            "filter": null,
+            "relation": null,
+            "tolerance": [
+              {
+                "code": null,
+                "value": 0.1,
+                "interval": null,
+                "condition": "under"
+              }
+            ]
+          },
+          "RefAttributeMiss": {
+            "figure": [
+              {
+                "code": "B0010000",
+                "attribute": [
+                  {
+                    "key": "type",
+                    "number": null,
+                    "values": null,
+                    "interval": null,
+                    "condition": null
+                  },
+                  {
+                    "key": "use",
+                    "number": null,
+                    "values": null,
+                    "interval": null,
+                    "condition": null
+                  }
+                ]
+              }
+            ],
+            "filter": null,
+            "relation": null,
+            "tolerance": [
+              {
+                "code": null,
+                "value": 0.1,
+                "interval": null,
+                "condition": "under"
+              }
+            ]
+          }
+        },
+        "graphic": {
+          "MultiPart": {
+            "filter": null,
+            "relation": null,
+            "tolerance": null
+          },
+          "OverShoot": {
+            "filter": null,
+            "relation": null,
+            "tolerance": [
+              {
+                "code": null,
+                "value": 0.1,
+                "interval": null,
+                "condition": "under"
+              }
+            ]
+          },
+          "SmallArea": {
+            "filter": null,
+            "relation": null,
+            "tolerance": [
+              {
+                "code": null,
+                "value": 0.1,
+                "interval": null,
+                "condition": "over"
+              }
+            ]
+          },
+          "SelfEntity": {
+            "filter": null,
+            "relation": [
+              {
+                "name": "building boundaries",
+                "filter": null,
+                "tolerance": null
+              },
+           {
+                "name": "road boundaries",
+                "filter": null,
+                "tolerance": null
+              },
+           {
+                "name": "contour line",
+                "filter": null,
+                "tolerance": null
+              }
+            ],
+            "tolerance": [
+              {
+                "code": null,
+                "value": 0.1,
+                "interval": null,
+                "condition": "under"
+              }
+            ]
+          },
+          "TwistedPolygon": {
+            "filter": null,
+            "relation": null,
+            "tolerance": null
+          },
+          "PointDuplicated": {
+            "filter": null,
+            "relation": null,
+            "tolerance": null
+          },
+          "BuildingSiteMiss": {
+            "filter": [
+              {
+                "code": "B0010000",
+                "attribute": [
+                  {
+                    "key": "use",
+                    "values": [
+                      "dangerous goods processing facilities",
+                      "Sightseeing/Resting faciliites"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "relation": [
+              {
+                "name": "gas station",
+                "filter": null,
+                "tolerance": [
+                  {
+                    "code": "C0423365",
+                    "value": null,
+                    "interval": null,
+                    "condition": null
+                  }
+                ]
+              }
+            ],
+            "tolerance": null
+          },
+          "EntityDuplicated": {
+            "filter": null,
+            "relation": null,
+            "tolerance": null
+          }
+        },
+        "attribute": {
+          "UFIDMiss": {
+            "figure": [
+              {
+                "code": null,
+                "attribute": [
+                  {
+                    "key": "UFID",
+                    "number": null,
+                    "values": null,
+                    "interval": null,
+                    "condition": null
+                  }
+                ]
+              }
+            ],
+            "filter": null,
+            "relation": null
+          }
+        }
+      }
+    },
+  {
+      "name": "farmland",
+      "options": {
+        "adjacent": {
+          "DRefEntityNone": {
+            "figure": null,
+            "filter": null,
+            "relation": null,
+            "tolerance": [
+              {
+                "code": null,
+                "value": 0.1,
+                "interval": null,
+                "condition": "under"
+              }
+            ]
+          },
+          "RefAttributeMiss": {
+            "figure": [
+              {
+                "code": "D0010000",
+                "attribute": [
+                  {
+                    "key": "구분",
+                    "number": null,
+                    "values": null,
+                    "interval": null,
+                    "condition": null
+                  }
+                ]
+              }
+            ],
+            "filter": null,
+            "relation": null,
+            "tolerance": [
+              {
+                "code": null,
+                "value": 0.1,
+                "interval": null,
+                "condition": "under"
+              }
+            ]
+          }
+        },
+        "graphic": {
+          "OneStage": {
+            "filter": null,
+            "relation": [
+              {
+                "name": "soil",
+                "filter": null,
+                "tolerance": null
+              }
+            ],
+            "tolerance": null
+          },
+          "MultiPart": {
+            "filter": null,
+            "relation": null,
+            "tolerance": null
+          },
+          "OverShoot": {
+            "filter": null,
+            "relation": null,
+            "tolerance": [
+              {
+                "code": null,
+                "value": 0.1,
+                "interval": null,
+                "condition": "under"
+              }
+            ]
+          },
+          "SmallArea": {
+            "filter": null,
+            "relation": null,
+            "tolerance": [
+              {
+                "code": null,
+                "value": 0.1,
+                "interval": null,
+                "condition": "over"
+              }
+            ]
+          },
+          "SelfEntity": {
+            "filter": null,
+            "relation": [
+              {
+                "name": "farmland",
+                "filter": null,
+                "tolerance": null
+              }
+            ],
+            "tolerance": [
+              {
+                "code": null,
+                "value": 0.1,
+                "interval": null,
+                "condition": "under"
+              }
+            ]
+          },
+          "TwistedPolygon": {
+            "filter": null,
+            "relation": null,
+            "tolerance": null
+          },
+          "PointDuplicated": {
+            "filter": null,
+            "relation": null,
+            "tolerance": null
+          },
+          "EntityDuplicated": {
+            "filter": null,
+            "relation": null,
+            "tolerance": null
+          }
+        },
+        "attribute": {
+          "UFIDMiss": {
+            "figure": [
+              {
+                "code": null,
+                "attribute": [
+                  {
+                    "key": "UFID",
+                    "number": null,
+                    "values": null,
+                    "interval": null,
+                    "condition": null
+                  }
+                ]
+              }
+            ],
+            "filter": null,
+            "relation": null
+          }
+        }
+      }
+    },
+  {
+      "name": "soil",
+      "options": {
+        "adjacent": {
+          "DRefEntityNone": {
+            "figure": null,
+            "filter": null,
+            "relation": null,
+            "tolerance": [
+              {
+                "code": null,
+                "value": 0.1,
+                "interval": null,
+                "condition": "under"
+              }
+            ]
+          },
+          "RefAttributeMiss": {
+            "figure": [
+              {
+                "code": "D0020000",
+                "attribute": [
+                  {
+                    "key": "구분",
+                    "number": null,
+                    "values": null,
+                    "interval": null,
+                    "condition": null
+                  }
+                ]
+              }
+            ],
+            "filter": null,
+            "relation": null,
+            "tolerance": [
+              {
+                "code": null,
+                "value": 0.1,
+                "interval": null,
+                "condition": "under"
+              }
+            ]
+          }
+        },
+        "graphic": {
+          "OneAcre": {
+            "filter": null,
+            "relation": [
+              {
+                "name": "farmland",
+                "filter": null,
+                "tolerance": null
+              }
+            ],
+            "tolerance": null
+          },
+          "MultiPart": {
+            "filter": null,
+            "relation": null,
+            "tolerance": null
+          },
+          "OverShoot": {
+            "filter": null,
+            "relation": null,
+            "tolerance": [
+              {
+                "code": null,
+                "value": 0.1,
+                "interval": null,
+                "condition": "under"
+              }
+            ]
+          },
+          "SmallArea": {
+            "filter": null,
+            "relation": null,
+            "tolerance": [
+              {
+                "code": null,
+                "value": 0.1,
+                "interval": null,
+                "condition": "over"
+              }
+            ]
+          },
+          "TwistedPolygon": {
+            "filter": null,
+            "relation": null,
+            "tolerance": null
+          },
+          "PointDuplicated": {
+            "filter": null,
+            "relation": null,
+            "tolerance": null
+          },
+          "EntityDuplicated": {
+            "filter": null,
+            "relation": null,
+            "tolerance": null
+          }
+        },
+        "attribute": {
+          "UFIDMiss": {
+            "figure": [
+              {
+                "code": null,
+                "attribute": [
+                  {
+                    "key": "UFID",
+                    "number": null,
+                    "values": null,
+                    "interval": null,
+                    "condition": null
+                  }
+                ]
+              }
+            ],
+            "filter": null,
+            "relation": null
+          }
+        }
+      }
+    },
+  {
+      "name": "contour line",
+      "options": {
+        "adjacent": {
+          "DRefEntityNone": {
+            "figure": null,
+            "filter": null,
+            "relation": null,
+            "tolerance": [
+              {
+                "code": null,
+                "value": 0.1,
+                "interval": null,
+                "condition": "under"
+              }
+            ]
+          },
+          "RefAttributeMiss": {
+            "figure": [
+              {
+                "code": "F0010000",
+                "attribute": [
+                  {
+                    "key": "elevation",
+                    "number": null,
+                    "values": null,
+                    "interval": null,
+                    "condition": null
+                  }
+                ]
+              }
+            ],
+            "filter": null,
+            "relation": null,
+            "tolerance": [
+              {
+                "code": null,
+                "value": 0.1,
+                "interval": null,
+                "condition": "under"
+              }
+            ]
+          }
+        },
+        "graphic": {
+          "ConBreak": {
+            "filter": null,
+            "relation": null,
+            "tolerance": [
+              {
+                "code": null,
+                "value": 0.1,
+                "interval": null,
+                "condition": "under"
+              }
+            ]
+          },
+          "MultiPart": {
+            "filter": null,
+            "relation": null,
+            "tolerance": null
+          },
+          "OverShoot": {
+            "filter": null,
+            "relation": null,
+            "tolerance": [
+              {
+                "code": null,
+                "value": 0.1,
+                "interval": null,
+                "condition": "under"
+              }
+            ]
+          },
+          "SmallLength": {
+            "filter": null,
+            "relation": null,
+            "tolerance": [
+              {
+                "code": null,
+                "value": 0.1,
+                "interval": null,
+                "condition": "over"
+              }
+            ]
+          },
+          "ConOverDegree": {
+            "filter": null,
+            "relation": null,
+            "tolerance": [
+              {
+                "code": null,
+                "value": 90,
+                "interval": null,
+                "condition": "over"
+              }
+            ]
+          },
+          "ConIntersected": {
+            "filter": null,
+            "relation": null,
+            "tolerance": null
+          },
+          "TwistedPolygon": {
+            "filter": null,
+            "relation": null,
+            "tolerance": null
+          },
+          "PointDuplicated": {
+            "filter": null,
+            "relation": null,
+            "tolerance": null
+          },
+          "EntityDuplicated": {
+            "filter": null,
+            "relation": null,
+            "tolerance": null
+          }
+        },
+        "attribute": {
+          "UFIDMiss": {
+            "figure": [
+              {
+                "code": null,
+                "attribute": [
+                  {
+                    "key": "UFID",
+                    "number": null,
+                    "values": null,
+                    "interval": null,
+                    "condition": null
+                  }
+                ]
+              }
+            ],
+            "filter": null,
+            "relation": null
+          },
+          "NumericalValue": {
+            "figure": [
+              {
+                "code": null,
+                "attribute": [
+                  {
+                    "key": "elevation",
+                    "number": 2000,
+                    "values": null,
+                    "interval": null,
+                    "condition": "over"
+                  }
+                ]
+              }
+            ]
+          },
+          "ZValueAmbiguous": {
+            "figure": [
+              {
+                "code": "F0010000",
+                "attribute": [
+                  {
+                    "key": "elevation",
+                    "number": 1,
+                    "values": null,
+                    "interval": 5,
+                    "condition": "over"
+                  }
+                ]
+              }
+            ],
+            "filter": null,
+            "relation": null
+          }
+        }
+      }
+    },
+{
+      "name": "border layer",
+      "options": {
+        "adjacent": {
+          "DRefEntityNone": {
+            "figure": null,
+            "filter": null,
+            "relation": null,
+            "tolerance": [
+              {
+                "code": null,
+                "value": 0.1,
+                "interval": null,
+                "condition": "under"
+              }
+            ]
+          },
+          "RefAttributeMiss": {
+            "figure": [
+              {
+                "code": "H0010000",
+                "attribute": [
+                  {
+                    "key": "도엽명",
+                    "number": null,
+                    "values": null,
+                    "interval": null,
+                    "condition": null
+                  },
+                  {
+                    "key": "도엽코드",
+                    "number": null,
+                    "values": null,
+                    "interval": null,
+                    "condition": null
+                  }
+                ]
+              }
+            ],
+            "filter": null,
+            "relation": null,
+            "tolerance": [
+              {
+                "code": null,
+                "value": 0.1,
+                "interval": null,
+                "condition": "under"
+              }
+            ]
+          }
+        },
+        "graphic": {
+          "MultiPart": {
+            "filter": null,
+            "relation": null,
+            "tolerance": null
+          },
+          "OverShoot": {
+            "filter": null,
+            "relation": null,
+            "tolerance": [
+              {
+                "code": null,
+                "value": 0.1,
+                "interval": null,
+                "condition": "under"
+              }
+            ]
+          },
+          "SmallLength": {
+            "filter": null,
+            "relation": null,
+            "tolerance": [
+              {
+                "code": null,
+                "value": 0.1,
+                "interval": null,
+                "condition": "over"
+              }
+            ]
+          },
+          "TwistedPolygon": {
+            "filter": null,
+            "relation": null,
+            "tolerance": null
+          },
+          "PointDuplicated": {
+            "filter": null,
+            "relation": null,
+            "tolerance": null
+          },
+          "EntityDuplicated": {
+            "filter": null,
+            "relation": null,
+            "tolerance": null
+          }
+        },
+        "attribute": {
+          "UFIDMiss": {
+            "figure": [
+              {
+                "code": null,
+                "attribute": [
+                  {
+                    "key": "UFID",
+                    "number": null,
+                    "values": null,
+                    "interval": null,
+                    "condition": null
+                  }
+                ]
+              }
+            ],
+            "filter": null,
+            "relation": null
+          }
+        }
+      }
+    }
+  ]
+}
+  
