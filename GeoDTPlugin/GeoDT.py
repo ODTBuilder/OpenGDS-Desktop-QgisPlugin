@@ -237,9 +237,9 @@ class GeoDT:
             self.dockwidget.cidx.setCurrentIndex(1) # 수치지도 2.0 기본
             self.dockwidget.crs.addItems([u'EPSG:5186',u'EPSG:5187'])
             '''
-            self.dockwidget.path1.setText(u'C:/val/수치지도20layer.json')
-            self.dockwidget.path2.setText(u'C:/val/수치지도20option.json')
-            self.dockwidget.path3.setText(u'C:/val/수치지도20Sample_ngi.zip')
+            self.dockwidget.path1.setText(u'C:/val/수치지도10layer.json')
+            self.dockwidget.path2.setText(u'C:/val/수치지도10option.json')
+            self.dockwidget.path3.setText(u'C:/val/수치지도10Sample.zip')
             '''
             self.dockwidget.log_detail.setVisible(False)
             self.check_java_proc.start(self.baseDir + "\\check_java.bat")
@@ -273,8 +273,8 @@ class GeoDT:
             fileList1 = os.listdir(u'%s'%self.errorDirPath)
         except:
             pass
-        fileList1.reverse()
         self.dockwidget.filelist1.addItems(fileList1)
+        fileList1.reverse()
         self.navi_change_directory_event()
         self.navi_change_shpfile_event()
 
@@ -282,14 +282,16 @@ class GeoDT:
         self.dockwidget.filelist2.clear()
         fileList2 = []
         try:
-            fileList2 = os.listdir(u'%s'%self.errorDirPath + self.dockwidget.filelist1.currentText())
-        except:
+            fileList2 = os.listdir(u'%s' % self.errorDirPath + u'%s' % self.dockwidget.filelist1.currentText() + "\\")
+        except Exception as e:
             pass
+
         shplist=[]
         for file in fileList2:
             if file.endswith('.shp'):
                 shplist.append(str(file).decode("utf-8").replace(".shp", ""))
         self.dockwidget.filelist2.addItems(shplist)
+        self.navi_change_shpfile_event()
 
     def navi_change_shpfile_event(self):
         for lyr in self.listLayer:
@@ -384,7 +386,6 @@ class GeoDT:
         else:
             cidx = str(self.dockwidget.cidx.currentIndex() + 1)
             try:
-
                 self.dockwidget.logLabel.setText("검수 작업을 진행합니다.".decode("utf-8"))
                 query = self.baseDir + "\\start.bat"
                 # 파일 내용 삭제
@@ -436,19 +437,22 @@ class GeoDT:
             self.dockwidget.logLabel.setText(u"검수를 실패했습니다.")
             self.dockwidget.go_btn.setEnabled(True)
 
-        intValue = re.findall("\d+", output)
-        percent = intValue[0]
-        startTime = intValue[3] + ":" + intValue[4] + ":" + intValue[5]
-        finishTime = intValue[6] + ":" + intValue[7] + ":" + intValue[8]
-        self.dockwidget.logLabel.setText("진행중".decode("utf-8") + " ( " + startTime + " / " + finishTime + " )")
-        self.dockwidget.progressBar.setValue(int(percent))
-
-        if u"성공" in output:
+        if u"성공" in output or self.dockwidget.progressBar.value() == 100:
             self.process.kill()
             self.ini_setting()
             self.dockwidget.logLabel.setText(u"검수가 완료 되었습니다.")
             self.dockwidget.tabWidget.setCurrentIndex(1)
             self.dockwidget.go_btn.setEnabled(True)
+
+        try:
+            intValue = re.findall("\d+", output)
+            percent = intValue[0]
+            startTime = intValue[3] + ":" + intValue[4] + ":" + intValue[5]
+            finishTime = intValue[6] + ":" + intValue[7] + ":" + intValue[8]
+            self.dockwidget.logLabel.setText("진행중".decode("utf-8") + " ( " + startTime + " / " + finishTime + " )")
+            self.dockwidget.progressBar.setValue(int(percent))
+        except Exception as e:
+            pass
 
     def log_detail_btn_event(self):
         if self.dockwidget.log_detail_btn.isChecked():
