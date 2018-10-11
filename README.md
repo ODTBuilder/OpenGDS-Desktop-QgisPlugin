@@ -70,37 +70,3 @@ ghre55@git.co.kr
 
 
 
------
-<a name="english"></a>
-Validator-v1.0 (Validation tool for geospatial data v1.0) 
-=======
-
-This project is still a work in progress at its 4th year. 
-The final version of the project will be integrated in the later years.
-The program may cause some problems since it is not complete.
-The user is responsible to the caused problem and once it is complete, a new set of legal codes will be applied.
-
-Thank you.
-Geospatial Information Technology R&D <link>http://www.git.co.kr/<br>
-Team OpenGeoDT
-
-
-Characteristics
-=======
-
--Validation tool for geospatial data v1.0 is a GIS integrated solution for inspecting and editing geospatial data based on GeoDT 2.2
--Provides tools for inspecting the geometric/logical structure of geospatial data.
--Supports various types of web browsers without installations of any plugins or ActiveX. 
--Can be customized or extended depending on the needs of the user since the program is written in JavaScript and Java.
--Follows the standards of OGC and provides more than 20 validating functions that follow the Korean law for making maps.
-
-
-Getting Started
-=====
-### 1. Background ###
-- Java - OpenGDK 1.8.0.111 64 bit
-
-Mail
-=====
-Developer : SG.LEE
-ghre55@git.co.kr
