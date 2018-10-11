@@ -16,6 +16,16 @@ QGIS 플러그인으로 개발되어졌으며, 배치파일 연동을 통한 검
 OpenGeoDT 팀
 
 
+Getting Started
+=====
+### 1. 환경 ###
+- Java - OpenGDK 1.8.0.111 64 bit
+- QGIS - 2.18.13
+
+### 2. 설치 ###
+- 설치는 [OpenGDS Desktop QGISPlugIn 매뉴얼](https://github.com/ODTBuilder/OpenGDS-Desktop-QgisPlugin/blob/master/OpenGDS%20Desktop%20QGISPlugIn%20%EB%A7%A4%EB%89%B4%EC%96%BC.docx) 을 참조하십시오.
+
+
 특징
 =====
 - 데스크톱상에서 공간정보의 기하학적/논리적 구조와 속성값에 대한 검수편집 기능을 제공함.
@@ -55,15 +65,6 @@ OpenGeoDT 팀
 - 세부 책임 : 부산대학교 <link>http://www.pusan.ac.kr/<br>
 - 연구 책임 : 국토연구원 <link>http://www.krihs.re.kr/
 
-
-Getting Started
-=====
-### 1. 환경 ###
-- Java - OpenGDK 1.8.0.111 64 bit
-- QGIS - 2.18.13
-
-### 2. 설치 ###
-- 설치는 [OpenGDS Desktop QGISPlugIn 매뉴얼](https://github.com/ODTBuilder/OpenGDS-Desktop-QgisPlugin/blob/master/OpenGDS%20Desktop%20QGISPlugIn%20%EB%A7%A4%EB%89%B4%EC%96%BC.docx) 을 참조하십시오.
 
 Mail
 =====
