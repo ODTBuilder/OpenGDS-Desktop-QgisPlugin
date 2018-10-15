@@ -294,18 +294,33 @@ class GeoDT:
         self.navi_change_shpfile_event()
 
     def navi_change_shpfile_event(self):
+        for qgis_layer in self.iface.legendInterface().layers():
+            if qgis_layer.name() == self.dockwidget.filelist2.currentText():
+                QgsMapLayerRegistry.instance().removeMapLayer(qgis_layer.id())
+                break
+
         for lyr in self.listLayer:
             try:
                 vl = self.iface.legendInterface().layers()[self.findlayer(lyr.name())]
                 QgsMapLayerRegistry.instance().removeMapLayer(vl.id())
             except:
                 pass
-        # 위젯에 값 설정이 안되있으면 종료
-        if self.ini_flag:
-            return
 
         filePath = self.errorDirPath + self.dockwidget.filelist1.currentText()+'/'+ self.dockwidget.filelist2.currentText()+'.shp'
         layer = QgsVectorLayer(filePath, self.dockwidget.filelist2.currentText(), 'ogr')
+
+        # 스타일 적용
+        label = QgsPalLayerSettings()
+        label.readFromLayer(layer)
+        label.enabled = True
+        label.fieldName = 'errName'
+        label.writeToLayer(layer)
+        symbol = QgsSymbolV2.defaultSymbol(layer.geometryType())
+        symbol.setColor(QColor(0, 0, 0, 0))
+        symbol.setSize(10)
+        symbol.symbolLayer(0).setOutlineColor(QColor(255, 0, 0))
+        layer.rendererV2().setSymbol(symbol)
+
         self.listLayer.append(layer)
         QgsMapLayerRegistry.instance().addMapLayer(layer, True)
         tableFiled=[]
