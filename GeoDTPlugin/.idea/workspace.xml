@@ -12,26 +12,26 @@
     <session id="-1256942834">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="22" />
+          <entry key="project.closed" value="25" />
           <entry key="project.open.time.0" value="5" />
           <entry key="project.open.time.2" value="3" />
           <entry key="project.open.time.3" value="2" />
-          <entry key="project.open.time.4" value="10" />
-          <entry key="project.open.time.5" value="3" />
+          <entry key="project.open.time.4" value="12" />
+          <entry key="project.open.time.5" value="4" />
           <entry key="project.open.time.6" value="1" />
           <entry key="project.open.time.8" value="1" />
-          <entry key="project.opened" value="25" />
+          <entry key="project.opened" value="28" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="Python Console" value="18" />
-          <entry key="py" value="13918" />
+          <entry key="py" value="14675" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Python" value="13936" />
+          <entry key="Python" value="14693" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -51,8 +51,11 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/GeoDT.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="275">
-              <caret line="23" column="8" selection-start-line="23" selection-start-column="8" selection-end-line="23" selection-end-column="8" />
+            <state relative-caret-position="747">
+              <caret line="489" column="23" selection-start-line="489" selection-start-column="23" selection-end-line="489" selection-end-column="23" />
+              <folding>
+                <element signature="e#1076#1099#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -60,7 +63,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/val_dockwidget.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="822">
+            <state relative-caret-position="925">
               <caret line="46" column="8" selection-start-line="46" selection-start-column="8" selection-end-line="46" selection-end-column="8" />
             </state>
           </provider>
@@ -77,9 +80,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>aDock</find>
-      <find>aa</find>
-      <find>ini_event</find>
       <find>findlayer</find>
       <find>append</find>
       <find>QgsMessageLog</find>
@@ -107,6 +107,9 @@
       <find>val</find>
       <find>errorDirPath</find>
       <find>re</find>
+      <find>crs</find>
+      <find>close_button_event</find>
+      <find>self.iface</find>
     </findStrings>
   </component>
   <component name="IdeDocumentHistory">
@@ -125,17 +128,16 @@
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="2069" />
-    <option name="y" value="53" />
-    <option name="width" value="1932" />
-    <option name="height" value="1047" />
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1936" />
+    <option name="height" value="1056" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -143,14 +145,11 @@
               <item name="GeoDT" type="b2602c69:ProjectViewProjectNode" />
               <item name="GeoDT" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="GeoDT" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -265,7 +264,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1912" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.113804005" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -368,17 +367,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/val_dockwidget.py">
+    <entry file="file://$PROJECT_DIR$/GeoDT.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="822">
-          <caret line="46" column="8" selection-start-line="46" selection-start-column="8" selection-end-line="46" selection-end-column="8" />
+        <state relative-caret-position="747">
+          <caret line="489" column="23" selection-start-line="489" selection-start-column="23" selection-end-line="489" selection-end-column="23" />
+          <folding>
+            <element signature="e#1076#1099#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/GeoDT.py">
+    <entry file="file://$PROJECT_DIR$/val_dockwidget.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="275">
-          <caret line="23" column="8" selection-start-line="23" selection-start-column="8" selection-end-line="23" selection-end-column="8" />
+        <state relative-caret-position="925">
+          <caret line="46" column="8" selection-start-line="46" selection-start-column="8" selection-end-line="46" selection-end-column="8" />
         </state>
       </provider>
     </entry>

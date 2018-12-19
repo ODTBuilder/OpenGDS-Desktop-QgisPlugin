@@ -28,10 +28,8 @@ import os.path
 import os
 import re
 import sys
-import subprocess
 reload(sys)
 sys.setdefaultencoding('utf-8')
-# Initialize Qt resources from file resources.py
 import resources
 # Import the code for the DockWidget
 from val_dockwidget import ValDockWidget
@@ -85,6 +83,8 @@ class GeoDT:
         self.check_java_proc = QProcess(self.iface)
         self.baseDir = "C:\\val"
         self.errorDirPath = self.baseDir + '\\error\\'
+        self.ini_flag = True
+
 
     # noinspection PyMethodMayBeStatic
     def tr(self, message):
@@ -102,16 +102,16 @@ class GeoDT:
         return QCoreApplication.translate('a', message)
 
     def add_action(
-        self,
-        icon_path,
-        text,
-        callback,
-        enabled_flag=True,
-        add_to_menu=True,
-        add_to_toolbar=True,
-        status_tip=None,
-        whats_this=None,
-        parent=None):
+            self,
+            icon_path,
+            text,
+            callback,
+            enabled_flag=True,
+            add_to_menu=True,
+            add_to_toolbar=True,
+            status_tip=None,
+            whats_this=None,
+            parent=None):
         """Add a toolbar icon to the toolbar.
 
         :param icon_path: Path to the icon for this action. Can be a resource
@@ -215,14 +215,31 @@ class GeoDT:
         # remove the toolbar
         del self.toolbar
 
-    # --------------------------------------------------------------------------
-
+    # 실제로 플러그인 실행할 때 추가하는 부분
     def run(self):
         """Run method that loads and starts the plugin"""
-        self.ini_flag=True
 
         if not self.pluginIsActive:
             self.pluginIsActive = True
+            self.listLayer = []  # # 추가된 레이어 리스트 목록 저장
+
+
+            self.ini_setting()
+            self.ini_event()
+
+            self.dockwidget.closingPlugin.connect(self.onClosePlugin)
+            self.ini_flag = False
+            # connect to provide cleanup on closing of dockwidget
+
+            self.iface.addDockWidget(Qt.RightDockWidgetArea, self.dockwidget)
+            self.dockwidget.show()
+
+    # 이벤트를 추가하는 부분
+    def ini_event(self):
+        if self.ini_flag:
+            self.dockwidget.filelist1.currentIndexChanged.connect(self.navi_change_directory_event)
+            self.dockwidget.filelist2.activated.connect(self.navi_change_shpfile_event)
+            self.dockwidget.tableWidget.cellClicked.connect(self.viewClicked)
             self.dockwidget.go_btn.clicked.connect(self.execute_val)
             self.dockwidget.close_btn.clicked.connect(self.close_button_event)
             self.dockwidget.close_btn_2.clicked.connect(self.close_button_event)
@@ -232,57 +249,42 @@ class GeoDT:
             self.dockwidget.cidx.currentIndexChanged.connect(self.change_filetype)
             self.dockwidget.log_detail_btn.clicked.connect(self.log_detail_btn_event)
             self.process.readyRead.connect(self.print_log_event)
+            self.process.finished.connect(self.process_finished_event)
             self.check_java_proc.readyRead.connect(self.check_java)
-            self.dockwidget.cidx.addItems([ u'수치지도 1.0', u'수치지도 2.0', u'지하시설물 1.0', u'지하시설물 2.0', u'임상도'])
-            self.dockwidget.cidx.setCurrentIndex(1) # 수치지도 2.0 기본
-            self.dockwidget.crs.addItems([u'EPSG:5186',u'EPSG:5187'])
-            '''
-            self.dockwidget.path1.setText(u'C:/val/수치지도10layer.json')
-            self.dockwidget.path2.setText(u'C:/val/수치지도10option.json')
-            self.dockwidget.path3.setText(u'C:/val/수치지도10Sample.zip')
-            '''
-            self.dockwidget.log_detail.setVisible(False)
             self.check_java_proc.start(self.baseDir + "\\check_java.bat")
-            self.listLayer = []  # # 추가된 레이어 리스트 목록 저장
-            self.ini_setting()
-            self.ini_event()
 
-            # connect to provide cleanup on closing of dockwidget
-            self.dockwidget.closingPlugin.connect(self.onClosePlugin)
-            self.ini_flag=False
-
-            # show the dockwidget
-            # TODO: fix to allow choice of dock location
-
-            self.iface.addDockWidget(Qt.RightDockWidgetArea, self.dockwidget)
-            self.dockwidget.show()
-
-# ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-
-    def ini_event(self):
-        self.dockwidget.filelist1.currentIndexChanged.connect(self.navi_change_directory_event)
-        self.dockwidget.filelist2.activated.connect(self.navi_change_shpfile_event)
-        self.dockwidget.tableWidget.clicked.connect(self.viewClicked)
-
+    # 초깃값 셋팅
     def ini_setting(self):
+        if self.ini_flag:
+            self.dockwidget.tabWidget.setCurrentIndex(0)
+            self.dockwidget.cidx.addItems([u'수치지도 1.0', u'수치지도 2.0', u'지하시설물 1.0', u'지하시설물 2.0', u'임상도'])
+            self.dockwidget.cidx.setCurrentIndex(1)  # 수치지도 2.0 기본
+            self.dockwidget.filetype.addItems([u'shp', u'ngi'])
+            self.dockwidget.crs.addItems([u'EPSG:5186', u'EPSG:5187'])
+            self.dockwidget.log_detail.setVisible(False)
         self.dockwidget.filelist1.clear()
         self.dockwidget.filelist2.clear()
         self.dockwidget.tableWidget.clear()
         fileList1 = []
         try:
             fileList1 = os.listdir(u'%s'%self.errorDirPath)
-        except:
+        except Exception as e:
             pass
-        self.dockwidget.filelist1.addItems(fileList1)
         fileList1.reverse()
+        self.dockwidget.filelist1.addItems(fileList1)
         self.navi_change_directory_event()
-        self.navi_change_shpfile_event()
 
+    # 네비게이션 탭 > 폴더 변경 시 이벤트
     def navi_change_directory_event(self):
         self.dockwidget.filelist2.clear()
         fileList2 = []
         try:
             fileList2 = os.listdir(u'%s' % self.errorDirPath + u'%s' % self.dockwidget.filelist1.currentText() + "\\")
+            if not fileList2:
+                self.dockwidget.logLabel.setText(u'%s' % self.errorDirPath + u'%s' % self.dockwidget.filelist1.currentText() + " 경로에 파일이 없습니다.")
+                self.dockwidget.log_detail.appendPlainText(u'%s' % self.errorDirPath + u'%s' % self.dockwidget.filelist1.currentText() + " 경로에 파일이 없습니다.")
+                self.dockwidget.log_detail.appendPlainText(u"네비게이터가 비활성화됩니다.")
+                return
         except Exception as e:
             pass
 
@@ -293,40 +295,39 @@ class GeoDT:
         self.dockwidget.filelist2.addItems(shplist)
         self.navi_change_shpfile_event()
 
+    # 네비게이션 탭 > SHP 파일 변경 시 이벤트
     def navi_change_shpfile_event(self):
+
+        # QGIS 레이어 패널에 중복된 err shp가 있으면 제거
         for qgis_layer in self.iface.legendInterface().layers():
             if qgis_layer.name() == self.dockwidget.filelist2.currentText():
                 QgsMapLayerRegistry.instance().removeMapLayer(qgis_layer.id())
                 break
 
-        for lyr in self.listLayer:
-            try:
-                vl = self.iface.legendInterface().layers()[self.findlayer(lyr.name())]
-                QgsMapLayerRegistry.instance().removeMapLayer(vl.id())
-            except:
-                pass
-
         filePath = self.errorDirPath + self.dockwidget.filelist1.currentText()+'/'+ self.dockwidget.filelist2.currentText()+'.shp'
         layer = QgsVectorLayer(filePath, self.dockwidget.filelist2.currentText(), 'ogr')
 
-        # 스타일 적용
+        # 스타일 적용 : 빨간색 원
         label = QgsPalLayerSettings()
         label.readFromLayer(layer)
         label.enabled = True
         label.fieldName = 'errName'
         label.writeToLayer(layer)
         symbol = QgsSymbolV2.defaultSymbol(layer.geometryType())
-        symbol.setColor(QColor(0, 0, 0, 0))
-        symbol.setSize(10)
-        symbol.symbolLayer(0).setOutlineColor(QColor(255, 0, 0))
-        layer.rendererV2().setSymbol(symbol)
+        try:
+            symbol.setColor(QColor(0, 0, 0, 0))
+            symbol.setSize(10)
+            symbol.symbolLayer(0).setOutlineColor(QColor(255, 0, 0))
+            layer.rendererV2().setSymbol(symbol)
+            self.listLayer.append(layer)
+            QgsMapLayerRegistry.instance().addMapLayer(layer, True)
+        except Exception as e:
+            QgsMessageLog.logMessage(str(e), tag="Validating", level=QgsMessageLog.INFO)
 
-        self.listLayer.append(layer)
-        QgsMapLayerRegistry.instance().addMapLayer(layer, True)
+        # 에러 네비게이터 추가
         tableFiled=[]
         self.dockwidget.tableWidget.clear()
         for filed in layer.fields():
-            # QMessageBox.warning(self.iface.mainWindow(), "File Make ", str(filed.name()))
             tableFiled.append(filed.name())
         tableFiled.append('id')
         self.dockwidget.tableWidget.setColumnCount(len(tableFiled))
@@ -337,22 +338,23 @@ class GeoDT:
         self.activeLayer=layer
         self.hideFiled = len(tableFiled)-1
 
-        # QMessageBox.warning(self.iface.mainWindow(), "File Make ", str(layer.featureCount()))
+        # 피쳐 > 행 > 열
         i = 0
         for feat in feats:
             j = 0
             for filed in layer.fields():
                 try:
                     m = QTableWidgetItem(feat.attribute(filed.name()))
+                    # m.setFlags(Qt.ItemIsSelectable | Qt.ItemIsEnabled)
                     self.dockwidget.tableWidget.setItem(i, j, m)
                 except:
                     pass
-                j = j + 1
+                j += 1
             m = QTableWidgetItem(str(feat.id()))
             self.dockwidget.tableWidget.setItem(i, j,m)
-            i = i + 1
-            # QMessageBox.warning(self.iface.mainWindow(), "File Make ", str(feat.id()))
+            i += 1
 
+    # 오류 객체 추적 이벤트
     def viewClicked(self):
         if not self.activeLayer:
             return
@@ -366,27 +368,29 @@ class GeoDT:
         # canvas.zoomOut()
         self.iface.mapCanvas().refresh()
 
-    # +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-
+    # 레이어 정의 옵션 파일 열기 이벤트
     def load_layer_def_event(self):
         filename = QFileDialog.getOpenFileName(self.dockwidget, u"레이어 정의 옵션 경로", self.baseDir, '*.*')
         self.dockwidget.path1.setText(filename)
 
+    # 검수 옵션 파일 열기 이벤트
     def load_val_opt_event(self):
         filename = QFileDialog.getOpenFileName(self.dockwidget, u"검수 옵션 경로", self.baseDir, '*.*')
         self.dockwidget.path2.setText(filename)
 
+    # 검수 대상 파일 열기 이벤트
     def load_val_target_event(self):
         filename = QFileDialog.getOpenFileName(self.dockwidget, u"검수 대상 파일 경로", self.baseDir, '*.*')
         self.dockwidget.path3.setText(filename)
 
+    # 파일 형식 변경 이벤트
     def change_filetype(self):
         filetypelist = [[u'dxf'] ,[u'shp', u'ngi'], [u'dxf'], [u'shp'], [u'shp']]
         self.dockwidget.filetype.clear()
         self.dockwidget.filetype.addItems(filetypelist[int(self.dockwidget.cidx.currentIndex())])
 
+    # 검수 실행 이벤트
     def execute_val(self):
-
         if self.dockwidget.path1.text() =='' or self.dockwidget.path2.text()=='' or self.dockwidget.path3.text() =='':
             if self.dockwidget.path1.text() =='':
                 QMessageBox.warning(self.iface.mainWindow(), u'알림', u'레이어 정의 옵션 경로를 입력해주세요')
@@ -403,23 +407,24 @@ class GeoDT:
             try:
                 self.dockwidget.logLabel.setText("검수 작업을 진행합니다.".decode("utf-8"))
                 query = self.baseDir + "\\start.bat"
-                # 파일 내용 삭제
+                # 배치 파일 내용 삭제
                 open(query, 'w').close()
-                # 파일 내용 삽입
+                # 배치 파일 내용 삽입
                 f = open(query, 'w')
                 f.write("@echo off\n" +
                         '"%JAVA_HOME%\\bin\\java" ' +
-                        "-Dfile.encoding=utf-8 -Djava.file.encoding=UTF-8 -jar -Xms1024m -Xmx1024m " +
-                        self.baseDir + "\\val.jar "
+                        "-Dfile.encoding=utf-8 -Djava.file.encoding=UTF-8 -jar -Xms256m -Xmx2048m " +
+                        self.baseDir + "\\val.jar " +
                         # args
-                        "--basedir " + self.baseDir + " " +
-                        "--filetype " + self.dockwidget.filetype.currentText().encode('euc-kr') + " "+
-                        "--cidx " + cidx + " " +
-                        "--layerdefpath " + self.dockwidget.path1.text().encode('euc-kr').replace("/", "\\", 2) + " "
-                        "--valoptpath " + self.dockwidget.path2.text().encode('euc-kr').replace("/", "\\", 2) + " "
-                        "--objfilepath " + self.dockwidget.path3.text().encode('euc-kr').replace("/", "\\", 2) + " "
-                        "--crs " + self.dockwidget.crs.currentText().encode('euc-kr') +
+                        "--basedir=" + self.baseDir + " " +
+                        "--filetype=" + self.dockwidget.filetype.currentText().encode('utf-8') + " " +
+                        "--cidx=" + cidx + " " +
+                        "--layerdefpath=" + self.dockwidget.path1.text().encode('utf-8').replace("/", "\\", 2) + " " +
+                        "--valoptpath=" + self.dockwidget.path2.text().encode('utf-8').replace("/", "\\", 2) + " " +
+                        "--objfilepath=" + self.dockwidget.path3.text().encode('utf-8').replace("/", "\\", 2) + " " +
+                        "--crs=" + self.dockwidget.crs.currentText().encode('utf-8') +
                         "\n\n" +
+                        "EXIT\n" +
                         "pause>nul")
                 f.close()
                 self.dockwidget.log_detail.setPlainText("")
@@ -431,33 +436,15 @@ class GeoDT:
                 QgsMessageLog.logMessage("Error : " + str(e), tag="Validating", level=QgsMessageLog.INFO)
                 self.dockwidget.logLabel.setText("검수 작업이 실패하였습니다.".decode("utf-8"))
                 return
-    def findlayer(self, s):
-        layers = self.iface.legendInterface().layers()
-        i = -1
-        for layer in layers:
-            u = layer.name()
-            i = i + 1
-            if u == s:
-                return i
 
+    # 닫기 버튼 이벤트
     def close_button_event(self):
         self.dockwidget.close()
 
+    # 검수 실행 시 출력 이벤트
     def print_log_event(self):
         output = str(self.process.readAllStandardOutput()).decode("utf-8").replace("<br>", "\n")
         self.dockwidget.log_detail.appendPlainText(output)
-
-        if u"실패" in output:
-            self.process.kill()
-            self.dockwidget.logLabel.setText(u"검수를 실패했습니다.")
-            self.dockwidget.go_btn.setEnabled(True)
-
-        if u"성공" in output or self.dockwidget.progressBar.value() == 100:
-            self.process.kill()
-            self.ini_setting()
-            self.dockwidget.logLabel.setText(u"검수가 완료 되었습니다.")
-            self.dockwidget.tabWidget.setCurrentIndex(1)
-            self.dockwidget.go_btn.setEnabled(True)
 
         try:
             intValue = re.findall("\d+", output)
@@ -469,13 +456,25 @@ class GeoDT:
         except Exception as e:
             pass
 
+    # 검수 종료 이벤트
+    def process_finished_event(self, exit_code):
+        if exit_code == 200:
+            self.ini_setting()
+            self.dockwidget.logLabel.setText(u"검수가 완료 되었습니다.")
+            self.dockwidget.tabWidget.setCurrentIndex(1)
+            self.dockwidget.go_btn.setEnabled(True)
+        else:
+            self.dockwidget.logLabel.setText(u"검수를 실패했습니다.")
+            self.dockwidget.go_btn.setEnabled(True)
+
+    # 로그 상세 버튼 이벤트
     def log_detail_btn_event(self):
         if self.dockwidget.log_detail_btn.isChecked():
             self.dockwidget.log_detail.setVisible(True)
         else:
             self.dockwidget.log_detail.setVisible(False)
 
-    # check_java_proc
+    # 자바 유효성 검사 이벤트
     def check_java(self):
         output = str(self.check_java_proc.readAllStandardOutput()).decode("utf-8")
         if "not found." in output:
@@ -487,3 +486,5 @@ class GeoDT:
                 QMessageBox.warning(self.iface.mainWindow(), u'알림', u'자바 ' + version + '버전에 호환되지 않습니다.')
                 return
             pass
+
+    # 현구 들렀다감. 팀장님 나빠요.
