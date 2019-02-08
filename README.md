@@ -41,7 +41,7 @@ GeoDT Desktop은 QGIS Desktop의 확장 플러그인 입니다. QGIS에서 제�
 기능
 =====
 - Option 설정
-  - GeoDT Online 에서 검수옵션 설정을 기반으로 QGIS 검수 옵션값을 설정함
+  - '환경설정' 탭의 검수옵션 설정을 기반으로 QGIS 검수 옵션값을 설정함
     - 설정 예시 1)
     
     <img width="911" alt="2018-08-24 9 15 34" src="https://user-images.githubusercontent.com/13480171/44558307-66f74880-a77e-11e8-9add-74537c569ce7.png">
@@ -54,7 +54,7 @@ GeoDT Desktop은 QGIS Desktop의 확장 플러그인 입니다. QGIS에서 제�
    
     <img width="875" alt="2018-08-24 9 21 49" src="https://user-images.githubusercontent.com/13480171/44558462-3f54b000-a77f-11e8-91e1-d86d694faa6f.png">
 
-  - 자세한 검수 옵션설정은 [GeoDT Online 웹 매뉴얼](https://github.com/ODTBuilder/OpenGDS-Desktop-QgisPlugin/blob/master/GeoDT%20Online%20매뉴얼.hwp)을 참조하십시오.
+  - 자세한 검수 옵션설정은 [GeoDT Online 웹 매뉴얼](https://github.com/ODTBuilder/OpenGDS-Desktop-QgisPlugin/blob/master/GeoDT%20Online%20%EC%9B%B9%EA%B2%80%EC%88%98%20%EB%A7%A4%EB%89%B4%EC%96%BC.hwp)을 참조하시길 바랍니다.
   
   - QGIS Parameter 연동
   ![image](https://user-images.githubusercontent.com/13480171/46720101-83a5fc00-ccaa-11e8-894c-6fb0b044ac20.JPG) 
