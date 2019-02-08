@@ -6,9 +6,9 @@
 OpenGDS-Desktop-QgisPlugin 
 =======
 이 프로젝트는 국토공간정보연구사업 중 [공간정보 SW 활용을 위한 오픈소스 가공기술 개발]과제의 5차년도 연구성과 입니다.<br>
-QGIS 플러그인으로 개발되어졌으며, 배치파일 연동을 통한 검수를 지원한다.<br>
-배치파일은 3~4차년도 때 Web기반으로 개발된 공간정보 검수도구 Java Library 기반(OpenGDS/Validator)으로 개발되어 졌으며, Geoserver연동을 통한 검수가 아닌 로컬파일을 직접 읽어 검수함으로써 기존이슈였던 대용량 지원 및 고속검수를 목적으로 한다.<br>
-또한 Web기반이 아니기 때문에 오프라인 환경에서 검수가 가능하다.<br>
+본 프로젝트는 QGIS 플러그인으로 개발되었고, 배치파일 연동을 통한 공간정보 검수를 지원합니다.<br>
+배치파일은 3, 4차년도 때 Web기반으로 개발된 공간정보 검수도구인 OpenGDS(https://github.com/ODTBuilder/OpenGDS-Builder-Javascript)와 Validator(https://github.com/ODTBuilder/Validator)로 개발되었습니다. Geoserver 연동 없이 로컬파일을 직접 읽어 검수함으로써 기존 이슈였던 대용량 지원 및 고속검수가 가능합니다..<br>
+또한 Web기반이 아니기 때문에 오프라인 환경에서 검수가 가능합니다.<br>
 
 감사합니다.<br>
 공간정보기술(주) 연구소 <link>http://www.git.co.kr/<br>
@@ -18,7 +18,7 @@ OpenGeoDT 팀
 Getting Started
 =====
 ### 1. 환경 ###
-- Java - OpenGDK 1.8.0.111 64 bit
+- Java - OpenJDK 1.8.0.111 64 bit
 - QGIS - 2.18.13
 
 ### 2. 설치 ###
