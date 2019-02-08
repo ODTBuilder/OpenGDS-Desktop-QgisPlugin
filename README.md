@@ -18,11 +18,11 @@ OpenGeoDT 팀
 Getting Started
 =====
 ### 1. 환경 ###
-- Java - OpenJDK 1.8.0.111 64 bit
+- Java - OpenJDK 1.8.0.111 64 bit, JDK 1.8.0_192
 - QGIS - 2.18.13
 
 ### 2. 설치 ###
-- 설치는 [OpenGDS Desktop QGISPlugIn 매뉴얼](https://github.com/ODTBuilder/OpenGDS-Desktop-QgisPlugin/blob/master/OpenGDS%20Desktop%20QGISPlugIn%20%EB%A7%A4%EB%89%B4%EC%96%BC.docx) 을 참조하십시오.
+- 설치는 [OpenGDS Desktop QGISPlugIn 매뉴얼]() 을 참조하십시오.
 
 
 특징
