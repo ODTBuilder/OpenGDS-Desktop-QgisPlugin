@@ -22,13 +22,20 @@ Getting Started
 - QGIS - 2.18.13
 
 ### 2. 설치 ###
-- 설치는 [OpenGDS Desktop QGISPlugIn 매뉴얼]() 을 참조하십시오.
+- 설치는 [OpenGDS Desktop QGISPlugIn 매뉴얼](https://github.com/ODTBuilder/OpenGDS-Desktop-QgisPlugin/blob/master/OpenGDS%20Desktop%20QGISPlugIn%20%EB%A7%A4%EB%89%B4%EC%96%BC.docx) 을 참조하시길 바랍니다.
 
 
 특징
 =====
-- 데스크톱상에서 공간정보의 기하학적/논리적 구조와 속성값에 대한 검수편집 기능을 제공함.
-- python에서 Batch file호출을 통한 검수를 진행함.
+-	오프라인 환경에서의 작업<br>
+GeoDT Desktop는 인터넷 연결 없이도 언제 어디서나 데스크톱을 통해 간편하게 사용할 수 있습니다. 사용자는 적합한 필터를 선택하여 편리하게 지리 정보를 관리할 수 있습니다.
+
+-	쉬운 UI<br>
+GeoDT Desktop은 지도 레이어의 검수 및 편집 기능을 지원하며, 사용자 편의를 고려한 쉽고 간편한 조작으로 사용할 수 있습니다.
+
+-	모듈<br>
+GeoDT Desktop은 QGIS Desktop의 확장 플러그인 입니다. QGIS에서 제공하는 기본 기능과 커뮤니티를 통해 공유되는 확장 기능을 자유롭게 조합하여 동시에 사용할 수 있습니다.
+
 
 
 기능
