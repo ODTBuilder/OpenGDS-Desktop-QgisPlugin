@@ -49,7 +49,7 @@ GeoDT Desktop은 QGIS Desktop의 확장 플러그인 입니다. QGIS에서 제�
   - QGIS Parameter 연동
   ![image](https://user-images.githubusercontent.com/13480171/46720101-83a5fc00-ccaa-11e8-894c-6fb0b044ac20.JPG) 
     - 환경설정창 확대</br>
-  ![1](https://user-images.githubusercontent.com/13480171/52467587-6128de80-2bc9-11e9-8072-cb1bc70d5fa5.PNG)
+  ![2](https://user-images.githubusercontent.com/13480171/52542578-82b1e200-2de4-11e9-916f-46df4ed569e6.png)
 
   - QGIS 에러 네비게이터
   ![image](https://user-images.githubusercontent.com/13480171/46720108-87d21980-ccaa-11e8-805d-374ebb668161.JPG)
