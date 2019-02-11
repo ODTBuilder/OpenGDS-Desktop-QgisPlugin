@@ -22,7 +22,7 @@ Getting Started
 - QGIS - 2.18.13
 
 ### 2. 설치 및 연동방법 ### 
-- 설치는 [OpenGDS Desktop QGISPlugIn 매뉴얼](https://github.com/ODTBuilder/OpenGDS-Desktop-QgisPlugin/blob/master/OpenGDS%20Desktop%20QGISPlugIn%20%EB%A7%A4%EB%89%B4%EC%96%BC.docx) 을 참조하시길 바랍니다.
+- 설치는 [OpenGDS Desktop QGISPlugIn 매뉴얼](https://github.com/ODTBuilder/OpenGDS-Desktop-QgisPlugin/blob/master/OpenGDS%20Desktop%20QGISPlugIn%20%EB%A7%A4%EB%89%B4%EC%96%BC.docx) 을 참고하시길 바랍니다.
 
 
 특징
@@ -43,7 +43,7 @@ GeoDT Desktop은 QGIS Desktop의 확장 플러그인 입니다. QGIS에서 제�
 - Option 설정
   - '환경설정' 탭의 검수옵션 설정을 기반으로 QGIS 검수 옵션값을 설정함
 
-  - 자세한 검수 옵션설정은 [GeoDT Online 웹 매뉴얼](https://github.com/ODTBuilder/OpenGDS-Desktop-QgisPlugin/blob/master/GeoDT%20Online%20%EC%9B%B9%EA%B2%80%EC%88%98%20%EB%A7%A4%EB%89%B4%EC%96%BC.hwp)을 참조하시길 바랍니다.
+  - 자세한 검수 옵션설정은 [GeoDT Online 웹 매뉴얼](https://github.com/ODTBuilder/OpenGDS-Desktop-QgisPlugin/blob/master/GeoDT%20Online%20%EC%9B%B9%EA%B2%80%EC%88%98%20%EB%A7%A4%EB%89%B4%EC%96%BC.hwp)을 참고하시길 바랍니다.
   
   - QGIS Parameter 연동
   ![image](https://user-images.githubusercontent.com/13480171/46720101-83a5fc00-ccaa-11e8-894c-6fb0b044ac20.JPG) 
