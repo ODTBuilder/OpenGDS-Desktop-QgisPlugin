@@ -73,6 +73,16 @@ OpenGeoDT 팀
 
 - [Validator](https://github.com/ODTBuilder/Validator) 와 동일합니다.
 
+1. GeoTools 16.5 (LGPL) http://www.geotools.org/
+2. JTS 1.12 (Eclipse Public License 1.0, Eclipse Distribution License 1.0 (a BSD Style License)) https://www.locationtech.org/
+2. ApachePOI 3.14 (Apache License 2.0) http://poi.apache.org
+3. ApacheCommons 1.3.3 (Apache License 2.0) commons.apache.org/proper/commons-logging/
+4. JACKSON 1.9.7 (Apache License (AL) 2.0, LGPL 2.1)
+5. JSON 20160212 (MIT License)
+6. kabeja 0.4 (Apache Software License 2.0) http://kabeja.sourceforge.net/index.html
+7. kabeja-svg 0.4 (Apache Software License 2.0) http://kabeja.sourceforge.net/index.html
+8. gt-datastore-ngi 1.0.0 (GNU Library or Lesser General Public License version 2.0 (LGPLv2)) http://www.mangosystem.com/
+
 
 Mail
 =====
