@@ -28,7 +28,7 @@ OpenGeoDT 팀
 - 세부 책임 : 부산대학교 <link>http://www.pusan.ac.kr/<br>
 - 연구 책임 : 국토연구원 <link>http://www.krihs.re.kr/
 
-=====
+#
 ### 목차
     
   - [기능 소개](#기능-소개)  
