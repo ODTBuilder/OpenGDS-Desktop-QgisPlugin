@@ -50,7 +50,7 @@ OpenGeoDT 팀
 
 # 오류 네비게이터
 
- ![default](https://user-images.githubusercontent.com/13480171/52613094-fda3f700-2ecf-11e9-821d-f4f77614b23c.gif)
+ ![default](https://user-images.githubusercontent.com/13480171/52613094-fda3f700-2ecf-11e9-821d-f4f77614b23c.gif)<br>
  검수가 완료되면 네비게이터를 통해 오류목록을 볼 수 있습니다. 오류 항목을 클릭하면 해당 위치로 QGIS 맵이 이동하니다. 편집기능은 QGIS 기본기능을 사용합니다. 자세한 내용은 QGIS 홈페이지(https://www.qgis.org/ko/site/) 를 참고하시길 바랍니다.
 
   
