@@ -14,16 +14,15 @@ Version 1.0 February 11th, 2019
 
 검수기능은 3, 4차년도 때 Web기반으로 개발된 공간정보 검수도구인<br>
 OpenGDS(https://github.com/ODTBuilder/OpenGDS-Builder-Javascript)<br>
-Validator(https://github.com/ODTBuilder/Validator)로 개발되었습니다.
+Validator(https://github.com/ODTBuilder/Validator) 로 개발되었습니다.
 
-<br><br>Geoserver 연동 없이 로컬파일을 직접 읽어 검수함으로써 기존 이슈였던 대용량 지원, 고속 검수 및 편집을 지원합니다.<br>
-또한 Web기반이 아니기 때문에 오프라인 환경에서 검수가 가능합니다.<br>
-
+<br>Geoserver 연동 없이 로컬파일을 직접 읽어 검수함으로써 기존 이슈였던 대용량 지원, 고속 검수 및 편집을 지원합니다.<br>
+또한 Web기반이 아니기 때문에 오프라인 환경에서 검수가 가능합니다.
 
 감사합니다.<br>
 공간정보기술(주) 연구소 <link>http://www.git.co.kr/<br>
 OpenGeoDT 팀
-<br>
+
 연구기관
 =====
 - 세부 책임 : 부산대학교 <link>http://www.pusan.ac.kr/<br>
