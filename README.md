@@ -10,7 +10,7 @@ Version 1.0 February 11th, 2019
 (내부 : OpenGeoDT / Mobile)
 
 이 프로젝트는 국토공간정보연구사업 중 [공간정보 SW 활용을 위한 오픈소스 가공기술 개발]과제의 5차년도 연구성과 입니다.<br>
-본 프로젝트는 QGIS 플러그인으로 개발되었고, 배치파일 연동을 통한 공간정보 검수를 지원합니다.<br><br>
+본 프로젝트는 QGIS 플러그인으로 개발되었고, 배치파일 연동을 통한 공간정보 검수를 지원합니다.<br>
 
 검수기능은 3, 4차년도 때 Web기반으로 개발된 공간정보 검수도구인 [OpenGDS](https://github.com/ODTBuilder/OpenGDS-Builder-Javascript)과
 [Validator](https://github.com/ODTBuilder/Validator)로 개발되었습니다.
