@@ -18,6 +18,7 @@ Validator(https://github.com/ODTBuilder/Validator) 로 개발되었습니다.
 
 <br>Geoserver 연동 없이 로컬파일을 직접 읽어 검수함으로써 기존 이슈였던 대용량 지원, 고속 검수 및 편집을 지원합니다.<br>
 또한 Web기반이 아니기 때문에 오프라인 환경에서 검수가 가능합니다.
+자세한 검수 옵션설정은 [GeoDT Online 웹 매뉴얼](https://github.com/ODTBuilder/OpenGDS-Desktop-QgisPlugin/blob/master/GeoDT%20Online%20%EC%9B%B9%EA%B2%80%EC%88%98%20%EB%A7%A4%EB%89%B4%EC%96%BC.hwp)을 참고하시길 바랍니다.
 
 감사합니다.<br>
 공간정보기술(주) 연구소 <link>http://www.git.co.kr/<br>
@@ -47,9 +48,6 @@ OpenGeoDT 팀
 
 - Option 설정
   - '환경설정' 탭의 검수옵션 설정을 기반으로 QGIS 검수 옵션값을 설정함
-
-  - 자세한 검수 옵션설정은 [GeoDT Online 웹 매뉴얼](https://github.com/ODTBuilder/OpenGDS-Desktop-QgisPlugin/blob/master/GeoDT%20Online%20%EC%9B%B9%EA%B2%80%EC%88%98%20%EB%A7%A4%EB%89%B4%EC%96%BC.hwp)을 참고하시길 바랍니다.
-  
   - QGIS Parameter 연동
   ![image](https://user-images.githubusercontent.com/13480171/46720101-83a5fc00-ccaa-11e8-894c-6fb0b044ac20.JPG) 
     - 환경설정창 확대</br>
