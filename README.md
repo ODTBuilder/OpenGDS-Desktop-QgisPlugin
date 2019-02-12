@@ -3,44 +3,49 @@
 
 
 <a name="korean"></a>
-OpenGDS-Desktop-QgisPlugin 
+OpenGDS-Desktop-QgisPlugin (공간자료 편집도구)
 =======
+Version 1.0 February 11th, 2019
+![logo_geodt_desktop](https://user-images.githubusercontent.com/13480171/52611305-435cc180-2ec8-11e9-8366-3937725fedab.png)
+(내부 : OpenGeoDT / Mobile)
+
 이 프로젝트는 국토공간정보연구사업 중 [공간정보 SW 활용을 위한 오픈소스 가공기술 개발]과제의 5차년도 연구성과 입니다.<br>
-본 프로젝트는 QGIS 플러그인으로 개발되었고, 배치파일 연동을 통한 공간정보 검수를 지원합니다.<br>
-배치파일은 3, 4차년도 때 Web기반으로 개발된 공간정보 검수도구인 OpenGDS(https://github.com/ODTBuilder/OpenGDS-Builder-Javascript)와 Validator(https://github.com/ODTBuilder/Validator)로 개발되었습니다.
-<br>Geoserver 연동 없이 로컬파일을 직접 읽어 검수함으로써 기존 이슈였던 대용량 지원 및 고속검수가 가능합니다.<br>
+본 프로젝트는 QGIS 플러그인으로 개발되었고, 배치파일 연동을 통한 공간정보 검수를 지원합니다.<br><br>
+
+검수기능은 3, 4차년도 때 Web기반으로 개발된 공간정보 검수도구인<br>
+OpenGDS(https://github.com/ODTBuilder/OpenGDS-Builder-Javascript)<br>
+Validator(https://github.com/ODTBuilder/Validator)로 개발되었습니다.
+
+<br><br>Geoserver 연동 없이 로컬파일을 직접 읽어 검수함으로써 기존 이슈였던 대용량 지원, 고속 검수 및 편집을 지원합니다.<br>
 또한 Web기반이 아니기 때문에 오프라인 환경에서 검수가 가능합니다.<br>
+
 
 감사합니다.<br>
 공간정보기술(주) 연구소 <link>http://www.git.co.kr/<br>
 OpenGeoDT 팀
-
-
-Getting Started
+<br>
+연구기관
 =====
-### 1. 환경 ###
-- Java - OpenJDK 1.8.0.111 64 bit, JDK 1.8.0_192
-- QGIS - 2.18.13
+- 세부 책임 : 부산대학교 <link>http://www.pusan.ac.kr/<br>
+- 연구 책임 : 국토연구원 <link>http://www.krihs.re.kr/
 
-### 2. 설치 및 연동방법 ### 
-- 설치는 [OpenGDS Desktop QGISPlugIn 매뉴얼](https://github.com/ODTBuilder/OpenGDS-Desktop-QgisPlugin/blob/master/OpenGDS%20Desktop%20QGISPlugIn%20%EB%A7%A4%EB%89%B4%EC%96%BC.docx) 을 참고하시길 바랍니다.
+  #
+  
+  ### 목차
+    
+  - [기능 소개](#기능-소개)  
+    - [환경설정](#환경설정)
+    - [네비게이터](#오류 네비게이터)
+  - [요구 사양](#요구-사양)
+  - [참고 자료](#참고-자료)
+  - [사용 라이브러리](#사용-라이브러리)
+ 
+ 
 
-
-특징
+기능 소개
 =====
--	오프라인 환경에서의 작업<br>
-GeoDT Desktop는 인터넷 연결 없이도 언제 어디서나 데스크톱을 통해 간편하게 사용할 수 있습니다. 사용자는 적합한 필터를 선택하여 편리하게 지리 정보를 관리할 수 있습니다.
+# 환경설정
 
--	쉬운 UI<br>
-GeoDT Desktop은 지도 레이어의 검수 및 편집 기능을 지원하며, 사용자 편의를 고려한 쉽고 간편한 조작으로 사용할 수 있습니다.
-
--	모듈<br>
-GeoDT Desktop은 QGIS Desktop의 확장 플러그인 입니다. QGIS에서 제공하는 기본 기능과 커뮤니티를 통해 공유되는 확장 기능을 자유롭게 조합하여 동시에 사용할 수 있습니다.
-
-
-
-기능
-=====
 - Option 설정
   - '환경설정' 탭의 검수옵션 설정을 기반으로 QGIS 검수 옵션값을 설정함
 
@@ -51,15 +56,31 @@ GeoDT Desktop은 QGIS Desktop의 확장 플러그인 입니다. QGIS에서 제�
     - 환경설정창 확대</br>
   ![2](https://user-images.githubusercontent.com/13480171/52542578-82b1e200-2de4-11e9-916f-46df4ed569e6.png)
 
-  - QGIS 에러 네비게이터
+# 오류 네비게이터
+
+- QGIS 에러 네비게이터
   ![image](https://user-images.githubusercontent.com/13480171/46720108-87d21980-ccaa-11e8-805d-374ebb668161.JPG)
     - 에러 네비게이터창 확대</br>
   ![5](https://user-images.githubusercontent.com/13480171/52467611-7dc51680-2bc9-11e9-9ca5-47994d8ba413.PNG)
-
-연구기관
+  
+요구 사항
 =====
-- 세부 책임 : 부산대학교 <link>http://www.pusan.ac.kr/<br>
-- 연구 책임 : 국토연구원 <link>http://www.krihs.re.kr/
+### 1. 환경 ###
+- Java - OpenJDK 1.8.0.111 64 bit, JDK 1.8.0_192
+- QGIS - 2.18.13
+
+### 2. 설치 및 연동방법 ### 
+- 설치는 [OpenGDS Desktop QGISPlugIn 매뉴얼](https://github.com/ODTBuilder/OpenGDS-Desktop-QgisPlugin/blob/master/OpenGDS%20Desktop%20QGISPlugIn%20%EB%A7%A4%EB%89%B4%EC%96%BC.docx) 을 참고하시길 바랍니다.
+
+참고 자료
+=====
+
+사용 라이브러리
+=====
+
+
+
+
 
 
 Mail
