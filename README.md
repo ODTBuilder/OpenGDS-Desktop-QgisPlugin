@@ -41,14 +41,14 @@ OpenGeoDT 팀
 
 기능 소개
 =====
-# 환경설정
+## 환경설정
 
   ![5](https://user-images.githubusercontent.com/13480171/52615071-2976ab00-2ed7-11e9-8cae-d09272055bb9.PNG)
   '환경설정' 탭의 검수옵션 설정을 기반으로 QGIS 검수 옵션값을 설정합니다.
   <br>검수 옵션 파일(레이어 정의 옵션, 검수 경로 옵션) 은 [GeoDT Web](http://www.geodt.co.kr/pages/web.html) 을 통해 만들 수 있습니다. 
 
 
-# 오류 네비게이터
+## 오류 네비게이터
 
  ![default](https://user-images.githubusercontent.com/13480171/52613094-fda3f700-2ecf-11e9-821d-f4f77614b23c.gif)<br>
  검수가 완료되면 네비게이터를 통해 오류목록을 볼 수 있습니다. 오류 항목을 클릭하면 해당 위치로 QGIS 맵이 이동하니다.
