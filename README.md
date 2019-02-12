@@ -36,7 +36,7 @@ OpenGeoDT 팀
     - [환경설정](#)
     - [오류 네비게이터](#오류-네비게이터)
   - [요구 사양](#요구-사양)
-  - [참고 자료](#참고-자료)ㅏ
+  - [참고 자료](#참고-자료)
   - [사용 라이브러리](#사용-라이브러리)
  
 
@@ -44,19 +44,15 @@ OpenGeoDT 팀
 =====
 # 환경설정
 
-- Option 설정
-  - '환경설정' 탭의 검수옵션 설정을 기반으로 QGIS 검수 옵션값을 설정함
-  - QGIS Parameter 연동
-  ![image](https://user-images.githubusercontent.com/13480171/46720101-83a5fc00-ccaa-11e8-894c-6fb0b044ac20.JPG) 
-    - 환경설정창 확대</br>
-  ![2](https://user-images.githubusercontent.com/13480171/52542578-82b1e200-2de4-11e9-916f-46df4ed569e6.png)
+  ![5](https://user-images.githubusercontent.com/13480171/52614535-4dd18800-2ed5-11e9-9653-3e03730cb98f.PNG)
+  '환경설정' 탭의 검수옵션 설정을 기반으로 QGIS 검수 옵션값을 설정합니다. 검수 옵션 파일(레이어 정의 옵션, 검수 경로 옵션) 은 GeoDT Web(http://www.geodt.co.kr/pages/web.html) 을 통해 만들 수 있습니다. 
+
 
 # 오류 네비게이터
 
-- QGIS 에러 네비게이터
-  ![image](https://user-images.githubusercontent.com/13480171/46720108-87d21980-ccaa-11e8-805d-374ebb668161.JPG)
-    - 에러 네비게이터창 확대</br>
-  ![5](https://user-images.githubusercontent.com/13480171/52467611-7dc51680-2bc9-11e9-9ca5-47994d8ba413.PNG)
+ ![default](https://user-images.githubusercontent.com/13480171/52613094-fda3f700-2ecf-11e9-821d-f4f77614b23c.gif)
+ 검수가 완료되면 네비게이터를 통해 오류목록을 볼 수 있습니다. 오류 항목을 클릭하면 해당 위치로 QGIS 맵이 이동하니다. 편집기능은 QGIS 기본기능을 사용합니다. 자세한 내용은 QGIS 홈페이지(https://www.qgis.org/ko/site/) 를 참고하시길 바랍니다.
+
   
 요구 사항
 =====
@@ -69,13 +65,12 @@ OpenGeoDT 팀
 
 참고 자료
 =====
+- QGIS Tutorials and Tips - Building a Python Plugin(http://www.qgistutorials.com/ko/docs/building_a_python_plugin.html)
 
 사용 라이브러리
 =====
 
-
-
-
+- Validator(https://github.com/ODTBuilder/Validator) 와 동일합니다.
 
 
 Mail
