@@ -53,7 +53,7 @@ OpenGeoDT 팀
  <br>편집기능은 QGIS 기본기능을 사용합니다. 자세한 내용은 [QGIS 홈페이지](https://www.qgis.org/ko/site/) 를 참고하시길 바랍니다.
 
   
-요구 
+요구 사항
 =====
 ### 1. 환경 ###
 - Java - OpenJDK 1.8.0.111 64 bit, JDK 1.8.0_192
