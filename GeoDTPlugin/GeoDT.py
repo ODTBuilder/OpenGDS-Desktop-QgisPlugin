@@ -24,9 +24,12 @@
 from qgis.core import *
 from PyQt4.QtGui import *
 from PyQt4.QtCore import *
+from _winreg import *
+import unicodedata
+import subprocess
+import re
 import os.path
 import os
-import re
 import sys
 reload(sys)
 sys.setdefaultencoding('utf-8')
@@ -36,6 +39,8 @@ from val_dockwidget import ValDockWidget
 import os.path
 
 class GeoDT:
+
+
     """QGIS Plugin Implementation."""
 
     def __init__(self, iface):
@@ -80,7 +85,7 @@ class GeoDT:
         # self.dockwidget = None
         self.dockwidget = ValDockWidget(self.iface)
         self.process = QProcess(self.iface)
-        self.check_java_proc = QProcess(self.iface)
+        # self.check_java_proc = QProcess(self.iface)
         self.baseDir = "C:\\val"
         self.errorDirPath = self.baseDir + '\\error\\'
         self.ini_flag = True
@@ -227,12 +232,18 @@ class GeoDT:
             self.ini_setting()
             self.ini_event()
 
+
             self.dockwidget.closingPlugin.connect(self.onClosePlugin)
             self.ini_flag = False
             # connect to provide cleanup on closing of dockwidget
 
             self.iface.addDockWidget(Qt.RightDockWidgetArea, self.dockwidget)
+
+            # 자바버전 체크함수 실행
+            self.check_java()
             self.dockwidget.show()
+
+
 
     # 이벤트를 추가하는 부분
     def ini_event(self):
@@ -250,8 +261,10 @@ class GeoDT:
             self.dockwidget.log_detail_btn.clicked.connect(self.log_detail_btn_event)
             self.process.readyRead.connect(self.print_log_event)
             self.process.finished.connect(self.process_finished_event)
-            self.check_java_proc.readyRead.connect(self.check_java)
-            self.check_java_proc.start(self.baseDir + "\\check_java.bat")
+            # 자바버전 체크하는 이벤트를 run에 직접 올림
+            # self.check_java_proc.readyRead.connect(self.check_java)
+            # 자바버전 체크 시 배치파일을 이제 사용하지 않으므로 주석처리
+            # self.check_java_proc.start(self.baseDir + "\\check_java.bat")
 
     # 초깃값 셋팅
     def ini_setting(self):
@@ -413,16 +426,16 @@ class GeoDT:
                 f = open(query, 'w')
                 f.write("@echo off\n" +
                         '"%JAVA_HOME%\\bin\\java" ' +
-                        "-Dfile.encoding=utf-8 -Djava.file.encoding=UTF-8 -jar -Xms256m -Xmx2048m " +
+                        "-Dfile.encoding=UTF-8 -Djava.file.encoding=UTF-8 -jar -Xms256m -Xmx2048m " +
                         self.baseDir + "\\val.jar " +
                         # args
                         "--basedir=" + self.baseDir + " " +
-                        "--filetype=" + self.dockwidget.filetype.currentText().encode('utf-8') + " " +
+                        "--filetype=" + self.dockwidget.filetype.currentText().encode('euc-kr') + " " +
                         "--cidx=" + cidx + " " +
-                        "--layerdefpath=" + self.dockwidget.path1.text().encode('utf-8').replace("/", "\\", 2) + " " +
-                        "--valoptpath=" + self.dockwidget.path2.text().encode('utf-8').replace("/", "\\", 2) + " " +
-                        "--objfilepath=" + self.dockwidget.path3.text().encode('utf-8').replace("/", "\\", 2) + " " +
-                        "--crs=" + self.dockwidget.crs.currentText().encode('utf-8') +
+                        "--layerdefpath=" + self.dockwidget.path1.text().encode('euc-kr').replace("/", "\\", 2) + " " +
+                        "--valoptpath=" + self.dockwidget.path2.text().encode('euc-kr').replace("/", "\\", 2) + " " +
+                        "--objfilepath=" + self.dockwidget.path3.text().encode('euc-kr').replace("/", "\\", 2) + " " +
+                        "--crs=" + self.dockwidget.crs.currentText().encode('euc-kr') +
                         "\n\n" +
                         "EXIT\n" +
                         "pause>nul")
@@ -474,17 +487,126 @@ class GeoDT:
         else:
             self.dockwidget.log_detail.setVisible(False)
 
-    # 자바 유효성 검사 이벤트
+     # 자바 유효성 검사 이벤트
+     # 수정 : 이석재
+     # 19.02.22 - 배치파일 없이 버전체크 가능
+
     def check_java(self):
-        output = str(self.check_java_proc.readAllStandardOutput()).decode("utf-8")
-        if "not found." in output:
-            QMessageBox.warning(self.iface.mainWindow(), u'알림', u'자바가 설치되어있지 않습니다.')
-            return
-        if "Java runtime is" in output:
-            version = re.findall("\d+", output)[1]
-            if int(version) < 8:
-                QMessageBox.warning(self.iface.mainWindow(), u'알림', u'자바 ' + version + '버전에 호환되지 않습니다.')
-                return
+
+        roots_hives = {
+            "HKEY_CLASSES_ROOT": HKEY_CLASSES_ROOT,
+            "HKEY_CURRENT_USER": HKEY_CURRENT_USER,
+            "HKEY_LOCAL_MACHINE": HKEY_LOCAL_MACHINE,
+            "HKEY_USERS": HKEY_USERS,
+            "HKEY_PERFORMANCE_DATA": HKEY_PERFORMANCE_DATA,
+            "HKEY_CURRENT_CONFIG": HKEY_CURRENT_CONFIG,
+            "HKEY_DYN_DATA": HKEY_DYN_DATA
+        }
+        '''
+        레지스트리 파일들을 탐색하면서 원하는 파일의 값을 읽어오기 위한 부분
+        '''
+        def parse_key(key):
+            key = key.upper()
+            parts = key.split('\\')
+            root_hive_name = parts[0]
+            root_hive = roots_hives.get(root_hive_name)
+            partial_key = '\\'.join(parts[1:])
+
+            if not root_hive:
+                raise Exception('root hive "{}" was not found'.format(root_hive_name))
+
+            return partial_key, root_hive
+
+        def get_sub_keys(key):
+            partial_key, root_hive = parse_key(key)
+
+            with ConnectRegistry(None, root_hive) as reg:
+                with OpenKey(reg, partial_key) as key_object:
+                    sub_keys_count, values_count, last_modified = QueryInfoKey(key_object)
+                    try:
+                        for i in range(sub_keys_count):
+                            sub_key_name = EnumKey(key_object, i)
+                            yield sub_key_name
+                    except WindowsError:
+                        pass
+
+        def get_values(key, fields):
+            partial_key, root_hive = parse_key(key)
+
+            with ConnectRegistry(None, root_hive) as reg:
+                with OpenKey(reg, partial_key) as key_object:
+                    data = {}
+                    for field in fields:
+                        try:
+                            value, type = QueryValueEx(key_object, field)
+                            data[field] = value
+                        except WindowsError:
+                            pass
+
+                    return data
+
+        def get_value(key, field):
+            values = get_values(key, [field])
+            return values.get(field)
+
+        def join(path, *paths):
+            path = path.strip('/\\')
+            paths = map(lambda x: x.strip('/\\'), paths)
+            paths = list(paths)
+            result = os.path.join(path, *paths)
+            result = result.replace('/', '\\')
+            return result
+        # key 의 경로 아래에 JAVA_HOME 과 Path 레지스트리 파일이 있음
+        key = r'HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\Session Manager'
+        # key 경로를 탐색하면서 Path 와 JAVA_HOME 의 레지스트리 값을 저장, 저장되면 반복문 탈출
+        for sub_key in get_sub_keys(key):
+            path = join(key, sub_key)
+            value = get_values(path, ['Path', 'JAVA_HOME'])
+            if value:
+                break
+        java_home=r'"%JAVA_HOME%\bin"'
+
+        try:
+            global string_java_home
+            global string_path
+            # 가져온 레지스트리 값을 문자열로 변환
+            string_java_home = (unicodedata.normalize('NFKD', value['JAVA_HOME']).encode('ascii', 'ignore'))
+            string_path = (unicodedata.normalize('NFKD', value['Path']).encode('ascii', 'ignore'))
+            #  테스트용 출력. 이 출력 결과는 QGIS 내부 파이썬 콘솔에서 확인가능함
+            #  GeoDT Desktop 실행 전 파이썬 콘솔을 켜 놔야 콘솔창에 값들이 출력되는 것이 확인가능
+            print(string_path)
+            print(string_java_home)
+        except :
+            # 만일 JAVA_HOME 의 값 자체가 없으면 에러 메시지 1 띄움
+            QMessageBox.warning(self.iface.mainWindow(), u'알림', u'JAVA_HOME 환경 변수가 없습니다.')
+            print(string_path)
+            print(string_java_home)
+        if "JAVA_HOME" in string_path:
             pass
+        else:
+            # 만일 Path 에 %JAVA_HOME%/bin 이 추가되있지 않으면 에러 메시지 2 띄움
+            QMessageBox.warning(self.iface.mainWindow(), u'알림', u'PATH '
+                                                                u'환경 변수에 '+java_home+' 을 추가해주세요.')
+
+        # subprocess 모듈을 사용해 경로를 넣고 싶으면 경로 사이에 \ 이 아니라 / 이 들어가야 인식해서
+        # \ 을 / 로 다 바꿔줌
+        string_java_home2=string_java_home.replace('\\','/')
+        # 잘 변환됬는지 테스트 출력
+        print string_java_home2+'/bin/java.exe'
+        # subprocess 모듈을 사용해서 사용자가 JAVA_HOME 경로의 java.exe 버전을 체크
+        # cmd 의 java -version 의 결과값과 동일함
+        r1 = subprocess.check_output([string_java_home2+'/bin/java.exe', '-version'],
+                                     stderr=subprocess.STDOUT)
+        pattern = '\"(\d+\.\d+).*\"'
+        # re 모듈을 사용해서 결과값에서 필요한 버전 부분만 따오고 이를 float로 변환
+        r2 = float(re.search(pattern, r1).groups()[0])
+        # 잘 변환됬는지 테스트 출력
+        print(r2)
+        # 현재 검수 기능이 javac 1.8 버전에서만 작동하기 때문에 버전이 1.8이 아니면
+        if r2==1.8:
+            pass
+        else:
+            # 에러 메시지3 띄움
+            QMessageBox.warning(self.iface.mainWindow(), u'알림', u'javac 버전이 호환되지 않습니다.')
 
     # 현구 들렀다감. 팀장님 나빠요.

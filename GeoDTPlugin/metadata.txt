@@ -7,14 +7,20 @@
 # This file should be included when you package your plugin.# Mandatory items:
 
 [general]
-name=GeoDT_Online
+name=GeoDT_Desktop
 qgisMinimumVersion=2.0
-description=aa
+description=공간정보의 기하학적/논리적구조 및 속성 검수 플러그인
+about=세부기능: 
+       1.zip 형태의 다수, 대용량 파일(Shape, NGI/NDA, DXF) 검수
+       2.40여종의 공간정보 기하학적/논리적 구조 및 속성 오류 검출
+	   3.국가기본도, 임상도, 지하시설물 데이터에 특화된 검수 항목 제공
+       4.검수 결과에 대한 오류 레이어 파일(Shape)생성 및 가시화
+	   5.오류 객체 추적
 version=0.1
 author=공간정보기술(주)
 email=
 
-about=
+
 
 tracker=
 repository=
