@@ -43,7 +43,7 @@ OpenGeoDT 팀
 
   ![5](https://user-images.githubusercontent.com/13480171/52615071-2976ab00-2ed7-11e9-8cae-d09272055bb9.PNG)
    검수를 진행하기 위해서 옵션 값을 설정하고 검수를 요청합니다. '환경설정' 탭의 검수옵션 설정을 기반으로 QGIS 검수 옵션값을 설정합니다.<br>
-   검수 옵션 파일(레이어 정의 옵션, 검수 경로 옵션) 은 [GeoDT Web](http://www.geodt.co.kr/pages/web.html) 을 통해 만들 수 있습니다. 
+   검수 옵션 파일(레이어 정의 옵션, 검수 경로 옵션) 은 [GeoDT Web](http://www.geodt.co.kr/pages/web.html) 을 통해 만들 수 있습니다. GeoDT Web의 사용 방법은 매뉴얼인 [GeoDT_web_user_guide.doc](https://github.com/ODTBuilder/OpenGDS-Desktop-QgisPlugin/blob/master/GeoDT_web_user_guide.docx) 을 참고하시길 바랍니다.
 
 
 ## 오류 객체 추적
@@ -60,7 +60,7 @@ OpenGeoDT 팀
 - QGIS - 2.18.13
 
 ### 2. 설치 및 연동방법 ### 
-- 설치는 [OpenGDS Desktop QGISPlugIn 매뉴얼](https://github.com/ODTBuilder/OpenGDS-Desktop-QgisPlugin/blob/master/OpenGDS%20Desktop%20QGISPlugIn%20%EB%A7%A4%EB%89%B4%EC%96%BC.docx) 을 참고하시길 바랍니다.
+- 설치 및 연동방법은 매뉴얼인 [GeoDT_desktop_user_guide.docx](https://github.com/ODTBuilder/OpenGDS-Desktop-QgisPlugin/blob/master/GeoDT_desktop_user_guide.docx) 을 참고하시길 바랍니다.
 
 참고 자료
 =====
