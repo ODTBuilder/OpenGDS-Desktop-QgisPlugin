@@ -18,6 +18,8 @@ Geoserver 연동 없이 로컬파일을 직접 읽어 검수함으로써 기존 
 또한 Web기반이 아니기 때문에 오프라인 환경에서 검수가 가능합니다.
 자세한 검수 옵션설정은 [GeoDT Online 웹 매뉴얼](https://github.com/ODTBuilder/OpenGDS-Desktop-QgisPlugin/blob/master/GeoDT_web_user_guide.pdf)을 참고하시길 바랍니다.
 
+또한 [GeoDT Desktop 홈페이지](http://www.geodt.co.kr/pages/desktop.html)도 제공하고 있으니 참고바랍니다.
+
 감사합니다.<br>
 공간정보기술(주) 연구소 <link>http://www.git.co.kr/<br>
 OpenGeoDT 팀
