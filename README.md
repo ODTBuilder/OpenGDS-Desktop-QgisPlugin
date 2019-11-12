@@ -8,7 +8,6 @@ OpenGDS-Desktop-QgisPlugin (공간자료 편집도구)
 Version 1.0 February 11th, 2019
 ![logo_geodt_desktop](https://user-images.githubusercontent.com/13480171/52611305-435cc180-2ec8-11e9-8366-3937725fedab.png)
 
-
 이 프로젝트는 국토공간정보연구사업 중 [공간정보 SW 활용을 위한 오픈소스 가공기술 개발]과제의 5차년도 연구성과 입니다.<br>
 
 ### GeoDT Desktop 이란 무엇인가?
@@ -41,12 +40,12 @@ GeoDT Desktop은 QGIS Desktop의 확장 플러그인입니다. QGIS에서 제공
 
 요구 사항
 =====
-### 1. 환경 ###
+## 개발 환경
 - Java - OpenJDK 1.8.0.111 64 bit, JDK 1.8.0_192
 - QGIS - 2.18.13
 
-### 2. 설치 및 연동방법 ### 
-- 설치 및 연동방법은 매뉴얼인 [GeoDT_desktop_user_guide.docx](https://github.com/ODTBuilder/OpenGDS-Desktop-QgisPlugin/blob/master/GeoDT_desktop_user_guide.pdf) 을 참고하시길 바랍니다.
+## 설치 및 연동방법
+- (https://github.com/ODTBuilder/OpenGDS-Desktop-QgisPlugin/blob/master/GeoDT_desktop_user_guide.pdf)
 
 참고 자료
 =====
@@ -72,6 +71,11 @@ GeoDT Desktop은 QGIS Desktop의 확장 플러그인입니다. QGIS에서 제공
 - 연구책임 : 공간정보기술(주) <link>http://www.git.co.kr/<br>
 - 협동기관 : 부산대학교 <link>http://www.pusan.ac.kr/<br>
 - 주관기관 : 국토연구원 <link>http://www.krihs.re.kr/
+
+Mail
+=====
+Developer : SG.LEE
+ghre55@git.co.kr
 
 <a name="english"></a>
 OpenGDS-Desktop-QgisPlugin<br> (Geospatial Information Validation Tool)
@@ -109,10 +113,41 @@ If you want to check the previous inspection result, you can set the 'Parent Fol
 Clicking on the property value of an error in the table shown in ‘Error Layer’ will take you to the location where the error occurred.<br>
 The editing function uses the QGIS basic functions. For more information, please refer to the [QGIS homepage] (https://www.qgis.org/en/site/).<br>
 
+Requirements
+=====
+## Development environment
+- Java - OpenJDK 1.8.0.111 64 bit, JDK 1.8.0_192
+- QGIS - 2.18.13
+
+## Installation and Set up
+- [GeoDT_desktop_user_guide.docx](https://github.com/ODTBuilder/OpenGDS-Desktop-QgisPlugin/blob/master/GeoDT_desktop_user_guide.pdf)
+
+Reference
+=====
+- [QGIS Tutorials and Tips - Building a Python Plugin](http://www.qgistutorials.com/ko/docs/building_a_python_plugin.html)
+
+Library
+=====
+
+- [Validator](https://github.com/ODTBuilder/Validator) 
+
+1. GeoTools 16.5 (LGPL) http://www.geotools.org/
+2. JTS 1.12 (Eclipse Public License 1.0, Eclipse Distribution License 1.0 (a BSD Style License)) https://www.locationtech.org/
+2. ApachePOI 3.14 (Apache License 2.0) http://poi.apache.org
+3. ApacheCommons 1.3.3 (Apache License 2.0) commons.apache.org/proper/commons-logging/
+4. JACKSON 1.9.7 (Apache License (AL) 2.0, LGPL 2.1)
+5. JSON 20160212 (MIT License)
+6. kabeja 0.4 (Apache Software License 2.0) http://kabeja.sourceforge.net/index.html
+7. kabeja-svg 0.4 (Apache Software License 2.0) http://kabeja.sourceforge.net/index.html
+8. gt-datastore-ngi 1.0.0 (GNU Library or Lesser General Public License version 2.0 (LGPLv2)) http://www.mangosystem.com/
+
+Responsibility
+=====
+- Research responsibility : GEOSPATIAL INFORMATION TECHNOLOGY <link>http://www.git.co.kr/<br>
+- Cooperative Organization : Pusan National University <link>http://www.pusan.ac.kr/<br>
+- Organizer : Korea Research Institute for Human Settlements <link>http://www.krihs.re.kr/
+
 Mail
 =====
 Developer : SG.LEE
 ghre55@git.co.kr
-
-
-
