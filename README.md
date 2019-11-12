@@ -13,9 +13,8 @@ Version 1.0 February 11th, 2019
 
 ### GeoDT Desktop 이란 무엇인가?
 GeoDT는 'Geo-Spatial'과 'Design Tool'이라는 단어를 합쳐 만든 이름으로, '지리 정보를 디자인하는 도구'를 의미합니다.<br>
-GeoDT Desktop는 데스크톱 환경에 설치해서 사용하는 QGIS의 플러그인이며 공간 데이터 검수를 위해서는 검수 종류, 옵션, 좌표계 등과 같은 세부 조건을 각 설정해야 합니다.<br>
-검수항목은 연구수행 3차년도 및 4차년도에 개발한 공간자료 검증도구 [Validator](https://github.com/ODTBuilder/Validator)와 동일합니다.<br>
-검수 수행에 관한 자세한 정보는 [사용자 매뉴얼](https://github.com/ODTBuilder/OpenGDS-Desktop-QgisPlugin/blob/master/GeoDT_web_user_guide.pdf) 또는 [GeoDT Desktop 홈페이지](http://www.geodt.co.kr/pages/desktop.html)를 참조하십시오.<br>
+GeoDT Desktop는 데스크톱 환경에 설치해서 사용하는 QGIS의 플러그인이며 공간 데이터 검수를 위해서는 검수 종류, 옵션, 좌표계 등과 같은 세부 조건을 각 설정해야 합니다.<br>검수 세부 조건 설정 및 검수 수행에 관한 자세한 정보는 [사용자 매뉴얼](https://github.com/ODTBuilder/OpenGDS-Desktop-QgisPlugin/blob/master/GeoDT_web_user_guide.pdf) 또는 [GeoDT Desktop 홈페이지](http://www.geodt.co.kr/pages/desktop.html)를 참조하십시오.<br>
+GeoDT Desktop는 데스크톱에서 제공하는 검수항목은 연구수행 3차년도 및 4차년도에 개발한 공간자료 검증도구 [Validator](https://github.com/ODTBuilder/Validator)와 동일합니다.<br>
 
 감사합니다.<br>
 공간정보기술(주) 연구소 <link>http://www.git.co.kr/<br>
