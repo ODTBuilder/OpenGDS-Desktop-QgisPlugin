@@ -12,7 +12,10 @@ Version 1.0 February 11th, 2019
 이 프로젝트는 국토공간정보연구사업 중 [공간정보 SW 활용을 위한 오픈소스 가공기술 개발]과제의 5차년도 연구성과 입니다.<br>
 
 ### GeoDT Desktop 이란 무엇인가?
-GeoDT는 'Geo-Spatial'과 'Design Tool'이라는 단어를 합쳐 만든 이름으로, '지리 정보를 디자인하는 도구'를 의미합니다.<br>GeoDT Desktop는 데스크톱 환경에 설치해서 사용하는 QGIS의 플러그인이며 공간 데이터 검수를 위해서는 검수 종류, 옵션, 좌표계 등과 같은 세부 조건을 각 설정해야 합니다.<br>자세한 정보는 GeoDT 온라인 웹 매뉴얼 또는 GeoDT 데스크탑 홈페이지를 참조하십시오.<br>검수항목은 연구수행 3차년도 및 4차년도에 개발한 공간자료 검증도구 [Validator](https://github.com/ODTBuilder/Validator)와 동일합니다.<br>검수 수행에 관한 자세한 정보는 [사용자 매뉴얼](https://github.com/ODTBuilder/OpenGDS-Desktop-QgisPlugin/blob/master/GeoDT_web_user_guide.pdf) 또는 [GeoDT Desktop 홈페이지](http://www.geodt.co.kr/pages/desktop.html)를 참조하십시오.<br>
+GeoDT는 'Geo-Spatial'과 'Design Tool'이라는 단어를 합쳐 만든 이름으로, '지리 정보를 디자인하는 도구'를 의미합니다.<br>
+GeoDT Desktop는 데스크톱 환경에 설치해서 사용하는 QGIS의 플러그인이며 공간 데이터 검수를 위해서는 검수 종류, 옵션, 좌표계 등과 같은 세부 조건을 각 설정해야 합니다.<br>
+검수항목은 연구수행 3차년도 및 4차년도에 개발한 공간자료 검증도구 [Validator](https://github.com/ODTBuilder/Validator)와 동일합니다.<br>
+검수 수행에 관한 자세한 정보는 [사용자 매뉴얼](https://github.com/ODTBuilder/OpenGDS-Desktop-QgisPlugin/blob/master/GeoDT_web_user_guide.pdf) 또는 [GeoDT Desktop 홈페이지](http://www.geodt.co.kr/pages/desktop.html)를 참조하십시오.<br>
 
 감사합니다.<br>
 공간정보기술(주) 연구소 <link>http://www.git.co.kr/<br>
