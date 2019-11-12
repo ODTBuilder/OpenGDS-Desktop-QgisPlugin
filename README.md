@@ -27,7 +27,7 @@ GeoDT Desktop은 QGIS Desktop의 확장 플러그인입니다. QGIS에서 제공
 대표 기능
 =====
 ### 검수 요청
-![환경설정](https://user-images.githubusercontent.com/20291050/68646175-b7162280-055d-11ea-8fb8-4aa36dbc4949.png)<br>
+![2](https://user-images.githubusercontent.com/20291050/68646314-22f88b00-055e-11ea-8a26-42fe26ab0ecf.png)<br>
 검수를 진행하기 위해서 '환경설정' 탭에서 옵션을 설정하고 검수를 요청합니다.<br>
 ‘레이어 정의 옵션’ 파일과 ‘검수 옵션’ 파일은 GeoDT Web 을 통해 생성하실 수 있습니다. 자세한 내용은 공식 홈페이지(http://www.geodt.co.kr/pages/web.html#layer_setting/ )의 ‘대상 레이어 설정’ 과 ‘검수항목 세부 설정’을 참고해주세요.
 
