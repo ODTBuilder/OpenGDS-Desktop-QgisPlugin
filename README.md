@@ -3,7 +3,7 @@
 
 
 <a name="korean"></a>
-OpenGDS-Desktop-QgisPlugin (공간자료 편집도구)
+OpenGDS-Desktop-QgisPlugin (공간자료 편집ff도구)
 =======
 Version 1.0 February 11th, 2019
 ![logo_geodt_desktop](https://user-images.githubusercontent.com/13480171/52611305-435cc180-2ec8-11e9-8366-3937725fedab.png)
