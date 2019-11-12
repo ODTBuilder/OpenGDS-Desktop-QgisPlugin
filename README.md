@@ -101,7 +101,7 @@ To proceed with the inspection, set the options in the 'Preferences' tab and req
 For more information, please refer to 'Target Layer Settings'and 'Details of Inspection Items'on the official website (http://www.geodt.co.kr/pages/web.html#layer_setting/).<br>
 
 ### Inspection confirmation
-![default](https://user-images.githubusercontent.com/13480171/52613094-fda3f700-2ecf-11e9-821d-f4f77614b23c.gif)<br>
+![preferences](https://user-images.githubusercontent.com/20291050/68645973-13c50d80-055d-11ea-835b-903acd82ac32.png)<br>
 You can check the inspection result by clicking the 'Navigator'tab at the top.<br>
 The test results are stored in a folder in C:/val/error.<br>
 If you want to check the previous inspection result, you can set the 'Parent Folder'and 'Error Layer'of 'Verification Result'to bring up the desired inspection result layer.<br>
