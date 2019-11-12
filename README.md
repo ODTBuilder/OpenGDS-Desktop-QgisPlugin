@@ -28,18 +28,8 @@ OpenGeoDT 팀
 =====
 - 세부 책임 : 부산대학교 <link>http://www.pusan.ac.kr/<br>
 - 연구 책임 : 국토연구원 <link>http://www.krihs.re.kr/
-
-#
-### 목차
-    
-  - [기능 소개](#기능-소개)  
-    - [검수요청](#검수요청)
-    - [오류 객체 추적](#오류-객체-추적)
-  - [요구 사항](#요구-사항) 
-  - [참고 자료](#참고-자료)
-  - [사용 라이브러리](#사용-라이브러리)
  
-기능 소개
+대표 기능
 =====
 ## 검수요청
 
@@ -47,14 +37,12 @@ OpenGeoDT 팀
    검수를 진행하기 위해서 옵션 값을 설정하고 검수를 요청합니다. '환경설정' 탭의 검수옵션 설정을 기반으로 QGIS 검수 옵션값을 설정합니다.<br>
    검수 옵션 파일(레이어 정의 옵션, 검수 경로 옵션) 은 [GeoDT Web](http://www.geodt.co.kr/pages/web.html) 을 통해 만들 수 있습니다. GeoDT Web의 사용 방법은 매뉴얼인 [GeoDT_web_user_guide.doc](https://github.com/ODTBuilder/OpenGDS-Desktop-QgisPlugin/blob/master/GeoDT_web_user_guide.pdf) 을 참고하시길 바랍니다.
 
-
 ## 오류 객체 추적
 
  ![default](https://user-images.githubusercontent.com/13480171/52613094-fda3f700-2ecf-11e9-821d-f4f77614b23c.gif)<br>
  검수가 완료되면 네비게이터를 통해 오류목록을 볼 수 있습니다. 오류 항목을 클릭하면 오류 객체를 추적해 해당 위치로 QGIS 맵이 이동합니다.
  <br>편집기능은 QGIS 기본기능을 사용합니다. 자세한 내용은 [QGIS 홈페이지](https://www.qgis.org/ko/site/) 를 참고하시길 바랍니다.
 
-  
 요구 사항
 =====
 ### 1. 환경 ###
@@ -90,10 +78,13 @@ OpenGDS-Desktop-QgisPlugin<br> (Geospatial Information Validation Tool)
 Version 1.0 February 11th, 2019
 ![logo_geodt_desktop](https://user-images.githubusercontent.com/13480171/52611305-435cc180-2ec8-11e9-8366-3937725fedab.png)
 
+This project is the result of the fifth year research of "Development of open source processing technology using spatial information SW" among national spatial information research projects.
+
 ### What is GeoDT Desktop?
 GeoDT is a combination of the words "Geo-Spatial"and "Design Tool", which means "tool for designing geographic information".<br> 
 GeoDT Desktop is a QGIS plug-in that is installed and used in a desktop environment.<br>  
 In order to perform spatial data inspection, detailed conditions such as inspection type, options, and the coordinate system must be set.<br> 
+See the [GeoDT_Desktoyp_v1.0_en.doc](https://github.com/ODTBuilder/OpenGDS-Desktop-QgisPlugin/blob/master/GeoDT_web_user_guide.pdf) or the [GeoDT desktop homepage](http://www.geodt.co.kr/pages/desktop.html) for more information.<br>
 
 ### GeoDT Desktop features and functions include:
 - Work in the offine environment<br> 
@@ -102,7 +93,10 @@ Users can conveniently manage geographic information by selecting the appropriat
 - Easy UI<br> 
 GeoDT Desktop supports the inspection and editing of map layers and can be used easily for your convenience.<br>
 - Module<br> 
-GeoDT Desktop is an extension plug-in for QGIS Desktop.<br> User can use anycombination of basic functions provided by QGIS and extensions shared by the community at the same time.
+GeoDT Desktop is an extension plug-in for QGIS Desktop.<br> User can use anycombination of basic functions provided by QGIS and extensions shared by the community at the same time.<br> 
+
+OpenGDS-Desktop-QgisPlugin<br> (Geospatial Information Validation Tool)
+=======
 
 
 Mail
