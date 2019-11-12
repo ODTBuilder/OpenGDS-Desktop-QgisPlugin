@@ -96,7 +96,13 @@ GeoDT Desktop is a QGIS plug-in that is installed and used in a desktop environm
 In order to perform spatial data inspection, detailed conditions such as inspection type, options, and the coordinate system must be set.<br> 
 
 ### GeoDT Desktop features and functions include:
-
+- Work in the offine environment
+GeoDT Desktop is easy to use from your desktop anytime and anywhere without an internet connection.<br> 
+Users can conveniently manage geographic information by selecting the appropriate filter.<br>
+- Easy UI
+GeoDT Desktop supports the inspection and editing of map layers and can be used easily for your convenience.<br>
+- Module
+GeoDT Desktop is an extension plug-in for QGIS Desktop.<br> User can use anycombination of basic functions provided by QGIS and extensions shared by the community at the same time.
 
 
 Mail
