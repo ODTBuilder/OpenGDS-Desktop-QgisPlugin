@@ -3,7 +3,7 @@
 
 
 <a name="korean"></a>
-OpenGDS-Desktop-QgisPlugin (공간자료 편집ff도구)
+OpenGDS-Desktop-QgisPlugin (공간자료 편집도구)
 =======
 Version 1.0 February 11th, 2019
 ![logo_geodt_desktop](https://user-images.githubusercontent.com/13480171/52611305-435cc180-2ec8-11e9-8366-3937725fedab.png)
@@ -85,13 +85,13 @@ OpenGeoDT 팀
 
 
 <a name="english"></a>
-OpenGDS-Desktop-QgisPlugin (Geospatial Information Validation Tool)
+OpenGDS-Desktop-QgisPlugin<br> (Geospatial Information Validation Tool)
 =======
 Version 1.0 February 11th, 2019
 ![logo_geodt_desktop](https://user-images.githubusercontent.com/13480171/52611305-435cc180-2ec8-11e9-8366-3937725fedab.png)
 
 ### What is GeoDT Desktop?
-GeoDT is a combination of the words `Geo-Spatial'and `Design Too', which means `tool for designing geographic information'.<br> 
+GeoDT is a combination of the words "Geo-Spatial"and "Design Tool", which means "tool for designing geographic information".<br> 
 GeoDT Desktop is a QGIS plug-in that is installed and used in a desktop environment.<br>  
 In order to perform spatial data inspection, detailed conditions such as inspection type, options, and the coordinate system must be set.<br> 
 
