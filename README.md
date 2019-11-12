@@ -16,25 +16,23 @@ GeoDT는 'Geo-Spatial'과 'Design Tool'이라는 단어를 합쳐 만든 이름�
 GeoDT Desktop는 데스크톱 환경에 설치해서 사용하는 QGIS의 플러그인이며 공간 데이터 검수를 위해서는 검수 종류, 옵션, 좌표계 등과 같은 세부 조건을 각 설정해야 합니다.<br>검수 세부 조건 설정 및 검수 수행에 관한 자세한 정보는 [사용자 매뉴얼](https://github.com/ODTBuilder/OpenGDS-Desktop-QgisPlugin/blob/master/GeoDT_web_user_guide.pdf) 또는 [GeoDT Desktop 홈페이지](http://www.geodt.co.kr/pages/desktop.html)를 참조하십시오.<br>
 GeoDT Desktop는 데스크톱에서 제공하는 검수항목은 연구수행 3차년도 및 4차년도에 개발한 공간자료 검증도구 [Validator](https://github.com/ODTBuilder/Validator)와 동일합니다.<br>
 
-감사합니다.<br>
-공간정보기술(주) 연구소 <link>http://www.git.co.kr/<br>
-OpenGeoDT 팀
-
-연구기관
-=====
-- 세부 책임 : 부산대학교 <link>http://www.pusan.ac.kr/<br>
-- 연구 책임 : 국토연구원 <link>http://www.krihs.re.kr/
+### GeoDT Desktop 기능 및 특징:
+- 오프라인 환경에서의 작업<br> 
+GeoDT Desktop는 인터넷 연결 없이도 언제 어디서나 데스크톱을 통해 간편하게 사용할 수 있습니다.<br> 
+사용자는 적합한 필터를 선택하여 편리하게 지리 정보를 관리할 수 있습니다.<br>
+- 쉬운 UI<br> 
+GeoDT Desktop은 지도 레이어의 검수 및 편집 기능을 지원하며, 사용자 편의를 고려한 쉽고 간편한 조작으로 사용할 수 있습니다.<br>
+- 모율<br> 
+GeoDT Desktop은 QGIS Desktop의 확장 플러그인입니다. QGIS에서 제공하는 기본 기능과 커뮤니티를 통해 공유되는 확장 기능을 자유롭게 조합하여 동시에 사용할 수 있습니다.<br> 
  
 대표 기능
 =====
 ## 검수요청
-
   ![5](https://user-images.githubusercontent.com/13480171/52615071-2976ab00-2ed7-11e9-8cae-d09272055bb9.PNG)
    검수를 진행하기 위해서 옵션 값을 설정하고 검수를 요청합니다. '환경설정' 탭의 검수옵션 설정을 기반으로 QGIS 검수 옵션값을 설정합니다.<br>
    검수 옵션 파일(레이어 정의 옵션, 검수 경로 옵션) 은 [GeoDT Web](http://www.geodt.co.kr/pages/web.html) 을 통해 만들 수 있습니다. GeoDT Web의 사용 방법은 매뉴얼인 [GeoDT_web_user_guide.doc](https://github.com/ODTBuilder/OpenGDS-Desktop-QgisPlugin/blob/master/GeoDT_web_user_guide.pdf) 을 참고하시길 바랍니다.
 
 ## 오류 객체 추적
-
  ![default](https://user-images.githubusercontent.com/13480171/52613094-fda3f700-2ecf-11e9-821d-f4f77614b23c.gif)<br>
  검수가 완료되면 네비게이터를 통해 오류목록을 볼 수 있습니다. 오류 항목을 클릭하면 오류 객체를 추적해 해당 위치로 QGIS 맵이 이동합니다.
  <br>편집기능은 QGIS 기본기능을 사용합니다. 자세한 내용은 [QGIS 홈페이지](https://www.qgis.org/ko/site/) 를 참고하시길 바랍니다.
@@ -67,6 +65,11 @@ OpenGeoDT 팀
 7. kabeja-svg 0.4 (Apache Software License 2.0) http://kabeja.sourceforge.net/index.html
 8. gt-datastore-ngi 1.0.0 (GNU Library or Lesser General Public License version 2.0 (LGPLv2)) http://www.mangosystem.com/
 
+연구기관
+=====
+- 연구책임 : 공간정보기술(주) <link>http://www.git.co.kr/<br>
+- 협동기관 : 부산대학교 <link>http://www.pusan.ac.kr/<br>
+- 주관기관 : 국토연구원 <link>http://www.krihs.re.kr/
 
 <a name="english"></a>
 OpenGDS-Desktop-QgisPlugin<br> (Geospatial Information Validation Tool)
