@@ -10,15 +10,9 @@ Version 1.0 February 11th, 2019
 
 
 이 프로젝트는 국토공간정보연구사업 중 [공간정보 SW 활용을 위한 오픈소스 가공기술 개발]과제의 5차년도 연구성과 입니다.<br>
-본 프로젝트는 QGIS 플러그인으로 개발되었고, 배치파일 연동을 통한 공간정보 검수를 지원합니다.<br>
 
-검수기능은 3, 4차년도 때 Web기반으로 개발된 공간정보 검수도구인 [Validator](https://github.com/ODTBuilder/Validator)로 개발되었습니다.
-
-Geoserver 연동 없이 로컬파일을 직접 읽어 검수함으로써 기존 이슈였던 대용량 지원, 고속 검수 및 편집을 지원합니다.<br>
-또한 Web기반이 아니기 때문에 오프라인 환경에서 검수가 가능합니다.
-자세한 검수 옵션설정은 [GeoDT Online 웹 매뉴얼](https://github.com/ODTBuilder/OpenGDS-Desktop-QgisPlugin/blob/master/GeoDT_web_user_guide.pdf)을 참고하시길 바랍니다.
-
-또한 [GeoDT Desktop 홈페이지](http://www.geodt.co.kr/pages/desktop.html)도 제공하고 있으니 참고바랍니다.
+### GeoDT Desktop 이란 무엇인가?
+GeoDT는 'Geo-Spatial'과 'Design Tool'이라는 단어를 합쳐 만든 이름으로, '지리 정보를 디자인하는 도구'를 의미합니다.<br>GeoDT Desktop는 데스크톱 환경에 설치해서 사용하는 QGIS의 플러그인이며 공간 데이터 검수를 위해서는 검수 종류, 옵션, 좌표계 등과 같은 세부 조건을 각 설정해야 합니다.<br>자세한 정보는 GeoDT 온라인 웹 매뉴얼 또는 GeoDT 데스크탑 홈페이지를 참조하십시오.<br>검수항목은 연구수행 3차년도 및 4차년도에 개발한 공간자료 검증도구 [Validator](https://github.com/ODTBuilder/Validator)와 동일합니다.<br>검수 수행에 관한 자세한 정보는 [사용자 매뉴얼](https://github.com/ODTBuilder/OpenGDS-Desktop-QgisPlugin/blob/master/GeoDT_web_user_guide.pdf) 또는 [GeoDT Desktop 홈페이지](http://www.geodt.co.kr/pages/desktop.html)를 참조하십시오.<br>
 
 감사합니다.<br>
 공간정보기술(주) 연구소 <link>http://www.git.co.kr/<br>
@@ -81,10 +75,7 @@ Version 1.0 February 11th, 2019
 This project is the result of the fifth year research of "Development of open source processing technology using spatial information SW" among national spatial information research projects.
 
 ### What is GeoDT Desktop?
-GeoDT is a combination of the words "Geo-Spatial"and "Design Tool", which means "tool for designing geographic information".<br> 
-GeoDT Desktop is a QGIS plug-in that is installed and used in a desktop environment.<br>  
-In order to perform spatial data inspection, detailed conditions such as inspection type, options, and the coordinate system must be set.<br> 
-See the [GeoDT_Desktoyp_v1.0_en.doc](https://github.com/ODTBuilder/OpenGDS-Desktop-QgisPlugin/blob/master/GeoDT_web_user_guide.pdf) or the [GeoDT desktop homepage](http://www.geodt.co.kr/pages/desktop.html) for more information.<br>
+GeoDT is a combination of the words "Geo-Spatial"and "Design Tool", which means "tool for designing geographic information".<br> GeoDT Desktop is a QGIS plug-in that is installed and used in a desktop environment.<br> In order to perform spatial data inspection, detailed conditions such as inspection type, options, and the coordinate system must be set.<br> See the [GeoDT_Desktoyp_v1.0_en.doc](https://github.com/ODTBuilder/OpenGDS-Desktop-QgisPlugin/blob/master/GeoDT_web_user_guide.pdf) or the [GeoDT desktop homepage](http://www.geodt.co.kr/pages/desktop.html) for more information.<br>
 
 ### GeoDT Desktop features and functions include:
 - Work in the offine environment<br> 
