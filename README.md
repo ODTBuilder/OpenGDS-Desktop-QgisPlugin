@@ -27,15 +27,17 @@ GeoDT Desktop은 QGIS Desktop의 확장 플러그인입니다. QGIS에서 제공
  
 대표 기능
 =====
-## 검수요청
+## 검수 요청
 ![5](https://user-images.githubusercontent.com/13480171/52615071-2976ab00-2ed7-11e9-8cae-d09272055bb9.PNG)
 검수를 진행하기 위해서 '환경설정' 탭에서 옵션을 설정하고 검수를 요청합니다.<br>
 ‘레이어 정의 옵션’ 파일과 ‘검수 옵션’ 파일은 GeoDT Web 을 통해 생성하실 수 있습니다. 자세한 내용은 공식 홈페이지(http://www.geodt.co.kr/pages/web.html#layer_setting/ )의 ‘대상 레이어 설정’ 과 ‘검수항목 세부 설정’을 참고해주세요.
 
-## 오류 객체 추적
+## 검수 확인
  ![default](https://user-images.githubusercontent.com/13480171/52613094-fda3f700-2ecf-11e9-821d-f4f77614b23c.gif)<br>
- 검수가 완료되면 네비게이터를 통해 오류목록을 볼 수 있습니다. 오류 항목을 클릭하면 오류 객체를 추적해 해당 위치로 QGIS 맵이 이동합니다.
- <br>편집기능은 QGIS 기본기능을 사용합니다. 자세한 내용은 [QGIS 홈페이지](https://www.qgis.org/ko/site/) 를 참고하시길 바랍니다.
+상단 ‘Navigator’ 탭을 클릭해 검수 결과를 확인할 수 있습니다. 검수 결과는 C:/val/error 에 폴더로 저장됩니다.<br> 
+이전 검수 결과를 확인하고 싶다면 ‘Verification Result’의 ‘Parent Folder’ 와 ‘Error Layer’를 설정해 원하는 검수 결과 레이어를 불러올 수 있습니다.<br>
+‘Error Layer’에 보이는 표의 오류의 속성값을 클릭하면 해당 오류가 발생한 위치로 이동합니다.<br>
+편집기능은 QGIS 기본기능을 사용합니다. 자세한 내용은 [QGIS 홈페이지](https://www.qgis.org/ko/site/) 를 참고하시길 바랍니다.
 
 요구 사항
 =====
@@ -95,15 +97,17 @@ GeoDT Desktop function
 =====
 ## Running the inspection
 ![5](https://user-images.githubusercontent.com/13480171/52615071-2976ab00-2ed7-11e9-8cae-d09272055bb9.PNG)
-검수를 진행하기 위해서 '환경설정' 탭에서 옵션을 설정하고 검수를 요청합니다.<br>
-`Layer definition option' file and `Review option' file can be created via GeoDT Web. 
-For more information, please refer to `Target Layer Settings'and `Details of Inspection Items'on the official website (http://www.geodt.co.kr/pages/web.html#layer_setting/).<br>
+To proceed with the inspection, set the options in the 'Preferences' tab and request the inspection.<br>
+'Layer definition option' file and 'Review option' file can be created via GeoDT Web. 
+For more information, please refer to 'Target Layer Settings'and 'Details of Inspection Items'on the official website (http://www.geodt.co.kr/pages/web.html#layer_setting/).<br>
 
 ## Inspection confirmation
- ![default](https://user-images.githubusercontent.com/13480171/52613094-fda3f700-2ecf-11e9-821d-f4f77614b23c.gif)<br>
- 검수가 완료되면 네비게이터를 통해 오류목록을 볼 수 있습니다. 오류 항목을 클릭하면 오류 객체를 추적해 해당 위치로 QGIS 맵이 이동합니다.
- <br>편집기능은 QGIS 기본기능을 사용합니다. 자세한 내용은 [QGIS 홈페이지](https://www.qgis.org/ko/site/) 를 참고하시길 바랍니다.
-
+![default](https://user-images.githubusercontent.com/13480171/52613094-fda3f700-2ecf-11e9-821d-f4f77614b23c.gif)<br>
+You can check the inspection result by clicking the 'Navigator'tab at the top.<br>
+The test results are stored in a folder in C:/val/error.<br>
+If you want to check the previous inspection result, you can set the 'Parent Folder'and 'Error Layer'of 'Verification Result'to bring up the desired inspection result layer.<br>
+Clicking on the property value of an error in the table shown in ‘Error Layer’ will take you to the location where the error occurred.<br>
+The editing function uses the QGIS basic functions. For more information, please refer to the [QGIS homepage] (https://www.qgis.org/en/site/).<br>
 
 Mail
 =====
