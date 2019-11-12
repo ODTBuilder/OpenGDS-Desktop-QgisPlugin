@@ -72,11 +72,6 @@ GeoDT Desktop은 QGIS Desktop의 확장 플러그인입니다. QGIS에서 제공
 - 협동기관 : 부산대학교 <link>http://www.pusan.ac.kr/<br>
 - 주관기관 : 국토연구원 <link>http://www.krihs.re.kr/
 
-Mail
-=====
-Developer : SG.LEE
-ghre55@git.co.kr
-
 <a name="english"></a>
 OpenGDS-Desktop-QgisPlugin<br> (Geospatial Information Validation Tool)
 =======
@@ -86,7 +81,7 @@ Version 1.0 February 11th, 2019
 This project is the result of the fifth year research of "Development of open source processing technology using spatial information SW" among national spatial information research projects.
 
 ### What is GeoDT Desktop?
-GeoDT is a combination of the words "Geo-Spatial"and "Design Tool", which means "tool for designing geographic information".<br> GeoDT Desktop is a QGIS plug-in that is installed and used in a desktop environment.<br> In order to perform spatial data inspection, detailed conditions such as inspection type, options, and the coordinate system must be set.<br> See the [GeoDT_Desktop v1.0-User Manual_en.pdf](https://github.com/ODTBuilder/OpenGDS-Desktop-QgisPlugin/blob/master/GeoDT_Desktop v1.0-User Manual_en.pdf) or the [GeoDT desktop homepage](http://www.geodt.co.kr/pages/desktop.html) for more information.<br>
+GeoDT is a combination of the words "Geo-Spatial"and "Design Tool", which means "tool for designing geographic information".<br> GeoDT Desktop is a QGIS plug-in that is installed and used in a desktop environment.<br> In order to perform spatial data inspection, detailed conditions such as inspection type, options, and the coordinate system must be set.<br> See the [GeoDT_Desktop v1.0-User Manual_en.pdf](https://github.com/ODTBuilder/OpenGDS-Desktop-QgisPlugin/blob/master/GeoDT_Desktop_v1.0_User_Manual_en.pdf) or the [GeoDT desktop homepage](http://www.geodt.co.kr/pages/desktop.html) for more information.<br>
 
 ### GeoDT Desktop features and functions include:
 - Work in the offine environment<br> 
@@ -120,7 +115,7 @@ Requirements
 - QGIS - 2.18.13
 
 ## Installation and Set up
-- [GeoDT_Desktop v1.0-User Manual_en.pdf](https://github.com/ODTBuilder/OpenGDS-Desktop-QgisPlugin/blob/master/GeoDT_Desktop v1.0-User Manual_en.pdf)
+- [GeoDT_Desktop_v1.0_User_Manual_en.pdf](https://github.com/ODTBuilder/OpenGDS-Desktop-QgisPlugin/blob/master/GeoDT_Desktop_v1.0_User_Manual_en.pdf)
 
 Reference
 =====
