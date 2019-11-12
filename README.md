@@ -72,6 +72,10 @@ GeoDT Desktop은 QGIS Desktop의 확장 플러그인입니다. QGIS에서 제공
 - 협동기관 : 부산대학교 <link>http://www.pusan.ac.kr/<br>
 - 주관기관 : 국토연구원 <link>http://www.krihs.re.kr/
 
+<br>
+<br>
+<br>
+
 <a name="english"></a>
 OpenGDS-Desktop-QgisPlugin<br> (Geospatial Information Validation Tool)
 =======
