@@ -86,7 +86,7 @@ Version 1.0 February 11th, 2019
 This project is the result of the fifth year research of "Development of open source processing technology using spatial information SW" among national spatial information research projects.
 
 ### What is GeoDT Desktop?
-GeoDT is a combination of the words "Geo-Spatial"and "Design Tool", which means "tool for designing geographic information".<br> GeoDT Desktop is a QGIS plug-in that is installed and used in a desktop environment.<br> In order to perform spatial data inspection, detailed conditions such as inspection type, options, and the coordinate system must be set.<br> See the [GeoDT_Desktoyp_v1.0_en.doc](https://github.com/ODTBuilder/OpenGDS-Desktop-QgisPlugin/blob/master/GeoDT_web_user_guide.pdf) or the [GeoDT desktop homepage](http://www.geodt.co.kr/pages/desktop.html) for more information.<br>
+GeoDT is a combination of the words "Geo-Spatial"and "Design Tool", which means "tool for designing geographic information".<br> GeoDT Desktop is a QGIS plug-in that is installed and used in a desktop environment.<br> In order to perform spatial data inspection, detailed conditions such as inspection type, options, and the coordinate system must be set.<br> See the [GeoDT_Desktop v1.0-User Manual_en.pdf](https://github.com/ODTBuilder/OpenGDS-Desktop-QgisPlugin/blob/master/GeoDT_Desktop v1.0-User Manual_en.pdf) or the [GeoDT desktop homepage](http://www.geodt.co.kr/pages/desktop.html) for more information.<br>
 
 ### GeoDT Desktop features and functions include:
 - Work in the offine environment<br> 
@@ -120,7 +120,7 @@ Requirements
 - QGIS - 2.18.13
 
 ## Installation and Set up
-- [GeoDT_desktop_user_guide.docx](https://github.com/ODTBuilder/OpenGDS-Desktop-QgisPlugin/blob/master/GeoDT_desktop_user_guide.pdf)
+- [GeoDT_Desktop v1.0-User Manual_en.pdf](https://github.com/ODTBuilder/OpenGDS-Desktop-QgisPlugin/blob/master/GeoDT_Desktop v1.0-User Manual_en.pdf)
 
 Reference
 =====
