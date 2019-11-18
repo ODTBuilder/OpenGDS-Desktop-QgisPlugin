@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>532</width>
+    <width>394</width>
     <height>901</height>
    </rect>
   </property>
@@ -338,330 +338,6 @@ QMainWindow::separator:hover
   </property>
   <widget class="QWidget" name="dockWidgetContents">
    <layout class="QGridLayout" name="gridLayout">
-    <item row="0" column="0">
-     <widget class="QTabWidget" name="tabWidget">
-      <property name="styleSheet">
-       <string notr="true">QGroupBox {
-    background-color: #ffffff;
-    border: 1px solid #d8d8d8;
-    border-top-style: solid;
-    border-right-style: solid;
-    border-bottom-style: solid;
-    border-left-style: solid;
-    border-radius: 0;
-    margin-top: 3ex;  
-}
-
-QGroupBox::title {
-     subcontrol-origin: margin;
-    subcontrol-position: top left;  
-    padding: 0 6px;
-	color: #335095;
-    background-color:#ffffff;
-}
-
-QPushButton {
-    background-color: ;
-	border:1px solid #999;
-    border-width: 1px;
-    border-radius: 2px;
-       min-width: 2em;
-    padding: 6px;
-}
-
-QPushButton::hover {
-    background-color:#dde3f4;
-    border-color: #91aee0;
-}
-
-QPushButton::disabled {
-    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,stop: 0 #ffffff22, stop: 1.0 #9b9bff22);
-    border-style: dotted;
-    border-width: 1px;
-    border-radius: 5px;
-    border-color: #99999933;
-    min-width: 2em;
-    padding: 6px;
-    color:#33333;
-}
-
-
-
-
-QLineEdit {
-    color: #333;
-	padding:2px 5px;
-    background-color: #fff;
-    selection-color: #335095;
-	selection-border: 1px solid #90a5dc;
-    selection-background-color: #e9eefb;
-    border: 1px solid #c5c5c5; /* border top color defined after QAbstractSpinBox, QLineEdit and QComboBox */
-    border-radius: 2px;
-}
- 
-QLineEdit:read-only {
-       background-color: #ccc;
-}
-
-QTextEdit, QListView {
-    background-color: white;
-    border: 1px solid gray;
-    background-attachment: scroll;
-}
-
-
-</string>
-      </property>
-      <property name="currentIndex">
-       <number>1</number>
-      </property>
-      <widget class="QWidget" name="tab">
-       <attribute name="title">
-        <string>환경 설정</string>
-       </attribute>
-       <layout class="QGridLayout" name="gridLayout_4">
-        <item row="0" column="0">
-         <widget class="QGroupBox" name="groupBox">
-          <property name="styleSheet">
-           <string notr="true">background-color: rgb(255, 255, 255);</string>
-          </property>
-          <property name="title">
-           <string>옵션 설정</string>
-          </property>
-          <layout class="QGridLayout" name="gridLayout_2">
-           <item row="4" column="0" colspan="3">
-            <widget class="QGroupBox" name="groupBox_5">
-             <property name="title">
-              <string>검수 대상 파일 경로</string>
-             </property>
-             <layout class="QGridLayout" name="gridLayout_8">
-              <item row="0" column="0">
-               <widget class="QLineEdit" name="path3">
-                <property name="readOnly">
-                 <bool>true</bool>
-                </property>
-               </widget>
-              </item>
-              <item row="0" column="1">
-               <widget class="QPushButton" name="load3">
-                <property name="text">
-                 <string>불러오기</string>
-                </property>
-               </widget>
-              </item>
-             </layout>
-            </widget>
-           </item>
-           <item row="1" column="0" colspan="3">
-            <widget class="QGroupBox" name="groupBox_9">
-             <property name="title">
-              <string>파일 형식</string>
-             </property>
-             <property name="alignment">
-              <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
-             </property>
-             <layout class="QHBoxLayout" name="horizontalLayout">
-              <item>
-               <widget class="QComboBox" name="filetype"/>
-              </item>
-             </layout>
-            </widget>
-           </item>
-           <item row="0" column="0" colspan="3">
-            <widget class="QGroupBox" name="groupBox_2">
-             <property name="title">
-              <string>검수 종류</string>
-             </property>
-             <layout class="QGridLayout" name="gridLayout_3">
-              <item row="0" column="1">
-               <widget class="QComboBox" name="cidx"/>
-              </item>
-             </layout>
-            </widget>
-           </item>
-           <item row="5" column="0" colspan="3">
-            <widget class="QGroupBox" name="groupBox_3">
-             <property name="title">
-              <string>좌표계</string>
-             </property>
-             <layout class="QGridLayout" name="gridLayout_9">
-              <item row="0" column="0">
-               <widget class="QComboBox" name="crs"/>
-              </item>
-             </layout>
-            </widget>
-           </item>
-           <item row="3" column="0" colspan="3">
-            <widget class="QGroupBox" name="groupBox_6">
-             <property name="title">
-              <string>검수 옵션 경로</string>
-             </property>
-             <layout class="QGridLayout" name="gridLayout_7">
-              <item row="0" column="0">
-               <widget class="QLineEdit" name="path2">
-                <property name="readOnly">
-                 <bool>true</bool>
-                </property>
-               </widget>
-              </item>
-              <item row="0" column="1">
-               <widget class="QPushButton" name="load2">
-                <property name="text">
-                 <string>불러오기</string>
-                </property>
-               </widget>
-              </item>
-             </layout>
-            </widget>
-           </item>
-           <item row="2" column="0" colspan="3">
-            <widget class="QGroupBox" name="groupBox_7">
-             <property name="title">
-              <string>레이어 정의 옵션 경로</string>
-             </property>
-             <layout class="QGridLayout" name="gridLayout_6">
-              <item row="0" column="0">
-               <widget class="QLineEdit" name="path1">
-                <property name="readOnly">
-                 <bool>true</bool>
-                </property>
-               </widget>
-              </item>
-              <item row="0" column="1">
-               <widget class="QPushButton" name="load1">
-                <property name="text">
-                 <string>불러오기</string>
-                </property>
-               </widget>
-              </item>
-             </layout>
-            </widget>
-           </item>
-           <item row="7" column="0">
-            <spacer name="horizontalSpacer">
-             <property name="orientation">
-              <enum>Qt::Horizontal</enum>
-             </property>
-             <property name="sizeHint" stdset="0">
-              <size>
-               <width>40</width>
-               <height>20</height>
-              </size>
-             </property>
-            </spacer>
-           </item>
-           <item row="7" column="2">
-            <widget class="QPushButton" name="close_btn">
-             <property name="text">
-              <string>닫기</string>
-             </property>
-            </widget>
-           </item>
-           <item row="7" column="1">
-            <widget class="QPushButton" name="go_btn">
-             <property name="text">
-              <string>실행</string>
-             </property>
-            </widget>
-           </item>
-          </layout>
-         </widget>
-        </item>
-       </layout>
-      </widget>
-      <widget class="QWidget" name="tab_2">
-       <attribute name="title">
-        <string>네비게이터</string>
-       </attribute>
-       <layout class="QGridLayout" name="gridLayout_5">
-        <item row="0" column="0" colspan="2">
-         <widget class="QGroupBox" name="groupBox_4">
-          <property name="styleSheet">
-           <string notr="true">background-color: rgb(255, 255, 255);</string>
-          </property>
-          <property name="title">
-           <string>검수 결과</string>
-          </property>
-          <layout class="QGridLayout" name="gridLayout_10">
-           <item row="0" column="1">
-            <widget class="QComboBox" name="filelist1"/>
-           </item>
-           <item row="1" column="0">
-            <widget class="QLabel" name="label_2">
-             <property name="text">
-              <string>SHP 파일</string>
-             </property>
-            </widget>
-           </item>
-           <item row="1" column="1">
-            <widget class="QComboBox" name="filelist2"/>
-           </item>
-           <item row="0" column="0">
-            <widget class="QLabel" name="label">
-             <property name="text">
-              <string>상위폴더</string>
-             </property>
-            </widget>
-           </item>
-           <item row="2" column="0" colspan="2">
-            <widget class="QTableWidget" name="tableWidget">
-             <property name="enabled">
-              <bool>true</bool>
-             </property>
-             <property name="editTriggers">
-              <set>QAbstractItemView::NoEditTriggers</set>
-             </property>
-             <property name="alternatingRowColors">
-              <bool>true</bool>
-             </property>
-             <property name="selectionMode">
-              <enum>QAbstractItemView::SingleSelection</enum>
-             </property>
-             <attribute name="horizontalHeaderStretchLastSection">
-              <bool>true</bool>
-             </attribute>
-            </widget>
-           </item>
-          </layout>
-         </widget>
-        </item>
-        <item row="1" column="0">
-         <spacer name="horizontalSpacer_2">
-          <property name="orientation">
-           <enum>Qt::Horizontal</enum>
-          </property>
-          <property name="sizeHint" stdset="0">
-           <size>
-            <width>40</width>
-            <height>20</height>
-           </size>
-          </property>
-         </spacer>
-        </item>
-        <item row="1" column="1">
-         <widget class="QPushButton" name="close_btn_2">
-          <property name="text">
-           <string>닫기</string>
-          </property>
-         </widget>
-        </item>
-       </layout>
-      </widget>
-     </widget>
-    </item>
-    <item row="6" column="0">
-     <spacer name="verticalSpacer">
-      <property name="orientation">
-       <enum>Qt::Vertical</enum>
-      </property>
-      <property name="sizeHint" stdset="0">
-       <size>
-        <width>100</width>
-        <height>500</height>
-       </size>
-      </property>
-     </spacer>
-    </item>
     <item row="5" column="0">
      <widget class="QGroupBox" name="groupBox_8">
       <property name="sizePolicy">
@@ -750,6 +426,351 @@ QTextEdit, QListView {
         </widget>
        </item>
       </layout>
+     </widget>
+    </item>
+    <item row="6" column="0">
+     <spacer name="verticalSpacer">
+      <property name="orientation">
+       <enum>Qt::Vertical</enum>
+      </property>
+      <property name="sizeHint" stdset="0">
+       <size>
+        <width>100</width>
+        <height>500</height>
+       </size>
+      </property>
+     </spacer>
+    </item>
+    <item row="0" column="0">
+     <widget class="QTabWidget" name="tabWidget">
+      <property name="styleSheet">
+       <string notr="true">QGroupBox {
+    background-color: #ffffff;
+    border: 1px solid #d8d8d8;
+    border-top-style: solid;
+    border-right-style: solid;
+    border-bottom-style: solid;
+    border-left-style: solid;
+    border-radius: 0;
+    margin-top: 3ex;  
+}
+
+QGroupBox::title {
+     subcontrol-origin: margin;
+    subcontrol-position: top left;  
+    padding: 0 6px;
+	color: #335095;
+    background-color:#ffffff;
+}
+
+QPushButton {
+    background-color: ;
+	border:1px solid #999;
+    border-width: 1px;
+    border-radius: 2px;
+       min-width: 2em;
+    padding: 6px;
+}
+
+QPushButton::hover {
+    background-color:#dde3f4;
+    border-color: #91aee0;
+}
+
+QPushButton::disabled {
+    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,stop: 0 #ffffff22, stop: 1.0 #9b9bff22);
+    border-style: dotted;
+    border-width: 1px;
+    border-radius: 5px;
+    border-color: #99999933;
+    min-width: 2em;
+    padding: 6px;
+    color:#33333;
+}
+
+
+
+
+QLineEdit {
+    color: #333;
+	padding:2px 5px;
+    background-color: #fff;
+    selection-color: #335095;
+	selection-border: 1px solid #90a5dc;
+    selection-background-color: #e9eefb;
+    border: 1px solid #c5c5c5; /* border top color defined after QAbstractSpinBox, QLineEdit and QComboBox */
+    border-radius: 2px;
+}
+ 
+QLineEdit:read-only {
+       background-color: #ccc;
+}
+
+QTextEdit, QListView {
+    background-color: white;
+    border: 1px solid gray;
+    background-attachment: scroll;
+}
+
+
+</string>
+      </property>
+      <property name="currentIndex">
+       <number>0</number>
+      </property>
+      <widget class="QWidget" name="tab">
+       <attribute name="title">
+        <string>환경 설정</string>
+       </attribute>
+       <layout class="QGridLayout" name="gridLayout_4">
+        <item row="1" column="0">
+         <widget class="QGroupBox" name="groupBox">
+          <property name="styleSheet">
+           <string notr="true">background-color: rgb(255, 255, 255);</string>
+          </property>
+          <property name="title">
+           <string>옵션 설정</string>
+          </property>
+          <layout class="QGridLayout" name="gridLayout_2">
+           <item row="4" column="0" colspan="3">
+            <widget class="QGroupBox" name="groupBox_5">
+             <property name="title">
+              <string>검수 대상 파일 경로</string>
+             </property>
+             <layout class="QGridLayout" name="gridLayout_8">
+              <item row="0" column="0">
+               <widget class="QLineEdit" name="path3">
+                <property name="readOnly">
+                 <bool>true</bool>
+                </property>
+               </widget>
+              </item>
+              <item row="0" column="1">
+               <widget class="QPushButton" name="load3">
+                <property name="text">
+                 <string>불러오기</string>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </widget>
+           </item>
+           <item row="7" column="0">
+            <spacer name="horizontalSpacer">
+             <property name="orientation">
+              <enum>Qt::Horizontal</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>40</width>
+               <height>20</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+           <item row="7" column="2">
+            <widget class="QPushButton" name="close_btn">
+             <property name="text">
+              <string>닫기</string>
+             </property>
+            </widget>
+           </item>
+           <item row="7" column="1">
+            <widget class="QPushButton" name="go_btn">
+             <property name="text">
+              <string>실행</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="0" colspan="3">
+            <widget class="QGroupBox" name="groupBox_2">
+             <property name="title">
+              <string>검수 종류</string>
+             </property>
+             <layout class="QGridLayout" name="gridLayout_3">
+              <item row="0" column="1">
+               <widget class="QComboBox" name="cidx"/>
+              </item>
+             </layout>
+            </widget>
+           </item>
+           <item row="5" column="0" colspan="3">
+            <widget class="QGroupBox" name="groupBox_3">
+             <property name="title">
+              <string>좌표계</string>
+             </property>
+             <layout class="QGridLayout" name="gridLayout_9">
+              <item row="0" column="0">
+               <widget class="QComboBox" name="crs"/>
+              </item>
+             </layout>
+            </widget>
+           </item>
+           <item row="1" column="0" colspan="3">
+            <widget class="QGroupBox" name="groupBox_9">
+             <property name="title">
+              <string>파일 형식</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+             </property>
+             <layout class="QHBoxLayout" name="horizontalLayout">
+              <item>
+               <widget class="QComboBox" name="filetype"/>
+              </item>
+             </layout>
+            </widget>
+           </item>
+           <item row="2" column="0" colspan="3">
+            <widget class="QGroupBox" name="groupBox_7">
+             <property name="title">
+              <string>레이어 정의 옵션 경로</string>
+             </property>
+             <layout class="QGridLayout" name="gridLayout_6">
+              <item row="0" column="0">
+               <widget class="QLineEdit" name="path1">
+                <property name="readOnly">
+                 <bool>true</bool>
+                </property>
+               </widget>
+              </item>
+              <item row="0" column="1">
+               <widget class="QPushButton" name="load1">
+                <property name="text">
+                 <string>불러오기</string>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </widget>
+           </item>
+           <item row="3" column="0" colspan="3">
+            <widget class="QGroupBox" name="groupBox_6">
+             <property name="title">
+              <string>검수 옵션 경로</string>
+             </property>
+             <layout class="QGridLayout" name="gridLayout_7">
+              <item row="0" column="0">
+               <widget class="QLineEdit" name="path2">
+                <property name="readOnly">
+                 <bool>true</bool>
+                </property>
+               </widget>
+              </item>
+              <item row="0" column="1">
+               <widget class="QPushButton" name="load2">
+                <property name="text">
+                 <string>불러오기</string>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item row="0" column="0">
+         <layout class="QHBoxLayout" name="horizontalLayout_11">
+          <item>
+           <widget class="QRadioButton" name="radioButton_kor">
+            <property name="text">
+             <string>한국어(Kor)</string>
+            </property>
+            <property name="checked">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QRadioButton" name="radioButton_eng">
+            <property name="text">
+             <string>영어(English)</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="tab_2">
+       <attribute name="title">
+        <string>네비게이터</string>
+       </attribute>
+       <layout class="QGridLayout" name="gridLayout_5">
+        <item row="0" column="0" colspan="2">
+         <widget class="QGroupBox" name="groupBox_4">
+          <property name="styleSheet">
+           <string notr="true">background-color: rgb(255, 255, 255);</string>
+          </property>
+          <property name="title">
+           <string>검수 결과</string>
+          </property>
+          <layout class="QGridLayout" name="gridLayout_10">
+           <item row="0" column="1">
+            <widget class="QComboBox" name="filelist1"/>
+           </item>
+           <item row="1" column="0">
+            <widget class="QLabel" name="label_2">
+             <property name="text">
+              <string>SHP 파일</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="1">
+            <widget class="QComboBox" name="filelist2"/>
+           </item>
+           <item row="0" column="0">
+            <widget class="QLabel" name="label">
+             <property name="text">
+              <string>상위폴더</string>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="0" colspan="2">
+            <widget class="QTableWidget" name="tableWidget">
+             <property name="enabled">
+              <bool>true</bool>
+             </property>
+             <property name="editTriggers">
+              <set>QAbstractItemView::NoEditTriggers</set>
+             </property>
+             <property name="alternatingRowColors">
+              <bool>true</bool>
+             </property>
+             <property name="selectionMode">
+              <enum>QAbstractItemView::SingleSelection</enum>
+             </property>
+             <attribute name="horizontalHeaderStretchLastSection">
+              <bool>true</bool>
+             </attribute>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item row="1" column="0">
+         <spacer name="horizontalSpacer_2">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>40</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item row="1" column="1">
+         <widget class="QPushButton" name="close_btn_2">
+          <property name="text">
+           <string>닫기</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
      </widget>
     </item>
    </layout>

@@ -89,7 +89,7 @@ class GeoDT:
         self.baseDir = "C:\\val"
         self.errorDirPath = self.baseDir + '\\error\\'
         self.ini_flag = True
-
+        self.lang_type = 'ko'
 
     # noinspection PyMethodMayBeStatic
     def tr(self, message):
@@ -259,6 +259,8 @@ class GeoDT:
             self.dockwidget.load3.clicked.connect(self.load_val_target_event)
             self.dockwidget.cidx.currentIndexChanged.connect(self.change_filetype)
             self.dockwidget.log_detail_btn.clicked.connect(self.log_detail_btn_event)
+            self.dockwidget.radioButton_kor.toggled.connect(self.onToggledEngToKor)
+            self.dockwidget.radioButton_eng.toggled.connect(self.onToggledKorToEng)
             self.process.readyRead.connect(self.print_log_event)
             self.process.finished.connect(self.process_finished_event)
             # 자바버전 체크하는 이벤트를 run에 직접 올림
@@ -268,12 +270,13 @@ class GeoDT:
 
     # 초깃값 셋팅
     def ini_setting(self):
+
         if self.ini_flag:
             self.dockwidget.tabWidget.setCurrentIndex(0)
-            self.dockwidget.cidx.addItems([u'수치지도 1.0', u'수치지도 2.0', u'지하시설물 1.0', u'지하시설물 2.0', u'임상도'])
+            self.dockwidget.cidx.addItems([u'오픈디지털맵',u'수치지도 1.0', u'수치지도 2.0', u'지하시설물 1.0', u'지하시설물 2.0', u'임상도'])
             self.dockwidget.cidx.setCurrentIndex(1)  # 수치지도 2.0 기본
             self.dockwidget.filetype.addItems([u'shp', u'ngi'])
-            self.dockwidget.crs.addItems([u'EPSG:5186', u'EPSG:5187'])
+            self.dockwidget.crs.addItems([u'EPSG:4326', u'EPSG:3857', u'EPSG:5179', u'EPSG:5186', u'EPSG:5187'])
             self.dockwidget.log_detail.setVisible(False)
         self.dockwidget.filelist1.clear()
         self.dockwidget.filelist2.clear()
@@ -286,6 +289,66 @@ class GeoDT:
         fileList1.reverse()
         self.dockwidget.filelist1.addItems(fileList1)
         self.navi_change_directory_event()
+
+    def onToggledKorToEng(self, _checked):
+        self.lang_type = 'en'
+        self.dockwidget.cidx.clear()
+        self.dockwidget.tabWidget.setTabText(0, u'Preferences')
+        self.dockwidget.tabWidget.setTabText(1, u'Navigator')
+        self.dockwidget.groupBox.setTitle(u'Option Setting')
+        self.dockwidget.groupBox_2.setTitle(u'Validation Type')
+        self.dockwidget.groupBox_9.setTitle(u'File Type')
+        self.dockwidget.groupBox_7.setTitle(u'Layer Definition Option Path(Path)')
+        self.dockwidget.groupBox_6.setTitle(u'Validation Option Path(Path)')
+        self.dockwidget.groupBox_5.setTitle(u'Validation Target File Path')
+        self.dockwidget.groupBox_3.setTitle(u'Coordinate System')
+        self.dockwidget.go_btn.setText(u'Run')
+        self.dockwidget.close_btn.setText(u'Close')
+        self.dockwidget.groupBox_8.setTitle(u'Validation Work')
+        self.dockwidget.groupBox_10.setTitle(u'Log')
+        self.dockwidget.logLabel.setText(u'Status : Pending')
+        self.dockwidget.log_detail_btn.setText(u'Detail')
+        self.dockwidget.groupBox_4.setTitle(u'Verification Result')
+        self.dockwidget.label.setText(u'Parent Folder')
+        self.dockwidget.label_2.setText(u'Error Layer')
+        self.dockwidget.close_btn_2.setText(u'Close')
+        self.dockwidget.load1.setText(u'File')
+        self.dockwidget.load2.setText(u'File')
+        self.dockwidget.load3.setText(u'File')
+
+        self.dockwidget.cidx.addItems(
+            [u'Open Digital Map', u'Digital Map Exact position', u'Digital Map Structure', u'Underground Facilities Exact position',
+             u'Underground Facilities Structure', u'Forest type Map'])
+        self.dockwidget.cidx.setCurrentIndex(1)
+
+    def onToggledEngToKor(self, _checked):
+        self.lang_type = 'ko'
+        self.dockwidget.cidx.clear()
+        self.dockwidget.tabWidget.setTabText(0, u'환경설정')
+        self.dockwidget.tabWidget.setTabText(1, u'네비게이터')
+        self.dockwidget.groupBox.setTitle(u'옵션 설정')
+        self.dockwidget.groupBox_2.setTitle(u'검수 종류')
+        self.dockwidget.groupBox_9.setTitle(u'파일 형식')
+        self.dockwidget.groupBox_7.setTitle(u'레이어 정의 옵션 경로')
+        self.dockwidget.groupBox_6.setTitle(u'검수 옵션 경로')
+        self.dockwidget.groupBox_5.setTitle(u'검수 대상 파일 경로')
+        self.dockwidget.groupBox_3.setTitle(u'좌표계')
+        self.dockwidget.go_btn.setText(u'실행')
+        self.dockwidget.close_btn.setText(u'닫기')
+        self.dockwidget.groupBox_8.setTitle(u'검수 작업')
+        self.dockwidget.groupBox_10.setTitle(u'로그')
+        self.dockwidget.logLabel.setText(u'상태 : 대기 중')
+        self.dockwidget.log_detail_btn.setText(u'자세히')
+        self.dockwidget.groupBox_4.setTitle(u'검수 결과')
+        self.dockwidget.label.setText(u'상위 폴더')
+        self.dockwidget.label_2.setText(u'SHP 파일')
+        self.dockwidget.close_btn_2.setText(u'닫기')
+        self.dockwidget.load1.setText(u'불러오기')
+        self.dockwidget.load2.setText(u'불러오기')
+        self.dockwidget.load3.setText(u'불러오기')
+
+        self.dockwidget.cidx.addItems([u'오픈디지털맵', u'수치지도 1.0', u'수치지도 2.0', u'지하시설물 1.0', u'지하시설물 2.0', u'임상도'])
+        self.dockwidget.cidx.setCurrentIndex(1)
 
     # 네비게이션 탭 > 폴더 변경 시 이벤트
     def navi_change_directory_event(self):
@@ -393,12 +456,12 @@ class GeoDT:
 
     # 검수 대상 파일 열기 이벤트
     def load_val_target_event(self):
-        filename = QFileDialog.getOpenFileName(self.dockwidget, u"검수 대상 파일 경로", self.baseDir, '*.*')
+        filename = QFileDialog.getExistingDirectory(self.dockwidget, u"검수 대상 파일 경로", self.baseDir)
         self.dockwidget.path3.setText(filename)
 
     # 파일 형식 변경 이벤트
     def change_filetype(self):
-        filetypelist = [[u'dxf'] ,[u'shp', u'ngi'], [u'dxf'], [u'shp'], [u'shp']]
+        filetypelist = [[u'shp'], [u'dxf'] ,[u'shp', u'ngi'], [u'dxf'], [u'shp'], [u'shp']]
         self.dockwidget.filetype.clear()
         self.dockwidget.filetype.addItems(filetypelist[int(self.dockwidget.cidx.currentIndex())])
 
@@ -416,9 +479,11 @@ class GeoDT:
                 return
 
         else:
-            cidx = str(self.dockwidget.cidx.currentIndex() + 1)
+            cidx = str(self.dockwidget.cidx.currentIndex())
+            langtype = None
+
             try:
-                self.dockwidget.logLabel.setText("검수 작업을 진행합니다.".decode("utf-8"))
+                self.dockwidget.logLabel.setText("Verification is in progress....".decode("utf-8"))
                 query = self.baseDir + "\\start.bat"
                 # 배치 파일 내용 삭제
                 open(query, 'w').close()
@@ -432,10 +497,11 @@ class GeoDT:
                         "--basedir=" + self.baseDir + " " +
                         "--filetype=" + self.dockwidget.filetype.currentText().encode('euc-kr') + " " +
                         "--cidx=" + cidx + " " +
-                        "--layerdefpath=" + self.dockwidget.path1.text().encode('euc-kr').replace("/", "\\", 2) + " " +
-                        "--valoptpath=" + self.dockwidget.path2.text().encode('euc-kr').replace("/", "\\", 2) + " " +
-                        "--objfilepath=" + self.dockwidget.path3.text().encode('euc-kr').replace("/", "\\", 2) + " " +
-                        "--crs=" + self.dockwidget.crs.currentText().encode('euc-kr') +
+                        "--layerdefpath=" + self.dockwidget.path1.text().encode('euc-kr')+ " " +
+                        "--valoptpath=" + self.dockwidget.path2.text().encode('euc-kr') + " " +
+                        "--objfilepath=" + self.dockwidget.path3.text().encode('euc-kr') + " " +
+                        "--crs=" + self.dockwidget.crs.currentText().encode('euc-kr') + " " +
+                        "--langtype=" + self.lang_type +
                         "\n\n" +
                         "EXIT\n" +
                         "pause>nul")
@@ -447,7 +513,7 @@ class GeoDT:
 
             except Exception as e:
                 QgsMessageLog.logMessage("Error : " + str(e), tag="Validating", level=QgsMessageLog.INFO)
-                self.dockwidget.logLabel.setText("검수 작업이 실패하였습니다.".decode("utf-8"))
+                self.dockwidget.logLabel.setText("Fail.".decode("utf-8"))
                 return
 
     # 닫기 버튼 이벤트
@@ -464,7 +530,7 @@ class GeoDT:
             percent = intValue[0]
             startTime = intValue[3] + ":" + intValue[4] + ":" + intValue[5]
             finishTime = intValue[6] + ":" + intValue[7] + ":" + intValue[8]
-            self.dockwidget.logLabel.setText("진행중".decode("utf-8") + " ( " + startTime + " / " + finishTime + " )")
+            self.dockwidget.logLabel.setText("Procressing....".decode("utf-8") + " ( " + startTime + " / " + finishTime + " )")
             self.dockwidget.progressBar.setValue(int(percent))
         except Exception as e:
             pass
@@ -473,11 +539,11 @@ class GeoDT:
     def process_finished_event(self, exit_code):
         if exit_code == 200:
             self.ini_setting()
-            self.dockwidget.logLabel.setText(u"검수가 완료 되었습니다.")
+            self.dockwidget.logLabel.setText(u"Success.")
             self.dockwidget.tabWidget.setCurrentIndex(1)
             self.dockwidget.go_btn.setEnabled(True)
         else:
-            self.dockwidget.logLabel.setText(u"검수를 실패했습니다.")
+            self.dockwidget.logLabel.setText(u"Fail.")
             self.dockwidget.go_btn.setEnabled(True)
 
     # 로그 상세 버튼 이벤트

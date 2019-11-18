@@ -9,32 +9,28 @@
 [general]
 name=GeoDT_Desktop
 qgisMinimumVersion=2.0
-description=공간정보의 기하학적/논리적구조 및 속성 검수 플러그인
-about=세부기능: 
-       1.zip 형태의 다수, 대용량 파일(Shape, NGI/NDA, DXF) 검수
-       2.40여종의 공간정보 기하학적/논리적 구조 및 속성 오류 검출
-	   3.국가기본도, 임상도, 지하시설물 데이터에 특화된 검수 항목 제공
-       4.검수 결과에 대한 오류 레이어 파일(Shape)생성 및 가시화
-	   5.오류 객체 추적
+description=Geometric/Logical Structure and Property Validating Plugin for Geospatial Information
+about=Detailed features: 
+       1.Validation of large files (Shape, NGI / NDA, DXF) in the form of zip
+       2.Detection of geometric / logical structure and attribute error of 40 kinds for geospatial information
+	   3.Validation items that are specific to national basic maps, forest maps, and underground maps.
+       4.Creation and visualization of error layer file (Shape) on validation result
+       5.Error feature tracking
 version=0.1
-author=공간정보기술(주)
-email=
+author=GEOSPATIAL INFORMATION TECHNOLOGY (www.git.co.kr)
+email=ghre55@git.co.kr
 
+tracker=https://github.com/ODTBuilder/OpenGDS-Desktop-QgisPlugin
+repository=https://github.com/ODTBuilder/OpenGDS-Desktop-QgisPlugin
+homepage=https://github.com/ODTBuilder/OpenGDS-Desktop-QgisPlugin
 
-
-tracker=
-repository=
 # End of mandatory metadata
-
 # Recommended items:
-
 # Uncomment the following line and add your changelog:
 # changelog=
-
 # Tags are comma separated with spaces allowed
-tags=attribute table, attribute
 
-homepage=aa
+tags=attribute table, attribute
 category=Plugins
 icon=icon.png
 # experimental flag
@@ -42,4 +38,3 @@ experimental=False
 
 # deprecated flag (applies to the whole plugin, not just a single version)
 deprecated=False
-
