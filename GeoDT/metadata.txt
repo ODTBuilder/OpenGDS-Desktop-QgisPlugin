@@ -20,7 +20,7 @@ version=0.1
 author=GEOSPATIAL INFORMATION TECHNOLOGY (www.git.co.kr)
 email=ghre55@git.co.kr
 
-tracker=https://github.com/ODTBuilder/OpenGDS-Desktop-QgisPlugin
+tracker=https://github.com/ODTBuilder/OpenGDS-Desktop-QgisPlugin/issues
 repository=https://github.com/ODTBuilder/OpenGDS-Desktop-QgisPlugin
 homepage=https://github.com/ODTBuilder/OpenGDS-Desktop-QgisPlugin
 
